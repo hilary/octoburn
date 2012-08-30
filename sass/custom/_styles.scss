@@ -36,6 +36,9 @@ a.read-more {
 }
 
 body {
+  nav form fieldset input {
+    vertical-align : -0.3em;
+  }
   > footer {
   padding-top    : 0.75em;
   padding-bottom : 0.75em;
