@@ -6,6 +6,7 @@ date: 2012-08-28 14:28
 comments: true
 categories: 
 - Social Networks
+- Octopress
 - Firefox
 ---
 

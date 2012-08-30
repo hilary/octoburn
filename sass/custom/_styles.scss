@@ -2,6 +2,9 @@
   > div {
     padding-top    : 0;
     padding-bottom : 0;
+    img, video, .flash-video {
+      &.center { margin-bottom: 0.8em; }
+    }
   }
   .blog-index {
     article {
