@@ -3,7 +3,7 @@
 layout: post
 title: "On Delicious, Finally"
 date: 2012-08-28 14:28
-comments: false
+comments: true
 categories: 
 - Social Networks
 - Firefox

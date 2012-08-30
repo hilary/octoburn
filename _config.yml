@@ -1,4 +1,3 @@
-
 url: http://hilary.github.com
 title: integrating design
 subtitle: your friendly native guide
@@ -55,8 +54,8 @@ delicious_user: hilzh
 delicious_count: 3
 
 # Disqus Comments
-# disqus_short_name:
-# disqus_show_comment_count: false
+disqus_short_name: integrating
+disqus_show_comment_count: false
 
 # Google Analytics
 # google_analytics_tracking_id:
