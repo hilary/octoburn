@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[integrating design]]></title>
-  <link href="http://hilary.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Social Networks | integrating design]]></title>
+  <link href="http://hilary.github.com/blog/categories/social-networks/atom.xml" rel="self"/>
   <link href="http://hilary.github.com/"/>
   <updated>2012-08-29T23:10:52-07:00</updated>
   <id>http://hilary.github.com/</id>
@@ -32,7 +32,7 @@ would be:</p>
 <ol>
 <li><a href="http://www.mozilla.org/firefox">Firefox</a>, under my development profile (which I have captured in
 <a href="http://www.macosxautomation.com/automator/">Automator</a> and imaginatively named <code>FF dev</code>). Three to four
-windows open to various parts of the site I&#8217;m currently working on.</li>
+windows open to various parts of the site I'm currently working on.</li>
 <li>Firefox, under my personal profile (captured in Automator). A
 dizzying set of windows and tabs open to reference material.</li>
 <li>Firefox, under my Facebook profile (yup, you guessed it). I have a
@@ -45,7 +45,7 @@ Safari.</li>
 </ol>
 
 
-<p>Bookmarks local to a single browser simply don&#8217;t meet my needs.</p>
+<p>Bookmarks local to a single browser simply don't meet my needs.</p>
 
 <h3>rich associations</h3>
 
@@ -59,7 +59,7 @@ resource.</p>
 
 <p>Delicious pioneered using those terms (called <em>tags</em>) as the
 organizing principle for a set of bookmarks. Entering any of a
-bookmark&#8217;s tags will bring up that entry, along with any other
+bookmark's tags will bring up that entry, along with any other
 resources on which I have used the same tag. Tags not only eliminate
 the frustration during bookmarking and ease retrieval, they facilitate
 discovering new relations in the bookmarked materials.</p>
@@ -72,7 +72,7 @@ set of personalized tags and not using the feature at all.</p>
 
 <h3>sync, sank, sunk</h3>
 
-<p>I&#8217;ve explored alternatives to in-browser bookmarks before. Several
+<p>I've explored alternatives to in-browser bookmarks before. Several
 years ago I researched the bookmark syncing services and even tried
 Xmarks for a brief time. Xmarks syncing had a very noticeable impact
 on my mac, however, so I dropped it. I will say that I was not a
@@ -99,7 +99,7 @@ increase my workload.</p>
 <p>Enter Octopress. I have just moved my blog to Octopress (for some
 value of moved; I still need to process the posts on my old blog but
 decided not to let that delay launching the new one). One of
-Octopress&#8217;s default properties is that it integrates your Delicious
+Octopress's default properties is that it integrates your Delicious
 feed. How cool is that? Time to go revisit Delicious.</p>
 
 <p>I explored Delicious shortly after it came out and again several years
@@ -108,10 +108,10 @@ was interaction design: the drag on my workflow was such that I was
 confident it would get in the way of my productivity.</p>
 
 <p>This time, however, I was pleasantly surprised. While it is early days
-as of yet, I&#8217;m already integrating the beta bookmarklet into my
-workflow. The interface is nice and clean, although even the &#8216;compact&#8217;
-version takes up a huge amount of space. But that&#8217;s what user styles
-are for&#8230;</p>
+as of yet, I'm already integrating the beta bookmarklet into my
+workflow. The interface is nice and clean, although even the 'compact'
+version takes up a huge amount of space. But that's what user styles
+are for...</p>
 
 <p>I decided not to upload my bookmarks from my various browswers, but
 rather to enter them as I came to them: I was due to sort through the

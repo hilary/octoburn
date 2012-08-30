@@ -1,9 +1,12 @@
 source "http://rubygems.org"
 
 group :development do
+  gem 'guard'
+  gem 'guard-sass', '~> 1.0.0'
   gem 'rake', '~> 0.9.2'
   gem 'rack', '~> 1.4.1'
   gem 'jekyll', '~> 0.11.2'
+#  gem 'redcarpet'
   gem 'rdiscount', '~> 1.6.8'
   gem 'pygments.rb', '~> 0.2.12'
   gem 'RedCloth', '~> 4.2.9'

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="home">
+  <article role="article">{{ content }}</article>
+  {% if site.disqus_short_name == true %}
+    <section>
+      <h1>Comments</h1>
+      <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+    </section>
+  {% endif %}
+</div>
+<aside class="sidebar">
+  {% if site.home_asides.size %}
+    {% include_array home_asides %}
+  {% else %}
+    {% include_array default_asides %}
+  {% endif %}
+</aside>
