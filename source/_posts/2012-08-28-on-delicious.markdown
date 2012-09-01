@@ -4,6 +4,8 @@ layout: post
 title: "On Delicious, Finally"
 date: 2012-08-28 14:28
 comments: true
+description: Blog post analyzing why the author joined Delicious.
+keywords: delicious, social bookmarking, octopress, firefox, automator
 categories: 
 - Social Networks
 - Octopress

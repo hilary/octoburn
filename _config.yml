@@ -25,7 +25,7 @@ recent_posts          : 5
 excerpt_link          : "read on ..." 
 titlecase             : false
 
-default_asides : [asides/recent_posts.html, asides/delicious.html, custom/asides/github.html]
+default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github.html]
 
 # blog_index_asides:
 # post_asides:
@@ -36,10 +36,10 @@ default_asides : [asides/recent_posts.html, asides/delicious.html, custom/asides
 # ----------------------- #
 
 # Github repositories
-# github_user              : hilary
-# github_repo_count        : 2
-# github_show_profile_link : true
-# github_skip_forks        : true
+github_user              : hilary
+github_repo_count        : 3
+github_show_profile_link : true
+github_skip_forks        : true
 
 # Google +1
 # google_plus_one: false
