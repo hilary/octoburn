@@ -30,7 +30,7 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
-    kramdown (0.13.7)
+    kramdown (0.13.8)
     liquid (2.3.0)
     listen (0.4.7)
       rb-fchange (~> 0.0.5)
