@@ -1,29 +1,36 @@
-url: http://hilary.github.com
-title: integrating design
-subtitle: your friendly native guide
-author: hilary j holz
-simple_search: http://google.com/search
-description: coding blog about ruby rails chef vagrant cucumber
-date_format: "ordinal"
-subscribe_rss: /atom.xml
+url                          : http://hilary.github.com
+title                        : integrating design
+subtitle                     : your friendly native guide
+author                       : hilary j holz
+simple_search                : http://google.com/search
+description                  : coding blog about ruby rails chef vagrant cucumber
+date_format                  : "ordinal"
+subscribe_rss                : /atom.xml
 
-#    Jekyll & Plugins     #
-root                  : /
-permalink             : /blog/:year/:category/:title/
-source                : source
-destination           : public
-plugins               : plugins
-code_dir              : downloads/code
-category_dir          : blog/categories
-category_title_prefix : "Category: "
-markdown              : rdiscount
-pygments              : false # default python pygments replaced by pygments.rb
+root                         : /
+permalink                    : /blog/:year/:category/:title/
+source                       : source
+destination                  : public
+plugins                      : plugins
+code_dir                     : downloads/code
+category_dir                 : blog/categories
+category_title_prefix        : "Category: "
+markdown                     : rdiscount
+pygments                     : false # default python pygments replaced by pygments.rb
 
-paginate              : 10    
-pagination_dir        : blog  
-recent_posts          : 5     
-excerpt_link          : "read on ..." 
-titlecase             : false
+paginate                     : 10    
+pagination_dir               : blog  
+recent_posts                 : 5     
+excerpt_link                 : "read on ..." 
+excerpt_in_feed              : false
+permalink_label              : "&infin;"
+permalink_label_feed         : "&infin; Permalink"
+linklog_marker               : "&rarr;"
+linklog_marker_position      : after
+linklog_marker_position_feed : after
+standard_post_marker         :
+
+titlecase                    : false
 
 default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github.html]
 
@@ -31,34 +38,15 @@ default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github
 # post_asides:
 # page_asides:
 
-# ----------------------- #
-#   3rd Party Settings    #
-# ----------------------- #
-
-# Github repositories
 github_user              : hilary
 github_repo_count        : 3
 github_show_profile_link : true
 github_skip_forks        : true
 
-# Google +1
-# google_plus_one: false
-# google_plus_one_size: medium
-
-# Google Plus Profile
-# Hidden: No visible button, just add author information to search results
-# googleplus_user:
-# googleplus_hidden: false
-
 delicious_user: hilzh
 delicious_count: 3
 
-# Disqus Comments
 disqus_short_name: integrating
 disqus_show_comment_count: false
 
-# Google Analytics
-# google_analytics_tracking_id:
-
-# Facebook Like
 facebook_like: false
