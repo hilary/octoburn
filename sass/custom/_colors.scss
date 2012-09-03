@@ -1,10 +1,11 @@
-// more than one way to skin a cat...
-@import "typography";
+// maybe not necessary to have this here anymore
+//@import "typography";
 
 $header-bg      : #1d2f2b;
 $title-color    : #f2f2f2;
 $subtitle-color : lighten($header-bg, 65);
-$page-bg        : $header-bg;
+$pre-bg         : $header-bg;
+//$page-bg        : $header-bg;
 
 $nav-bg          : desaturate(lighten(#1d2f2b, 30), 5);
 $nav-bg-front    : image-url('noise.png');
@@ -33,4 +34,28 @@ $footer-bg-back          : linear-gradient(lighten($footer-bg, 8), $footer-bg, d
 $footer-link-color       : $title-color;
 $footer-link-color-hover : darken($title-color, 30);
 
-$indented-lists: true;
+//$solarized: dark;
+
+// code markers
+$marker             : rgba(#00baff, .5);
+$marker-bg          : rgba($marker, .03);
+$marker-border      : rgba($marker, .13);
+$marker-border-left : $marker;
+
+// fine control
+$base03        : #002b36; //darkest blue
+$base02        : #073642; //dark blue
+$base01        : #586e75; //darkest gray
+$base00        : #657b83; //dark gray
+$base0         : #839496; //medium gray
+$base1         : #93a1a1; //medium light gray
+$base2         : #eee8d5; //cream
+$base3         : #fdf6e3; //white
+$solar-yellow  : #b58900;
+$solar-orange  : #cb4b16;
+$solar-red     : #dc322f;
+$solar-magenta : #d33682;
+$solar-violet  : #6c71c4;
+$solar-blue    : #268bd2;
+$solar-cyan    : #2aa198;
+$solar-green   : #859900;

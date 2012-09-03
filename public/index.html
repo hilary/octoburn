@@ -7,10 +7,9 @@
   <meta charset="utf-8">
   <title>integrating design</title>
   <meta name="author" content="hilary j holz">
+  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
   
-  <meta name="description" content="Aug 30th, 2012 Repository Naming for Octopress on Github TL;DR While the Octopress instructions for deploying an
-Octopress blog on Github are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,18 +19,17 @@ Octopress blog on Github are &hellip;">
 
   
   <link rel="canonical" href="http://hilary.github.com/">
-  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="integrating design" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<!-- <link href='http://fonts.googleapis.com/css?family=Quando|Electrolize|Cabin' rel='stylesheet' type='text/css'> -->
+  
+
 <link href='http://fonts.googleapis.com/css?family=Quando|Electrolize|Ubuntu:300' rel='stylesheet' type='text/css'>
 
   
 
+   
+  <link href="/octopress-favicon.png" rel="icon">
 </head>
 
 <body   >
@@ -58,7 +56,7 @@ Octopress blog on Github are &hellip;">
 <ul class="main-navigation">
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/archives">Archives</a></li>
 </ul>
 
 </nav>
@@ -103,10 +101,22 @@ than getting on with life here in my new digs, however, you are
 welcome to rummage around in them yourself.</small>
 </article>
   
-</div>
-<aside class="sidebar">
+
+  <section>
+  <h1>Comments</h1>
   
-    <section>
+
+  
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  
+</section>
+
+</div>
+
+  <aside class="sidebar">
+  
+    <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -121,45 +131,26 @@ welcome to rummage around in them yourself.</small>
   </ul>
 </section>
 
+
+
+
 <section>
   <h1>On Delicious</h1>
   <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
   <p><a href="http://delicious.com/hilzh">My Delicious Bookmarks &raquo;</a></p>
 </section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/hilary">@hilary</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'hilary',
-            count: 3,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
 
 
-  
-</aside>
+
+
+
+
+
+  
+  </aside>
+
 
     </div>
   </div>
@@ -173,6 +164,7 @@ welcome to rummage around in them yourself.</small>
 
 <script type="text/javascript">
       var disqus_shortname = 'integrating';
+			var disqus_developer = '0';
       
         
         // var disqus_developer = 1;
@@ -186,11 +178,6 @@ welcome to rummage around in them yourself.</small>
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
 
 
 

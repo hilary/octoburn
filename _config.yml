@@ -3,9 +3,12 @@ title                        : integrating design
 subtitle                     : your friendly native guide
 author                       : hilary j holz
 simple_search                : http://google.com/search
-description                  : coding blog about ruby rails chef vagrant cucumber
+description                  : coding blog by full stack web dev
 date_format                  : "ordinal"
 subscribe_rss                : /atom.xml
+subscribe_email              :
+category_feeds               : false
+email                        :
 
 root                         : /
 permalink                    : /blog/:year/:category/:title/
@@ -14,17 +17,19 @@ destination                  : public
 plugins                      : plugins
 code_dir                     : downloads/code
 category_dir                 : blog/categories
-category_title_prefix        : "Category: "
-markdown                     : kramdown
-pygments                     : false # default python pygments replaced by pygments.rb
+category_title_prefix        : "Category: "  # not in new _config.yml
+markdown                     : kramdown      # default is rdiscount
 
-paginate                     : 10    
-pagination_dir               : blog  
-recent_posts                 : 5     
-excerpt_link                 : "read on ..." 
+# default python pygments replaced by pygments.rb, set to true for Albino + Python pygments
+pygments                     : false
+
+paginate                     : 10  
+pagination_dir               : blog
+recent_posts                 : 5
+excerpt_link                 : "read on ..."
 excerpt_in_feed              : false
-permalink_label              : "&infin;"
-permalink_label_feed         : "&infin; Permalink"
+permalink_label              : "permalink"
+permalink_label_feed         : "&#9875; permalink"
 linklog_marker               : "&rarr;"
 linklog_marker_position      : after
 linklog_marker_position_feed : after
@@ -32,21 +37,39 @@ standard_post_marker         :
 
 titlecase                    : false
 
-default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github.html]
+# To change the layout's default sidebar Add a new sidebar source/_includes/sidebars/your_sidebar.html
+# then make changes below, eg. post_sidebar: your_sidebar.html
+# default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github.html]
+blog_index_sidebar           : blog_index_default.html
+page_sidebar                 : page_default.html
+post_sidebar                 : post_default.html
 
-# blog_index_asides:
-# post_asides:
-# page_asides:
+respectfully_social          : true
 
-github_user              : hilary
-github_repo_count        : 3
-github_show_profile_link : true
-github_skip_forks        : true
+github_user                  : hilary
+github_repo_count            : 3
+github_show_profile_link     : true
+github_skip_forks            : true
 
-delicious_user: hilzh
-delicious_count: 3
+delicious_user               : hilzh
+delicious_count              : 3
 
-disqus_short_name: integrating
-disqus_show_comment_count: false
+disqus_short_name            : integrating
+disqus_show_comment_count    : false
+disqus_developer             : 0
 
-facebook_like: false
+facebook_like                : false
+
+# twitter_user                 :
+# twitter_tweet_count          : 4
+# twitter_show_replies         : false
+# twitter_follow_button        : true
+# twitter_show_follower_count  : false
+# twitter_tweet_button         : true
+
+# G+ hidden: no visible button, just adds author information to search results
+google_plus_one              : false
+google_plus_one_size         : medium
+google_plus_user             :
+google_plus_hidden           : true
+google_plus_image_size       : 32

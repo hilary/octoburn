@@ -9,10 +9,10 @@ module OctopressFilters
   include BacktickCodeBlock
   include TemplateWrapper
   def pre_filter(input)
-    input = render_code_block(input)
     input.gsub /(<figure.+?>.+?<\/figure>)/m do
       safe_wrap($1)
     end
+    input = render_code_block(input)
   end
   def post_filter(input)
     input = unwrap(input)
@@ -24,12 +24,12 @@ module Jekyll
   class ContentFilters < PostFilter
     include OctopressFilters
     def pre_render(post)
-      if post.ext.match('html|textile|markdown|md|haml|slim|xml')
+      if post.ext.match('html|textile|markdown|haml|slim|xml')
         post.content = pre_filter(post.content)
       end
     end
     def post_render(post)
-      if post.ext.match('html|textile|markdown|md|haml|slim|xml')
+      if post.ext.match('html|textile|markdown|haml|slim|xml')
         post.content = post_filter(post.content)
       end
     end
@@ -61,13 +61,6 @@ module OctopressLiquidFilters
     else
       input
     end
-  end
-
-  # Extracts raw content DIV from template, used for page description as {{ content }}
-  # contains complete sub-template code on main page level
-  def raw_content(input)
-    /<div class="entry-content">(?<content>[\s\S]*?)<\/div>\s*<(footer|\/article)>/ =~ input
-    return (content.nil?) ? input : content
   end
 
   # Escapes CDATA sections in post content
@@ -114,11 +107,6 @@ module OctopressLiquidFilters
     else
       input
     end
-  end
-
-  # Condenses multiple spaces and tabs into a single space
-  def condense_spaces(input)
-    input.gsub(/\s{2,}/, ' ')
   end
 
   # Removes trailing forward slash from a string for easily appending url segments

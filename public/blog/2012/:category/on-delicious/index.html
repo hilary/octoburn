@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <title>On Delicious, Finally - integrating design</title>
   <meta name="author" content="hilary j holz">
+  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
   
-  <meta name="description" content="Blog post analyzing why the author joined Delicious.">
   <meta name="keywords" content="delicious, social bookmarking, octopress, firefox, automator">
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,18 +19,17 @@
 
   
   <link rel="canonical" href="http://hilary.github.com/blog/2012/:category/on-delicious/">
-  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="integrating design" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<!-- <link href='http://fonts.googleapis.com/css?family=Quando|Electrolize|Cabin' rel='stylesheet' type='text/css'> -->
+  
+
 <link href='http://fonts.googleapis.com/css?family=Quando|Electrolize|Ubuntu:300' rel='stylesheet' type='text/css'>
 
   
 
+   
+  <link href="/octopress-favicon.png" rel="icon">
 </head>
 
 <body   >
@@ -57,7 +56,7 @@
 <ul class="main-navigation">
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/archives">Archives</a></li>
 </ul>
 
 </nav>
@@ -75,7 +74,7 @@
 
 
 
-<article class="hentry" role="article" >
+<article class="hentry " role="article">
   
   <header>
     <h1 class="entry-title">
@@ -99,8 +98,7 @@ On Delicious, Finally
 
 
 <time datetime="2012-08-28T14:28:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2012</time>
-        
-         &bull; <a rel="bookmark" href="/blog/2012/:category/on-delicious/">&infin;</a>
+         &bull; <a rel="bookmark" href="/blog/2012/:category/on-delicious/">permalink</a>
       </p>
     
   </header>
@@ -217,7 +215,7 @@ to my perennial bookmark problem!</p>
 
 <span class="byline author vcard">Posted by <span class="fn">hilary j holz</span></span>
 
-      
+
 
 
 
@@ -230,7 +228,7 @@ to my perennial bookmark problem!</p>
 
 
 <time datetime="2012-08-28T14:28:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2012</time>
-      
+
 
 <span class="categories">
   
@@ -239,12 +237,17 @@ to my perennial bookmark problem!</p>
 </span>
 
 
+
+      
+
     </p>
     
       <div class="sharing">
   
   
   
+  
+
 </div>
 
     
@@ -257,17 +260,21 @@ to my perennial bookmark problem!</p>
   </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
+<section>
+  <h1>Comments</h1>
+  
+
+  
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+  
+</section>
 
 </div>
 
 <aside class="sidebar">
-  
-    <section>
+  
+    <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -282,46 +289,25 @@ to my perennial bookmark problem!</p>
   </ul>
 </section>
 
+
+
+
 <section>
   <h1>On Delicious</h1>
   <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
   <p><a href="http://delicious.com/hilzh">My Delicious Bookmarks &raquo;</a></p>
 </section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/hilary">@hilary</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'hilary',
-            count: 3,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
 
 
-  
+
+
+
+
+
+  
 </aside>
-
 
 
     </div>
@@ -336,6 +322,7 @@ to my perennial bookmark problem!</p>
 
 <script type="text/javascript">
       var disqus_shortname = 'integrating';
+			var disqus_developer = '0';
       
         
         // var disqus_developer = 1;
@@ -349,11 +336,6 @@ to my perennial bookmark problem!</p>
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-
-
 
 
 

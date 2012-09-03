@@ -1,14 +1,16 @@
-//$header-font-size: 1em;
+$indented-lists        : true;
+
 $header-padding-top    : 1em;
 $header-padding-bottom : 1em;
 
-// Padding used for layout margins
-$pad-min    : 5px;
-$pad-narrow : 10px;
-$pad-medium : 15px;
-$pad-wide   : 25px;
+$pad-min               : 5px;
+$pad-narrow            : 10px;
 
-// Sidebar widths used in media queries
-$sidebar-pad-medium : 10px;
-$sidebar-pad-wide   : 15px;
+$sidebar-width-medium  : 240px;
+$sidebar-pad-medium    : 10px;
+$pad-medium            : 15px;
+
+$sidebar-width-wide    : $sidebar-width-medium;
+$sidebar-pad-wide      : $sidebar-pad-medium;
+$pad-wide              : 25px;
 
