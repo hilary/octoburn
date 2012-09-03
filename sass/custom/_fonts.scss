@@ -5,3 +5,24 @@ $mono  : 'Electrolize', 'Menlo', 'Monaco', 'lucida console', 'Courier New', mono
 $heading-font-family         : $serif;
 $header-title-font-family    : $serif;
 $header-subtitle-font-family : $serif;
+
+$main-text-font-family       : $sans;
+$sidebar-text-font-family    : $sans;
+$code-font-family            : $mono;
+
+// Fonts
+.heading         { font-family : $heading-font-family;      }
+.header-title    { font-family : $heading-font-family;      }
+.header-subtitle { font-family : $heading-font-family;      }
+.main-text       { font-family : $main-text-font-family;    }
+.sidebar-text    { font-family : $sidebar-text-font-family; }
+.code-font       { font-family : $code-font-family;         }
+
+html { font-size : 14px };
+
+$h1 : 2em;
+//$h2: 1.5em !default;
+//$h3: 1.3em !default;
+//$h4:   1em !default;
+//$h5:  .9em !default;
+//$h6:  .8em !default;

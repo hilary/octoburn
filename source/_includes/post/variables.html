@@ -12,3 +12,8 @@
 {% capture article_title %}{% if index %}{% unless linklog %}{{ site.standard_post_marker }}{% endunless %}{{ post.title }}{% else %}{% unless linklog %}{{ site.standard_post_marker }}{% endunless %}{{ page.title }}{% endif %}{% endcapture %}
 {% capture linklog_marker %}<span class='linklog-marker'>{{ site.linklog_marker }}</span>{% endcapture %}
 {% capture content %}{% if index %}{% capture excerpted %}{{ post.content | has_excerpt }}{% endcapture %}{% if excerpted != 'false' %}{{ post.content | excerpt }}{% else %}{{ post.content }}{% endif %}{% else %}{{ content }}{% endif %}{% endcapture %}
+
+{% assign show_comment_link = false  %}
+{% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
+  {% assign show_comment_link = true %}
+{% endif %}

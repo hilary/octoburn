@@ -1,11 +1,8 @@
-// maybe not necessary to have this here anymore
-//@import "typography";
 
 $header-bg      : #1d2f2b;
 $title-color    : #f2f2f2;
 $subtitle-color : lighten($header-bg, 65);
-$pre-bg         : $header-bg;
-//$page-bg        : $header-bg;
+$page-bg        : desaturate($header-bg, 10);
 
 $nav-bg          : desaturate(lighten(#1d2f2b, 30), 5);
 $nav-bg-front    : image-url('noise.png');

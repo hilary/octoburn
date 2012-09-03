@@ -11,13 +11,12 @@ category_feeds               : false
 email                        :
 
 root                         : /
-permalink                    : /blog/:year/:category/:title/
+permalink                    : /blog/:year/:title/
 source                       : source
 destination                  : public
 plugins                      : plugins
 code_dir                     : downloads/code
 category_dir                 : blog/categories
-category_title_prefix        : "Category: "  # not in new _config.yml
 markdown                     : kramdown      # default is rdiscount
 
 # default python pygments replaced by pygments.rb, set to true for Albino + Python pygments
@@ -26,7 +25,7 @@ pygments                     : false
 paginate                     : 10  
 pagination_dir               : blog
 recent_posts                 : 5
-excerpt_link                 : "read on ..."
+excerpt_link                 : "&hellip; read more &hellip;"
 excerpt_in_feed              : false
 permalink_label              : "permalink"
 permalink_label_feed         : "&#9875; permalink"
@@ -37,18 +36,21 @@ standard_post_marker         :
 
 titlecase                    : false
 
-# To change the layout's default sidebar Add a new sidebar source/_includes/sidebars/your_sidebar.html
-# then make changes below, eg. post_sidebar: your_sidebar.html
-# default_asides : [asides/recent_posts.html, asides/delicious.html, asides/github.html]
-blog_index_sidebar           : blog_index_default.html
-page_sidebar                 : page_default.html
-post_sidebar                 : post_default.html
+# sidebars
+home_sidebar                 : home.html
+blog_index_sidebar           : blog_index.html
+page_sidebar                 : page.html
+post_sidebar                 : post.html
 
 respectfully_social          : true
+twitter_tweet_button         : true
+facebook_like                : true
+google_plus_one              : true
+google_plus_one_size         : small
 
 github_user                  : hilary
 github_repo_count            : 3
-github_show_profile_link     : true
+github_show_profile_link     : false
 github_skip_forks            : true
 
 delicious_user               : hilzh
@@ -58,18 +60,14 @@ disqus_short_name            : integrating
 disqus_show_comment_count    : false
 disqus_developer             : 0
 
-facebook_like                : false
+google_plus_user             : holz.hilary@gmail.com
+google_plus_image_size       : 16
+google_plus_hidden           : false  # doesn't work
 
 # twitter_user                 :
 # twitter_tweet_count          : 4
 # twitter_show_replies         : false
 # twitter_follow_button        : true
 # twitter_show_follower_count  : false
-# twitter_tweet_button         : true
 
-# G+ hidden: no visible button, just adds author information to search results
-google_plus_one              : false
-google_plus_one_size         : medium
-google_plus_user             :
-google_plus_hidden           : true
-google_plus_image_size       : 32
+

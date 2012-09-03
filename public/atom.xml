@@ -3,7 +3,7 @@
   <title><![CDATA[integrating design]]></title>
   <link href="http://hilary.github.com/atom.xml" rel="self"/>
   <link href="http://hilary.github.com/"/>
-  <updated>2012-09-02T18:16:04-07:00</updated>
+  <updated>2012-09-03T01:19:23-07:00</updated>
   <id>http://hilary.github.com/</id>
   <author>
     <name><![CDATA[hilary j holz]]></name>
@@ -19,9 +19,9 @@
 
 
 <title type="html"><![CDATA[Repository Naming for Octopress on Github]]></title>
-<link href="http://hilary.github.com/blog/2012/:category/deploying-octopress-on-github/"/>
+<link href="http://hilary.github.com/blog/2012/deploying-octopress-on-github/"/>
 <updated>2012-08-30T10:40:00-07:00</updated>
-<id>http://hilary.github.com/blog/2012/:category/deploying-octopress-on-github</id>
+<id>http://hilary.github.com/blog/2012/deploying-octopress-on-github</id>
 
       <content type="html"><![CDATA[<p>TL;DR While the <a href="http://octopress.org/docs/deploying/github/">Octopress instructions</a> for deploying an
 Octopress blog on Github are generally quite straightforward,
@@ -74,7 +74,7 @@ doing an in-depth write-up.</p>
 <p>Having Octopress setup problems you haven’t solved? Leave a comment and I’ll
 look over your virtual shoulder and see if I can help.</p>
 
-<p><a rel="bookmark" href="http://hilary.github.com/blog/2012/:category/deploying-octopress-on-github/">&#9875; permalink</a></p>]]></content>
+<p><a rel="bookmark" href="http://hilary.github.com/blog/2012/deploying-octopress-on-github/">&#9875; permalink</a></p>]]></content>
     </entry>
   
     <entry>
@@ -84,9 +84,9 @@ look over your virtual shoulder and see if I can help.</p>
 
 
 <title type="html"><![CDATA[On Delicious, Finally]]></title>
-<link href="http://hilary.github.com/blog/2012/:category/on-delicious/"/>
+<link href="http://hilary.github.com/blog/2012/on-delicious/"/>
 <updated>2012-08-28T14:28:00-07:00</updated>
-<id>http://hilary.github.com/blog/2012/:category/on-delicious</id>
+<id>http://hilary.github.com/blog/2012/on-delicious</id>
 
       <content type="html"><![CDATA[<p>I joined <a href="http://www.delicious.com/">Delicious</a> (formerly styled del.icio.us) yesterday. For
 those of you living under a rock for the past decade, Delicious is the
@@ -190,7 +190,7 @@ things anyway. </p>
 I can actually write again, but it looks like I may have an answer
 to my perennial bookmark problem!</p>
 
-<p><a rel="bookmark" href="http://hilary.github.com/blog/2012/:category/on-delicious/">&#9875; permalink</a></p>]]></content>
+<p><a rel="bookmark" href="http://hilary.github.com/blog/2012/on-delicious/">&#9875; permalink</a></p>]]></content>
     </entry>
   
 </feed>

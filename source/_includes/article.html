@@ -9,14 +9,19 @@
     {% endunless %}
   </header>
 {% endunless %}
-<div class="entry-content">{{ content }}</div>
 {% if index %}
-  <footer>
-    {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-    <p><a class="comments-link" href="{% if index %}{{ permalink }}{% endif %}#disqus_thread">View comments &raquo;</a></p>
-    {% endif %}
-    {% if excerpted != 'false' %}
-    <p><a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a></p>
-    {% endif %}
-  </footer>
+  <div class="index-entry">
+    {{ content }}
+    <nav class="article-index">
+      <a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a>
+      {% if show_comment_link %}
+        <a class="comments-link" 
+           href="{% if index %}{{ permalink }}{% endif %}#disqus_thread">view comments &raquo;</a>
+      {% endif %}
+    </nav>
+  </div>
+{% else %}
+  <div class="entry-content">
+    {{ content }}
+  </div>
 {% endif %}
