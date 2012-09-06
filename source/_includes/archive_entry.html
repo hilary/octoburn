@@ -1,0 +1,6 @@
+{% capture permalink %}{{ root_url }}{{ post.url }}{% endcapture %}
+<li>
+  <h1 class="title"><a href="{{ permalink }}">{{ post.title }}</a></h1>
+  <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span> <span class='year'>%Y</span>"}}</time>
+  <p>{% include helpers/categories.html %}</p>
+</li>

@@ -1,0 +1,6 @@
+{% assign show_comment_link = false  %}
+{% if page.comments == true and post.comments == true %}
+  {% if site.disqus_short_name and site.disqus_show_comment_count == true %}
+    {% assign show_comment_link = true %}
+  {% endif %}
+{% endif %}

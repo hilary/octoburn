@@ -1,4 +1,5 @@
 # Require any additional compass plugins here.
+require "susy"
 project_type = :stand_alone
 
 # Publishing paths

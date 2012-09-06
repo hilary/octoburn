@@ -1,20 +1,14 @@
 ---
-layout: page
-title: Blog Archive
-footer: false
+layout: default
 body_id: archive
 ---
-
-<div id="blog-archives">
-{% for post in site.posts reverse %}
-{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-{% unless year == this_year %}
-  {% assign year = this_year %}
-  <h2>{{ year }}</h2>
-{% endunless %}
-{% include post/variables.html %}
-<article {% if linklog %}data-linklog{% endif %}>
-  {% include archive_post.html %}
+<article role="article">
+  <ul>
+    {% for post in site.posts limit: site.archive_max_posts reverse %}
+      {% include helpers/index_year.html %}
+      {% include archive_entry.html %}
+    {% endfor %}
+  </ul>
 </article>
-{% endfor %}
-</div>
+{% include_sidebar site.index_sidebar %}
+

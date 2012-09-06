@@ -2,27 +2,14 @@
 layout  : default
 body_id : blog_index
 ---
-<div>
-  {% for post in paginator.posts %}
-    {% include post/variables.html %}
-    <article {% if linklog %}class="linklog"{% endif %}>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <nav class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; older</a>
-    {% endif %}
+<article role="article">
+  <ul>
+    {% for post in site.posts limit: site.index_posts %}
+      <li>{% include excerpt_entry.html %}</li>
+    {% endfor %}
+  </ul>
+  <footer id="index-footer">
     <a href="/archives">blog archives</a>
-    {% if paginator.previous_page %}
-      <a class="next" href="{{paginator.previous_page}}">newer &rarr;</a>
-    {% endif %}
-  </nav>
-</div>
-<aside class="sidebar">
-  {% if page.sidebar == nil or page.sidebar == 'collapse' %}
-   {% include_sidebar site.blog_index_sidebar %}
-  {% else %}
-   {% include_sidebar %}
-  {% endif %}
-</aside>
+  </footer>
+</article>
+{% include_sidebar site.index_sidebar %}

@@ -22,8 +22,11 @@ markdown                     : kramdown      # default is rdiscount
 # default python pygments replaced by pygments.rb, set to true for Albino + Python pygments
 pygments                     : false
 
-paginate                     : 10  
-pagination_dir               : blog
+# pagination is very unpopular (to the point of hatred) with users. 
+# Simply limit entries on various pages and offer date and category indexes
+index_posts                  : 6
+archive_max_posts            : 20
+
 recent_posts                 : 5
 excerpt_link                 : "&hellip; read more &hellip;"
 excerpt_in_feed              : false

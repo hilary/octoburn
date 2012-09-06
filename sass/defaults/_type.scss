@@ -1,0 +1,55 @@
+html { // prevent iOS text size adjust after orientation change, 
+  -webkit-text-size-adjust : 100%; // without disabling user zoom.
+  -ms-text-size-adjust     : 100%;
+}
+
+b, 
+strong { // style set to bolder: Firefox 4+, Safari 4/5, Chrome.
+  font-weight : bold;
+}
+
+dfn { // missing definition: Safari 5 and Chrome.
+  font-style : italic;
+}
+
+small { // inconsistent and generally far too small: all browsers
+  font-size : 80%;
+}
+
+sub, 
+sup { // prevent sub, sup borking line-height: all browsers
+  font-size      : 75%;
+  line-height    : 0;
+  position       : relative;
+  vertical-align : baseline;
+}
+sub { bottom : -0.25em; }
+sup { top    : -0.5em; }
+
+pre { // Improve readability: all browsers
+  white-space : pre;
+  white-space : pre-wrap;
+  word-wrap   : break-word;
+  margin      : 1em 0;
+}
+
+mark { // missing definition: IE 7/8/9
+  background : #ff0;
+  color      : #000;
+}
+
+q { // CSS quotes not supported: IE 7
+  quotes : none;
+}
+q:before, q:after { // CSS quotes not supported: Safari 4
+  content : '';
+  content : none;
+}
+
+abbr[title] { // missing definition: IE 7/8/9, Safari 5, Chrome
+  border-bottom : 1px dotted;
+}
+
+a:focus { outline : thin dotted; }
+a:active, 
+a:hover { outline : 0; }

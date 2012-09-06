@@ -1,0 +1,37 @@
+.side-shadow-border {
+  @include box-shadow(lighten($sidebar-bg, 5) 0 1px);
+}
+.sidebar {
+  overflow: hidden;
+  aside, section {
+    font-size: .8em;
+    line-height: 1.4em;
+    margin-bottom: 1.5em;
+    h1 {
+      margin: 1.5em 0 0;
+      padding-bottom: .2em;
+      border-bottom: 1px solid $sidebar-border;
+      @extend .side-shadow-border;
+      + p {
+        padding-top: .4em;
+      }
+    }
+  }
+  img {
+    @extend .flex-content;
+    @extend .basic-alignment;
+    @include shadow-box($border: #fff .3em solid);
+  }
+  ul {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+  }
+  li {
+    list-style: none;
+    padding: .5em 0;
+    margin: 0;
+    border-bottom: 1px solid $sidebar-border;
+    @extend .side-shadow-border;
+  }
+}
+.aside-alt-link, .aside-alt-link:hover { color: $sidebar-link-color-subdued; }

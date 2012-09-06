@@ -1,0 +1,7 @@
+// these containers exist to organize the info model, should
+// not affect visual rhythm
+#main, #main > section:first-child {
+  margin  : 0;
+  padding : 0;
+}
+

@@ -1,7 +1,8 @@
-<section>
-  <h1>Comments</h1>
-  {% include custom/comments.html %}
-  {% if site.disqus_short_name %}
-    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
-  {% endif %}
-</section>
+{% if site.disqus_short_name %}
+  <section class="comments">
+    <header role="header"><h1>Comments</h1></header>
+    <section id="disqus_thread" aria-live="polite">
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  </section>
+{% endif %}

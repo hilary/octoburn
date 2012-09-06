@@ -1,15 +1,11 @@
 ---
 layout   : default
-comments : true
-sharing  : true
-footer   : true
 body_id  : home
 ---
-<div>
+<section>
   {% assign post = site.posts.first %}
-  {% include post/variables.html %}
-  <article class="hentry {% if linklog %}linklog{% endif %}" role="article">
-    {% include article.html %}
+  <article role="article">
+    {% include excerpt_entry.html %}
   </article>
   <footer>
     Pardon my mess, but I'm still moving in. Unpacking the last
@@ -17,11 +13,5 @@ body_id  : home
     priority than getting on with life here in my new digs, however,
     you are welcome to rummage around in them yourself.
   </footer>
-</div>
-<aside class="sidebar">
-  {% if page.sidebar == nil or page.sidebar == 'collapse' %}
-   {% include_sidebar site.home_sidebar %}
-  {% else %}
-   {% include_sidebar %}
-  {% endif %}
-</aside>
+</section>
+{% include_sidebar site.default_sidebar %}

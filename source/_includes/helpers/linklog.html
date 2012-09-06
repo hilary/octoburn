@@ -1,0 +1,15 @@
+{% assign linklog = false %}
+
+{% if page.external-url %}
+  {% capture linklog %}{{ page.external-url }}{% endcapture %}
+{% elsif post.external-url %}
+  {% capture linklog %}{{ post.external-url }}{% endcapture %}
+{% endif %}
+
+{% capture title_url %}
+  {% if linklog %}{{ linklog }}{% else %}{{ permalink }}{% endif %}
+{% endcapture %}
+
+{% capture linklog_marker %}
+  <span class='linklog-marker'>{{ site.linklog_marker }}</span>
+{% endcapture %}
