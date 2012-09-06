@@ -147,3 +147,38 @@ body > footer {
     @include link-colors($footer-link-color, $footer-link-color-hover, $visited: $footer-link-color);
   }
 }
+
+blockquote cite &:before { color   : $text-color-light; }
+
+body {
+  #main {
+    > section:first-child {
+      article {
+        #home & header h1 a { @include link-colors($sidebar-color, 
+                                                   $hover : $sidebar-color, 
+                                                   $focus : $sidebar-color, 
+                                                   $visited : $sidebar-color, 
+                                                   $active : $sidebar-color); }
+
+        a[rel=full-article] { 
+          color      : $link-color;
+          background : $main-bg;
+          &.hover { 
+            color      : $link-color-hover; 
+            background : $main-bg;
+          }
+        }
+      }
+
+  nav.pagination { background    : $img-border top left repeat-x; }
+}
+
+#blog-archives {
+  .title {
+    color: $text-color;
+    a, a:hover { color: $link-color-hover; }
+  }
+  a.category, time { color: $text-color-light; }
+  a:hover { color: $link-color-hover; }
+}
+

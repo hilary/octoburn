@@ -1,7 +1,8 @@
 ---
-layout: default
+layout : default
+style  : default
 ---
-<section>
+<article>
   <article role="article">
     {% if page.title %}
       <header role="header">
@@ -10,14 +11,8 @@ layout: default
       </header>
     {% endif %}
     {{ content }}
-    <footer>
-      <p class="meta">
-        {% include helpers/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
-        {% if page.categories %}{% include helpers/categories.html %}{% endif %}
-      </p>
-      {% unless page.sharing == false %}{% include sharing.html %}{% endunless %}
-    </footer>
+    {% include meta_footer.html %}
   </article>
   {% if page.comments == true %}{% include comments.html %}{% endif %}
-</section>
-{% include_sidebar site.default_sidebar %}
+</article>
+{% include helpers/aside.html %}

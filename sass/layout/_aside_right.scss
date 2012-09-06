@@ -1,0 +1,4 @@
+@include at-breakpoint($aside-right-layout) {
+
+  #main_content > aside { @include(4 omega, $aside-right-columns); };
+}

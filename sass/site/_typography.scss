@@ -1,6 +1,5 @@
 
 // establish vertical rhythm
-@import compass/typography/vertical_rhythm;
 $relative-font-sizing        : true;
 $round-to-nearest-half-line  : true; 
 $min-line-padding            :  2px;
@@ -130,7 +129,6 @@ blockquote {
     a { word-wrap : break-word; }
     &:before { 
       content : "\2014"; 
-      color   : $text-color-light;
       @include h-borders(0, .5*lines-for-font-size(), 1em, none);
     }
   }
@@ -157,24 +155,11 @@ blockquote {
   @include apply-side-rhythm-border(right, 0, 1.5*lines-for-font-size(), 1em, none);
 }
 
-// @extend this to force long lines of continuous text to wrap
-.force-wrap {
-  white-space : -moz-pre-wrap;
-  white-space : -pre-wrap;
-  white-space : -o-pre-wrap;
-  white-space : pre-wrap;
-  word-wrap   : break-word;
-}
-
 body {
-  nav form fieldset input { vertical-align : -0.3em; }
-
   #main {
     > section:first-child {
 
       article {
-
-        #home & header h1 a { @include link-colors($sidebar-color, $hover : $sidebar-color, $focus : $sidebar-color, $visited : $sidebar-color, $active : $sidebar-color); }
 
         header { @include padding-leader(1.3*lines-for-font-size()); }
 
@@ -193,12 +178,6 @@ body {
           display    : inline-block;
           @include rhythm(0, 0, 0, 0, .85em);
           @include h-borders(0, lines-for-font-size(), 1em, none);
-          color      : $link-color;
-          background : $main-bg;
-          &.hover { 
-            color      : $link-color-hover; 
-            background : $main-bg;
-          }
         }
       }
 
@@ -231,7 +210,6 @@ body {
   nav.pagination {
     @extend .center;
     @include rhythm(0, lines-for-font-size(), lines-for-font-size(), 0, .9em);
-    background    : $img-border top left repeat-x;
   }
 
   > footer {
@@ -242,22 +220,15 @@ body {
 
 #blog-archives {
   .title {
-    color: $text-color;
     @extend .h3;
-    a {
-      @include hover-link;
-      &:hover { color: $link-color-hover; }
-      display: inline-block;
-    }
+    a { display: inline-block; }
   }
   article[data-linklog] .title { @extend .h4; }
-  a.category, time { color: $text-color-light; }
   time {
     @include adjust-font-size-to(.9em);
     .month, .day { display: inline-block; }
     .month { text-transform: uppercase; }
   }
-  a:hover { color: $link-color-hover; }
 }
 
 #main > section > .category {
@@ -273,69 +244,4 @@ body {
   font-style  : italic;
 }
 
-body {
-  #main {
-    > section:first-child {
 
-      article {
-
-        #home & header h1 a { @include link-colors($sidebar-color, $hover : $sidebar-color, $focus : $sidebar-color, $visited : $sidebar-color, $active : $sidebar-color); }
-
-        header { @include padding-leader(1.3*lines-for-font-size()); }
-
-        #blog-index & {
-          @include padding-leader(lines-for-font-size());
-          header { padding-leader(1.5*lines-for-font-size()); }
-        }
-
-        section.index {
-          > p:first-child { display : inline; }
-          nav.index       { display : inline; }
-        }
-
-        a[rel=full-article] { 
-          @extend .main-text;
-          display    : inline-block;
-          @include rhythm(0, 0, 0, 0, .85em);
-          @include h-borders(0, lines-for-font-size(), 1em, none);
-          color      : $link-color;
-          background : $main-bg;
-          &.hover { 
-            color      : $link-color-hover; 
-            background : $main-bg;
-          }
-        }
-      }
-
-      aside.sidebar {
-        padding : 0 0.5em 0.5em 1.5em;
-        section {
-          margin-bottom : 1em;
-          a { text-decoration : none; }
-          h1:first-child { margin-top : .2em; }
-          h1             { margin-top : 1em;   }
-          ul {
-            margin-left : 0.6em;
-            li {
-              border     : 0;
-              box-shadow : none;
-              padding    : 0.2em 0 !important;
-            }
-          }
-        }
-      }
-
-    }
-  }
-
-  nav.pagination {
-    @extend .center;
-    @include rhythm(0, lines-for-font-size(), lines-for-font-size(), 0, .9em);
-    background    : $img-border top left repeat-x;
-  }
-
-  > footer {
-    @include rhythm(0, .75*lines-for-font-size(), .75*lines-for-font-size(), lines-for-font-size(), 1em);
-  }
-
-}

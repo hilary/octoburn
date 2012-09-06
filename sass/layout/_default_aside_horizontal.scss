@@ -1,0 +1,10 @@
+@include at-breakpoint($horizontal-aside-layout) {
+
+  #main_content > aside { @include clearfix; }
+
+  #default-aside {
+    aside.recent-posts { @include span-columns(3      , $horizontal-aside-columns); }
+    aside.delicious    { @include span-columns(3      , $horizontal-aside-columns); }
+    aside.github       { @include span-columns(2 omega, $horizontal-aside-columns); }
+  }
+}

@@ -1,6 +1,7 @@
 ---
-layout   : default
-body_id  : home
+layout  : default
+style   : default
+body_id : home
 ---
 <section>
   {% assign post = site.posts.first %}
@@ -14,4 +15,4 @@ body_id  : home
     you are welcome to rummage around in them yourself.
   </footer>
 </section>
-{% include_sidebar site.default_sidebar %}
+{% include helpers/aside.html %}

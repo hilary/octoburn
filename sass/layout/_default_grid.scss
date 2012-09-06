@@ -1,0 +1,29 @@
+@import 'grid_geometry';
+
+@import 'site_header';
+@import 'primary_navigation';
+@import 'default_aside';
+@import 'aside_right';
+@import 'site_credits';
+
+@include at-breakpoint($horizontal-aside-layout) {
+
+  #main_content > section, #main_content > article { 
+    @include clearfix;
+    @include span-columns(8 omega, $horizontal-aside-columns); 
+  }
+}
+
+@include at-breakpoint($aside-right-layout) {
+
+  #main_content > section, #main_content > article { 
+
+    $content-columns : 8; 
+    @include span-columns($content-columns, $aside-right-columns);
+
+    > article, > section, > footer { 
+      @include span-columns(8 omega, $content-columns); 
+    }
+
+  } // #main_content > section
+}

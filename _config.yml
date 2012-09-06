@@ -39,11 +39,11 @@ standard_post_marker         :
 
 titlecase                    : false
 
-# sidebars
-home_sidebar                 : home.html
-blog_index_sidebar           : blog_index.html
-page_sidebar                 : page.html
-post_sidebar                 : post.html
+# asides
+home_aside                 : default.html
+blog_index_aside           : index.html
+page_aside                 : default.html
+post_aside                 : default.html
 
 respectfully_social          : true
 twitter_tweet_button         : true

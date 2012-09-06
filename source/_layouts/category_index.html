@@ -1,9 +1,10 @@
 ---
-layout: default
-body_id: category_archive
+layout  : default
+style   : index
+body_id : category_archive
 ---
 <article role="article">
-  <h1 class="title">{{ page.title }}</h1>
+  <header><h1 class="page-title">{{ page.title }}</h1><header>
   <ul>
     {% for post in site.categories[page.category] %}
       {% include helpers/index_year.html %}
@@ -11,4 +12,4 @@ body_id: category_archive
     {% endfor %}
   </ul>
 </article>
-{% include_sidebar site.index_sidebar %}
+{% include helpers/aside.html %}

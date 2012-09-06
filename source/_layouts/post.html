@@ -1,8 +1,9 @@
 ---
-layout: default
-single: true
+layout : default
+style  : default
+single : true
 ---
-<section>
+<article>
   {% capture permalink %}{{ root_url }}{{ post.url }}{% endcapture %}
   {% include helpers/linklog.html %}
   <article {% if linklog %}class="linklog"{% endif %} role="article">
@@ -22,17 +23,11 @@ single: true
         &bull; <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
       </p>
     </header>
-    <section class="content">
+    <article class="content">
       <header id="tldr">{{ content | excerpt }}</header>
       {{ content | split("<!--more-->") | last }}
-      <footer>
-        <p class="meta">
-          {% include helpers/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
-          {% include helpers/categories.html %}
-        </p>
-        {% unless page.sharing == false %}{% include sharing.html %}{% endunless %}
-      </footer>
-    </section>
+      {% include meta_footer.html %}
+    </article>
     <nav class="pagination" role="navigation">
       {% if page.previous.url %}
       <a class="basic-alignment left" 
@@ -47,5 +42,5 @@ single: true
     </nav>
   </article>
   {% if page.comments == true %}{% include comments.html %}{% endif %}
-</section>
-{% include_sidebar site.default_sidebar %}
+</article>
+{% include helpers/aside.html %}

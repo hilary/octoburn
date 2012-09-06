@@ -1,34 +1,23 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
-{% include head.html %}<!-- head and script -->
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} class="page">
+{% include default/head.html %}<!-- head and scripts -->
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
   <div id="grid">
     <header role="banner">
       <hgroup>
         <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
         <h2>{{ site.subtitle }}</h2>
       </hgroup>
-      <menu id="follow" role="menubar">
-        {% include follow_menu.html %}
-      </menu>
+      <menu class="follow_me" role="menubar">{% include default/follow_menu.html %}</menu>
     </header>
-    <nav role="navigation">
-      <form action="{{ site.simple_search }}" method="get">
-        <fieldset role="search">
-          <input type="hidden" name="q" value="site:{{ site.url | shorthand_url }}" />
-          <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-        </fieldset>
-      </form>
-      <ul class="main-navigation">
-        <li><a href="{{ root_url }}/">Home</a></li>
-        <li><a href="{{ root_url }}/blog/">Blog</a></li>
-        <li><a href="{{ root_url }}/archives/">Archives</a></li>
-      </ul>
-    </nav>
-    <section id="main"> <!-- sidebars thematically related -->
+    <div id="primary_navigation">
+      {% include default/simple_search.html %}
+      <nav role="navigation">{% include default/primary_navigation.html %}</nav>
+    </div>
+    <article id="main_content"> <!-- asides thematically related -->
       {{ content | expand_urls: root_url }}
-    </section>
+    </article>
     <div id="sticky_footer"></div>
-    {% include disqus.html %} <!-- script -->
+    {% include scripts/disqus.html %}
   </div>
   <footer id="contentinfo" role="contentinfo">
     copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -

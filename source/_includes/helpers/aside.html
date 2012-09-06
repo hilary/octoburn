@@ -1,0 +1,5 @@
+{% if page.style == "index" %}
+  {% include_aside site.index_aside %}
+{% else  %}
+  {% include_aside site.default_aside %}
+{% endif %}
