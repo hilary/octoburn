@@ -146,9 +146,12 @@ task :new_post, :title do |t, args|
     post.puts "date         : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
     post.puts "external-url : "
     if extra_meta_in_headers
+      post.puts "published    : false"
+      post.puts "#updated      : "
       post.puts "updated      : "
       post.puts "keywords     : "
       post.puts "description  : "
+      post.puts "tags         : "
     end
     post.puts "comments     : true"
     post.puts "categories   : "
@@ -184,10 +187,14 @@ task :new_page, :filename do |t, args|
       page.puts "---"
       page.puts "layout   : page"
       page.puts "title    : \"#{title}\""
+      post.puts "date         : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
       if extra_meta_in_headers
+        post.puts "#updated      : "
         post.puts "published    : false"
         post.puts "keywords     : "
         post.puts "description  : "
+        post.puts "tags         : "
+        post.puts "categories   : "
       end
       page.puts "comments : true"
       page.puts "sharing  : true"
@@ -222,7 +229,8 @@ end
 desc "Clean out caches: .pygments-cache, .gist-cache, .sass-cache"
 task :clean do
   [".pygments-cache/**", ".gist-cache/**"].each { |dir| rm_rf Dir.glob(dir) }
-  rm "#{source_dir}/stylesheets/screen.css" if File.exists?("#{source_dir}/stylesheets/screen.css")
+  rm "#{source_dir}/stylesheets/index.css" if File.exists?("#{source_dir}/stylesheets/index.css")
+  rm "#{source_dir}/stylesheets/default.css" if File.exists?("#{source_dir}/stylesheets/default.css")
   system "compass clean"
   puts "## Cleaned Sass, Pygments and Gist caches, removed generated stylesheets ##"
 end

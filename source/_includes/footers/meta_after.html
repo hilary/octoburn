@@ -1,0 +1,5 @@
+<footer class="meta">
+  {% include footers/published.html %}
+  {% if page.categories %}{% include footers/categories.html %}{% endif %}
+  {% unless page.sharing == false %}{% include sharing.html %}{% endunless %}
+</footer>

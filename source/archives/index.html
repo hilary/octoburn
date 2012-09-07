@@ -5,7 +5,7 @@ body_id : archive
 ---
 <article role="article">
   <ul>
-    {% for post in site.posts limit: site.archive_max_posts reverse %}
+    {% for post in site.posts limit: site.archive_max_posts %}
       {% include helpers/index_year.html %}
       {% include archive_entry.html %}
     {% endfor %}

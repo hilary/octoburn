@@ -16,7 +16,6 @@ source                       : source
 destination                  : public
 plugins                      : plugins
 code_dir                     : downloads/code
-category_dir                 : blog/categories
 markdown                     : kramdown      # default is rdiscount
 
 # default python pygments replaced by pygments.rb, set to true for Albino + Python pygments
@@ -39,14 +38,6 @@ standard_post_marker         :
 
 titlecase                    : false
 
-# asides
-home_aside                 : default.html
-blog_index_aside           : index.html
-page_aside                 : default.html
-post_aside                 : default.html
-
-respectfully_social          : true
-twitter_tweet_button         : true
 facebook_like                : true
 google_plus_one              : true
 google_plus_one_size         : small

@@ -1,6 +1,8 @@
 ---
-layout : default
-style  : default
+layout   : default
+style    : default
+category :
+tag      :
 ---
 <article>
   <article role="article">
@@ -11,7 +13,7 @@ style  : default
       </header>
     {% endif %}
     {{ content }}
-    {% include meta_footer.html %}
+    {% include footers/meta_after.html %}
   </article>
   {% if page.comments == true %}{% include comments.html %}{% endif %}
 </article>

@@ -19,13 +19,23 @@ $mono  : Electrolize, Menlo, Monaco, lucida console, Courier New, monospace;
 
 .heading { 
   font-family : $serif; 
-  a { text-decoration : none; }
+  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; }
 }
-.main-text    { font-family : $sans;  }
-.sidebar-text { font-family : $sans;  }
-.code-font    { font-family : $mono;  }
-
-.page {
+.main-text {
+  font-family : $sans;  
+  a, a:visited { text-decoration : none; }
+  a:hover, a:focus, a:active { text-decoration : underline; }
+}
+.sidebar-text { 
+  font-family : $sans;
+  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; }
+}
+.code-font {
+  font-family : $mono;
+  a, a:visited { text-decoration : none; }
+  a:hover, a:focus, a:active { text-decoration : underline; }
+}
+#grid {
   > header, > nav, > footer, nav.pagination, aside.sidebar,
   #main > section > article {
     @include h-borders(0, .5*lines-for-font-size(), 1em, none);
@@ -132,6 +142,12 @@ blockquote {
       @include h-borders(0, .5*lines-for-font-size(), 1em, none);
     }
   }
+}
+
+.separator {
+  content: "\2022 ";
+  padding: 0 .4em 0 .2em;
+  display: inline-block;
 }
 
 .pullquote-right:before,
@@ -245,3 +261,15 @@ body {
 }
 
 
+article {
+
+  a { @extend .force-wrap; }
+
+  header time { text-transform: uppercase; }
+
+  .linklog-marker {
+    color: $text-color-light;
+    font-size: .8em;
+    line-height: 1em;
+    position: relative; top: -.15em;
+  }

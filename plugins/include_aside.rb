@@ -21,4 +21,4 @@ module Jekyll
 
 end
 
-Liquid::Template.register_tag('include_sidebar', Jekyll::IncludeSidebarTag)
+Liquid::Template.register_tag('include_aside', Jekyll::IncludeAsideTag)

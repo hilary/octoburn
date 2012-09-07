@@ -1,0 +1,14 @@
+{% if post %}
+  {% capture categories %}{{ post.categories | category_links }}{% endcapture %}
+{% else %}
+  {% capture categories %}{{ page.categories | category_links }}{% endcapture %}
+{% endif %}
+
+{% unless categories == "" %}
+  {% if linklog %} &bull; {% endif %}
+  <span class="categories">{{ categories }}</span>
+{% endif %}
+
+<section class="category_list">
+  {% include helpers/categories.html %}
+</section>

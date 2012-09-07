@@ -104,9 +104,8 @@ $img-border : inline-image('dotted-border.png');
 
 // Core theme application
 a {
+  color : $link-color;
   @include transition(color .3s);
-  text-decoration : none;
-  color           : $link-color;
   @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
 }
 

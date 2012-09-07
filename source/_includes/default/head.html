@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="author" content="{{ site.author }}">
-  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
+  <meta name="Generator" content="Jekyll & Octopress Reloaded (http://hholz.com)">
 
   {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}{% endcapture %}{% if description.length %}
   <meta name="description" content="{{ description }}">{% endif %}
@@ -13,7 +13,9 @@
 
   {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
   <link rel="canonical" href="{{ canonical }}">
-  <link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  {% capture page_style %}{% if page.style %}{% page.style %}{% else %}default{% endif %}{% endcapture %}
+  {% capture stylesheet_url %}{{ root_url }}/stylesheets/{{ page_style }}.css{% endcapture %}
+  <link href="{{ stylesheet_url }}" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="{{ root_url }}/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
   <link href='http://fonts.googleapis.com/css?family=Quando|Electrolize|Ubuntu:300' rel='stylesheet' type='text/css'>
