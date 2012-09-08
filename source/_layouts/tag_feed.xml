@@ -13,11 +13,11 @@ layout: nil
     <name><![CDATA[{{ site.author | strip_html }}]]></name>
     {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="http://hholz.com/">Octopress Reloaded</generator>
 
-  {% for post in site.categories[page.category] limit: 5 %}
+  {% for post in site.tags[page.tag] limit: 5 %}
     <entry>
-      {% include feed_entry.xml %}
+      {% include articles/feed_entry.xml %}
       <content type="html"><![CDATA[{{ content | markdownify | cdata_escape }}]]></content>
     </entry>
   {% endfor %}

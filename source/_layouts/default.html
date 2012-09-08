@@ -1,5 +1,5 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
-{% include default/head.html %}<!-- head and scripts -->
+{% include head/head.html %}
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
   <div id="grid">
     <header role="banner">
@@ -7,17 +7,17 @@
         <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
         <h2>{{ site.subtitle }}</h2>
       </hgroup>
-      <menu class="follow_me" role="menubar">{% include default/follow_menu.html %}</menu>
+      {% include menus_and_navigation/follow_menu.html %}
     </header>
     <div id="primary_navigation">
-      {% include default/simple_search.html %}
-      <nav role="navigation">{% include default/primary_navigation.html %}</nav>
+      {% include sections/simple_search.html %}
+      {% include menus_and_navigation/primary_navigation.html %}
     </div>
     <article id="main_content"> <!-- asides thematically related -->
       {{ content | expand_urls: root_url }}
     </article>
     <div id="sticky_footer"></div>
-    {% include scripts/disqus.html %}
+    {% include head/disqus.html %}
   </div>
   <footer id="contentinfo" role="contentinfo">
     copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -

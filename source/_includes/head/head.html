@@ -13,8 +13,7 @@
 
   {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
   <link rel="canonical" href="{{ canonical }}">
-  {% capture page_style %}{% if page.style %}{% page.style %}{% else %}default{% endif %}{% endcapture %}
-  {% capture stylesheet_url %}{{ root_url }}/stylesheets/{{ page_style }}.css{% endcapture %}
+  {% capture stylesheet_url %}{{ root_url }}/stylesheets/{% if page.aside_style %}{% page.aside_style %}{% else %}default{% endif %}.css{% endcapture %}
   <link href="{{ stylesheet_url }}" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="{{ root_url }}/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">

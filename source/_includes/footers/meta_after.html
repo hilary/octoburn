@@ -1,5 +1,12 @@
 <footer class="meta">
   {% include footers/published.html %}
-  {% if page.categories %}{% include footers/categories.html %}{% endif %}
-  {% unless page.sharing == false %}{% include sharing.html %}{% endunless %}
+  {% if page.tags %}
+    <nav class="category_list">
+      {% include menus_and_navigation/tag_link.html for page.tags %}
+      {% include helpers/categories.html %}
+    </nav>
+  {% endif %}
+  {% unless page.sharing == false %}
+    {% include menus_and_navigation/sharing_menu.html %}
+  {% endunless %}
 </footer>
