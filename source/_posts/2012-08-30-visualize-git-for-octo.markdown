@@ -1,11 +1,11 @@
 # -*- mode: markdown -*-
 ---
-layout: post
-title: "Visualizing git for an octopress blog"
-date: 2012-08-30 13:44
-comments: true
-categories: 
-published: false
+layout    : post
+title     : "Visualizing git for an octopress blog"
+date      : 2012-08-30 13:44
+comments  : true
+tags      :
+published : false
 ---
 
 ## magit

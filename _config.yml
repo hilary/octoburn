@@ -1,17 +1,20 @@
-url                          : http://hilary.github.com
+url                          : http://hholz.com/
 title                        : integrating design
 subtitle                     : your friendly native guide
 author                       : hilary j holz
 simple_search                : http://google.com/search
 description                  : coding blog by full stack web dev
 date_format                  : "ordinal"
-subscribe_rss                : /atom.xml
-subscribe_email              :
-category_feeds               : false
-email                        :
+feed_url                     : feeds/integrating_design.xml
+tag_dir                      : tags/
+tag_feeds                    : true
+feed_dir                     : feeds/
+
+generator_uri                : octoburn/
+generator_name               : Octoburn
 
 root                         : /
-permalink                    : /blog/:year/:title/
+permalink                    : /blog/:year/:title
 source                       : source
 destination                  : public
 plugins                      : plugins

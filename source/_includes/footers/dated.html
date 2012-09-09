@@ -1,0 +1,23 @@
+<!-- invoke as {% include dated.html with page %}
+            or {% include dated.html with post %}  -->
+{% if dated.date or dated.updated %}
+
+  {% capture date %}{{ dated.date }}{% endcapture %}
+  {% capture date_formatted %}{{ dated.date_formatted }}{% endcapture %}
+  {% capture has_date %}{{ date | size }}{% endcapture %}
+
+  {% capture updated %}{{ dated.updated }}{% endcapture %}
+  {% capture updated_formatted %}{{ dated.updated_formatted }}{% endcapture %}
+
+  {% if has_date %}
+    {% capture created_at %}created: <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate {% if updated %}data-updated="true"{% endif %}>{{ date_formatted }}</time>{% endcapture %}
+  {% endif %}
+
+  {% if updated %}
+    {% capture last_updated %}last updated: <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>{% endcapture %}
+  {% endif %}
+
+  {% if has_date or updated %}
+    <footer class="pubdate">{{ created_at }}{ last_updated }}</footer>
+  {% endif %}
+{% endif %}

@@ -6,8 +6,8 @@ date        : 2012-08-28 14:28
 comments    : true
 description : Why the author joined Delicious.
 keywords    : delicious, social bookmarking, octopress, firefox, automator
-categories  : 
-- Social Networks
+tags        : 
+- social networks
 - Octopress
 - Firefox
 ---

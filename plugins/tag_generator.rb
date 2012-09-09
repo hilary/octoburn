@@ -5,9 +5,10 @@
 # Version: 0.0.2 (20120907)
 #
 # Copyright (c) 2012 Hilary J Holz, http://hholz.com/
-# Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+# Licensed under the MIT license 
+#  (http://www.opensource.org/licenses/mit-license.php)
 # 
-# Creates tag pages for jekyll sites.
+# Creates tag pages and feeds for jekyll sites.
 #
 # see GenerateTagIndexes class for _config.yml settings
 #
@@ -26,9 +27,10 @@ module Jekyll
 
       self.read_yaml(layout_dir, layout_filename)
 
-      self.data['tag'] = tag
-      self.data['title'] = "#{title_prefix}#{tag}"
+      self.data['tag']         = tag
+      self.data['title']       = "#{title_prefix}#{tag}"
       self.data['description'] = "#{description_prefix}#{tag}"
+      self.data['date']        = "#{Time.now.strftime('%Y-%m-%d %H:%M')}"
 
       if service == :atom 
         self.data['feed_url'] = "#{dir}/#{name}" 
@@ -41,35 +43,32 @@ module Jekyll
     safe true
     priority :low
 
-    TAG_DIR                    = 'tags'
     TAG_TITLE_PREFIX           = ''
     TAG_DESCRIPTION_PREFIX     = 'index of posts tagged: '
     TAG_INDEX_LAYOUT           = 'tag_index'
     TAG_INDEX_LAYOUT_EXTENSION = 'html'
 
     TAG_FEEDS                  = false
-    TAG_FEED_DIR               = 'feeds'
     TAG_FEED_LAYOUT            = 'tag_feed'
 
     def generate(site)
 
       source_dir            = site.source
       layout_dir            = File.join(source_dir, '_layouts')
-      tag_dir               = site.config['tag_dir'] || TAG_DIR
       index_layout_filename = tag_index_layout +
         ".#{site.config['tag_index_layout_extension'] || TAG_INDEX_LAYOUT_EXTENSION}"
       title_prefix          = site.config['tag_title_prefix'] || TAG_TITLE_PREFIX
-      description_prefix    = site.config['tag_description_prefix'] || TAG_DESCRIPTION_PREFIX
+      description_prefix    = site.config['tag_description_prefix'] || 
+                                TAG_DESCRIPTION_PREFIX
 
       if site.config['tag_feeds']
         feed_layout_filename = tag_feed_layout + '.xml'
-        feed_dir             = site.config['tag_feed_dir'] || TAG_FEED_DIR
       end
 
       site.tags.keys.each do |tag|
 
         index = TagIndex.new(:html, site, tag, "#{tag}_index.html",
-                             source_dir, layout_dir, tag_dir,
+                             source_dir, layout_dir, site.config['tag_dir'],
                              index_layout_filename, title_prefix, description_prefix)
 
         index.render(site.layouts, site_payload)
@@ -79,7 +78,7 @@ module Jekyll
         if site.config['tag_feeds']
 
           feed = TagIndex.new(:atom, site, tag, "#{tag}_feed.xml",
-                             source_dir, layout_dir, feed_dir,
+                             source_dir, layout_dir, site.config['feed_dir'],
                              feed_layout_filename, title_prefix, description_prefix)
 
           feed.render(site.layouts, site_payload)

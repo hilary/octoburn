@@ -4,31 +4,24 @@ aside_style : default
 single      : true
 ---
 <article>
-  {% capture permalink %}{{ root_url }}{{ post.url }}{% endcapture %}
-  {% include helpers/linklog.html %}
-  <article {% if linklog %}class="linklog"{% endif %} role="article">
+  {% include helpers/permalink.html %}
+  <article role="article">
     <header>
-      <h1 class="title">
-        {% if linklog %}
-          <a href="{{ title_url }}">{{ page.title }}</a>
-          {% if site.linklog_marker and site.linklog_marker_position == 'after' %}
-            {{ linklog_marker }}
-          {% endif %}
-        {% else %}
-          {{ site.standard_post_marker }}{{ page.title }}
-        {% endif %}
-      </h1>
-      <p class="meta">
-        {% include helpers/date.html %}{{ time }}
-        &bull; <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
-      </p>
+      <h1 class="page_title">{{ site.standard_post_marker }}{{ page.title }}</h1>
     </header>
+    {% include helpers/date.html with post %}{{ time }}
+    <p class="bookmark">
+      &bull; <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
+    </p>
     <article class="content">
-      <header id="tldr">{{ content | excerpt }}</header>
+      <p class="tldr">{{ content | excerpt }}</p>
       {{ content | split("<!--more-->") | last }}
-      {% include footers/meta_after.html %}
+      <footer class="post_meta">
+        {% include menus_and_navigation/tag_list.html with post     %}
+        {% include menus_and_navigation/sharing_menu.html with post %}
+      </footer>
     </article>
   </article>
-  {% if page.comments == true %}{% include sections/comments.html %}{% endif %}
+  {% include sections/comments.html %}
 </article>
 {% include helpers/aside.html %}

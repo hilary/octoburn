@@ -1,12 +1,13 @@
 ---
-layout  : default
-style   : index
-body_id : blog_index
+layout      : default
+aside_style : index
+body_id     : blog_index
+updated     : 2012-09-08 22:55
 ---
 <article role="article">
   <ul>
     {% for post in site.posts limit: site.index_posts %}
-      <li>{% include excerpt_entry.html %}</li>
+      <li>{% include articles/excerpt_entry.html %}</li>
     {% endfor %}
   </ul>
   <footer id="index-footer">

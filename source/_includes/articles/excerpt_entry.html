@@ -1,19 +1,12 @@
+{% include helpers/permalink.html %}
 <article role="article">
-  {% include helpers/show_comment_link.html %}
-  {% capture permalink %}{{ root_url }}{{ post.url }}{% endcapture %}
   <header>
-    <h1 class="title"><a href="{{ permalink }}">{{ post.title }}</a></h1>
-    <p class="meta">
-      {% include helpers/date.html %}{{ time }}
-      &bull; 
-      <a rel="bookmark" 
-         href="{{ permalink }}">{{ site.permalink_label }}</a>
-    </p>
+    <h1 class="title"><a href="{{ permalink }}">{{ site.standard_post_marker }}{{ post.title }}</a></h1>
+    <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
   </header>
+  {% include footers/dated.html with post %}
   <section class="excerpt">
     {{ post.content | excerpt }}
-    <a rel="nofollow" 
-       rel="full-article" 
-       href="{{ permalink }}">{{ site.excerpt_link }}</a>
+    <a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a>
   </section>
 </article>

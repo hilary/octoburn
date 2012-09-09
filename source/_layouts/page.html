@@ -6,14 +6,15 @@ tag         :
 <article>
   <article role="article">
     {% if page.title %}
-      <header role="header">
-        <h1 class="title">{{ page.title }}</h1>
-        {% if page.date %}<p class="meta">{% include helpers/date.html %}{{ time }}</p>{% endif %}
-      </header>
+      <header role="header"><h1 class="title">{{ page.title }}</h1></header>
+      {% include footers/dated.html with page %}
     {% endif %}
     {{ content }}
-    {% include footers/meta_after.html %}
+    <footer class="page_meta">
+      {% include menus_and_navigation/tag_list.html with page     %}
+      {% include menus_and_navigation/sharing_menu.html with page %}
+    </footer>
   </article>
-  {% if page.comments == true %}{% include sections/comments.html %}{% endif %}
+  {% include sections/comments.html %}
 </article>
 {% include helpers/aside.html %}

@@ -1,13 +1,16 @@
 ---
-layout  : default
-style   : index
-body_id : archive
+layout      : default
+aside_style : index
+body_id     : archive
+updated     : 2012-09-08 22:55
 ---
 <article role="article">
   <ul>
     {% for post in site.posts limit: site.archive_max_posts %}
-      {% include helpers/index_year.html %}
-      {% include archive_entry.html %}
+      <li>
+        {% include helpers/index_year.html %}
+        {% include articles/archive_entry.html %}
+      </li>
     {% endfor %}
   </ul>
 </article>

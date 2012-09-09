@@ -239,7 +239,6 @@ body {
     @extend .h3;
     a { display: inline-block; }
   }
-  article[data-linklog] .title { @extend .h4; }
   time {
     @include adjust-font-size-to(.9em);
     .month, .day { display: inline-block; }
@@ -267,9 +266,3 @@ article {
 
   header time { text-transform: uppercase; }
 
-  .linklog-marker {
-    color: $text-color-light;
-    font-size: .8em;
-    line-height: 1em;
-    position: relative; top: -.15em;
-  }
