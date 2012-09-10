@@ -1,147 +1,51 @@
-
-// establish vertical rhythm
-$relative-font-sizing        : true;
-$round-to-nearest-half-line  : true; 
-$min-line-padding            :  2px;
-$base-line-height            : 20px;
-$base-font-size              : 14px;
-$default-rhythm-border-style : dotted;
-
-@include establish-baseline; // must come after base!
 @include at-breakpoint($fullsize-layout) { 
   @include establish-baseline(16px);
 }
 
-// Fonts
 $sans  : Ubuntu, Trebuchet MS, Arial, sans-serif;
 $serif : Quando, Georgia, Times, Times New Roman, serif;
 $mono  : Electrolize, Menlo, Monaco, lucida console, Courier New, monospace;
 
-.heading { 
-  font-family : $serif; 
+.heading      { font-family : $serif; }
+.main-content { font-family : $sans;  }
+.aside        { font-family : $sans;  }
+.code         { font-family : $mono;  }
+
+.heading, .aside { 
   a, a:visited, a:hover, a:focus, a:active { text-decoration : none; }
 }
-.main-text {
-  font-family : $sans;  
-  a, a:visited { text-decoration : none; }
+.main-content, .code {
+  a, a:visited               { text-decoration : none;      }
   a:hover, a:focus, a:active { text-decoration : underline; }
 }
-.sidebar-text { 
-  font-family : $sans;
-  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; }
-}
-.code-font {
-  font-family : $mono;
-  a, a:visited { text-decoration : none; }
-  a:hover, a:focus, a:active { text-decoration : underline; }
-}
-#grid {
-  > header, > nav, > footer, nav.pagination, aside.sidebar,
-  #main > section > article {
-    @include h-borders(0, .5*lines-for-font-size(), 1em, none);
 
-    @include at-breakpoint($tablet-layout) {
-      @include h-borders(0, .75*lines-for-font-size(), 1em, none);
-    }
-    @include at-breakpoint($fullsize-layout) {
-      @include h-borders(0, lines-for-font-size(), 1em, none);
-    }
-  }
+body                { @extend .main;  }
+pre, code, tt, samp { @extend .code;  }
+header {              @extend .heading; 
+  text-rendering : optimizelegibility;
 }
 
-body {
-  @extend .main-text;
-  header, aside header { 
-    text-rendering : optimizelegibility;
-    @extend .heading; 
-  }
-  pre, code, tt { @extend .code-font; }
-}
-
-h1 { 
-  @extend .heading;
+h1, h2, h3, h4, h5, h6 { 
+  @extend .heading; 
   font-weight : bold;
-  @include rhythm(0, lines-for-font-size(), 0, .5*lines-for-font-size(), 2em);
 }
-h2, section h1 {
-  @extend .heading;
-  font-weight : bold;
-  @include rhythm(0, lines-for-font-size(), 0, .5*lines-for-font-size(), 1.5em);
-}
+h1             { @include adjust-font-size-to(2*$base-font-size);   }
+h2, section h1 { @include adjust-font-size-to(1.5*$base-font-size); }
 h3, section h2, section section h1 {
-  @extend .heading;
+  font-weight  : normal;
   font-variant : small-caps;
-  @include rhythm(0, lines-for-font-size(), 0, .5*lines-for-font-size(), 1.2em);
+  @include adjust-font-size-to(1.2*$base-font-size); 
 }
 h4, section h3, section section h2, section section section h1 {
-  @extend .heading;
-  font-weight : bold;
-  @include rhythm(0, .75*lines-for-font-size(), 0, .5*lines-for-font-size(), 1.3em);
+  @include adjust-font-size-to(1.2*$base-font-size); 
 }
-
 h5, section h4, section section h3, section section section h2, 
 section section section section h1 {
-  @extend .heading;
-  font-weight  : bold;
   font-variant : small-caps;
-  @include rhythm(0, .75*lines-for-font-size(), 0, .5*lines-for-font-size(), 1em); 
 }
 h6, section h5, section section h4, section section section h3, 
 section section section section h2, section section section section section h1 {
-  @extend .heading;
-  font-weight : bold;
   font-style  : italic;
-  @include rhythm(0, .75*lines-for-font-size(), 0, .5*lines-for-font-size(), 1em);
-}
-
-small { @include adjust-font-size-to(.8em); }
-big   { @include adjust-font-size-to(1.2em); }
-
-p, blockquote { @include margin-trailer(.8*lines-for-font-size()); }
-
-ul, ul ul, ul ul ul, ul ol, ol, ol ul, ol ol, ol ol ol {
-  @include apply-side-rhythm-border(left, 0, 1.8*lines-for-font-size(), 1em, none);
-  @include margin-trailer(.8*lines-for-font-size());
-}
-
-ul { list-style-type     : disc;
-  ul { list-style-type   : circle; 
-    ul { list-style-type : square; }}}
-
-ol { list-style-type     : decimal;
-  ol { list-style-type   : lower-alpha; 
-    ol { list-style-type : lower-roman; }}}
-
-em, dfn       { font-style  : italic; }
-strong        { font-weight : bold;   }
-del, s        { text-decoration : line-through; }
-abbr, acronym { @include trailing-border(1px); cursor : help;  }
-hr            { @include margin-trailer(.2*lines-for-font-size()); }
-
-sup, sub { 
-  @include adjust-font-size-to(.8em);
-  position : relative;
-  display  : inline-block;
-}
-sup { top    : -.5em; }
-sub { bottom : -.5em; }
-
-q { font-style : italic;
-  &:before { content : "\201C"; }
-  &:after  { content : "\201D"; }
-}
-
-blockquote {
-  position  : relative;
-  @include h-borders(0, lines-for-font-size(), 1em, none);
-  cite {
-    font-style : italic;
-    a { word-wrap : break-word; }
-    &:before { 
-      content : "\2014"; 
-      @include h-borders(0, .5*lines-for-font-size(), 1em, none);
-    }
-  }
 }
 
 .separator {
@@ -150,119 +54,68 @@ blockquote {
   display: inline-block;
 }
 
-.pullquote-right:before,
-.pullquote-left:before   {
-  content  : attr(data-pullquote);
+header time { text-transform: uppercase; }
 
-  position : relative;
-  top      : 7px;
-  width    : 45%;
-  @include rhythm(.5*lines-for-font-size(), 0, 0, lines-for-font-size(), 1.4em)
-  @include h-borders(0, 0);
+.page-title { @include adjust-font-size-to(1.8*$base-font-size); }
+
+article.excerpt {
+  > header > h1 { @include adjust-font-size-to(1.5*$base-font-size); }
+  > footer { 
+    time {
+      @include adjust-font-size-to(.9em);
+      .month, .day { display: inline-block; }
+      .month { text-transform: uppercase; }
+    }
+  } 
 }
 
-.pullquote-right:before {
-  float : right;
-  @include apply-side-rhythm-border(left, 0, 1.5*lines-for-font-size(), 1em, none);
+a[rel=full-article] { // read more link
+  display    : inline-block;
+  @include adjust-font-size-to(.85*$base-font-size);
+  @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
 }
 
-.pullquote-left:before {
-  float: left;
-  @include apply-side-rhythm-border(right, 0, 1.5*lines-for-font-size(), 1em, none);
+.page-nav {
+  a[rel=prev] { @include float-left; }
+  a[rel=next] { @include float-right; }
 }
 
-body {
-  #main {
-    > section:first-child {
+// asides
+.aside { 
+  $aside-font-size : .9*$base-font-size;
+  $aside-lines     : lines-for-font-size($aside-font-size);
+  @include adjust-font-size-to($aside-font-size); 
+}
+aside { @extend .aside; }
 
-      article {
-
-        header { @include padding-leader(1.3*lines-for-font-size()); }
-
-        #blog-index & {
-          @include padding-leader(lines-for-font-size());
-          header { padding-leader(1.5*lines-for-font-size()); }
-        }
-
-        section.index {
-          > p:first-child { display : inline; }
-          nav.index       { display : inline; }
-        }
-
-        a[rel=full-article] { 
-          @extend .main-text;
-          display    : inline-block;
-          @include rhythm(0, 0, 0, 0, .85em);
-          @include h-borders(0, lines-for-font-size(), 1em, none);
-        }
-      }
-
-      aside.sidebar {
-        padding : 0 0.5em 0.5em 1.5em;
-        section {
-          margin-bottom : 1em;
-          a { text-decoration : none; }
-          h1:first-child { margin-top : .2em; }
-          h1             { margin-top : 1em;   }
-          ul {
-            margin-left : 0.6em;
-            li {
-              border     : 0;
-              box-shadow : none;
-              padding    : 0.2em 0 !important;
-            }
-          }
-        }
-      }
-
+#default-aside, #index-aside {
+  @extend .aside; 
+  h1:first-child { @include margin-leader(.2*$aside-lines); }
+  h1             { @include margin-leader($aside-lines);    }
+  ul {
+    @include apply-side-rhythm-border(left, 0, .6*$aside-lines, 1em, none);
+    li {
+      @include padding-leader(.2*$aside-lines);
+      @include padding-trailer(.2*$aside-lines);
     }
   }
-
-  #content > div > footer {
-    @include rhythm(0, 1.5*lines-for-font-size(), 0, 0, .85em);
-    font-style  : italic;
-  }
-
-  nav.pagination {
-    @extend .center;
-    @include rhythm(0, lines-for-font-size(), lines-for-font-size(), 0, .9em);
-  }
-
-  > footer {
-    @include rhythm(0, .75*lines-for-font-size(), .75*lines-for-font-size(), lines-for-font-size(), 1em);
-  }
-
 }
 
-#blog-archives {
-  .title {
-    @extend .h3;
-    a { display: inline-block; }
-  }
-  time {
-    @include adjust-font-size-to(.9em);
-    .month, .day { display: inline-block; }
-    .month { text-transform: uppercase; }
+#primary-navigation {
+  @include adjust-font-size-to(.9*$base-font-size);
+  > form { 
+    text-align : left; 
+    padding-left: .8em;
+    .search {
+      width: 93%;
+      @include adjust-font-size-to(.85*$base-font-size);
+    }
   }
 }
 
-#main > section > .category {
-  article {
-    margin-left: 0;
-    padding-left: 6.8em;
+.no-placeholder {
+  #primary-navigation .search {
+    text-indent: 1.3em;
   }
-  .year { display: inline; }
 }
-
-#content > div > footer {
-  @include rhythm(0, 1.5*lines-for-font-size(), 0, 0, .85em);
-  font-style  : italic;
-}
-
-
-article {
-
-  a { @extend .force-wrap; }
-
-  header time { text-transform: uppercase; }
 

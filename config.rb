@@ -15,5 +15,6 @@ images_dir                 = "source/images"
 fonts_dir                  = "source/fonts"
 generated_images_dir       = "source/images"
 
-line_comments              = false
+# sass debugging comments
+line_comments              = true
 output_style               = :compressed

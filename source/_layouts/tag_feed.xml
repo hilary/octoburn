@@ -7,10 +7,10 @@ layout: nil
   <link href="{{ site.url }}{{ page.feed_url }}" rel="self"/>
   <link href="{{ site.url }}"/>
   <updated>{{ page.updated | date_to_xmlschema }}</updated>
-  {% include helpers/site_meta.xml %}
+  {% include helpers/site-meta.xml %}
 
   {% for post in site.tags[page.tag] limit: 20 %}
-    {% include articles/feed_entry.xml %}
+    {% include articles/feed-entry.xml %}
   {% endfor %}
 </feed>
 

@@ -1,36 +1,42 @@
+// compass vertical rhythm, names determined by compass
+$relative-font-sizing        :                                 true;
+$round-to-nearest-half-line  :                                 true; 
+$base-font-size              :                                 14px; // MUST be in px
+$base-line-height            :                  1.5*$base-font-size;
+$min-line-padding            :                    $base-font-size/7;
+$default-rhythm-border-style :                               dotted;
+@include establish-baseline; // must come after base-line-height and base-font-size
+
+$base-lines                  : lines-for-font-size($base-font-size);
+
 html { // prevent iOS text size adjust after orientation change, 
   -webkit-text-size-adjust : 100%; // without disabling user zoom.
   -ms-text-size-adjust     : 100%;
 }
 
-b, 
-strong { // style set to bolder: Firefox 4+, Safari 4/5, Chrome.
-  font-weight : bold;
-}
+b, strong { font-weight : bold; }
+del, s    { text-decoration : line-through; }
+em, dfn   { font-style : italic; }
 
-dfn { // missing definition: Safari 5 and Chrome.
-  font-style : italic;
-}
+// inconsistent and generally far too small: all browsers
+small { @include adjust-font-size-to(.8*$base-font-size);  }
+big   { @include adjust-font-size-to(1.2*$base-font-size); }
 
-small { // inconsistent and generally far too small: all browsers
-  font-size : 80%;
+sup, sub { 
+  @include adjust-font-size-to(.8*$base-font-size);
+  position : relative;
+  display  : inline-block;
 }
-
-sub, 
-sup { // prevent sub, sup borking line-height: all browsers
-  font-size      : 75%;
-  line-height    : 0;
-  position       : relative;
-  vertical-align : baseline;
-}
-sub { bottom : -0.25em; }
-sup { top    : -0.5em; }
+sup { top    : -.5em; }
+sub { bottom : -.5em; }
 
 pre { // Improve readability: all browsers
-  white-space : pre;
-  white-space : pre-wrap;
-  word-wrap   : break-word;
-  margin      : 1em 0;
+  @include force-wrap;
+  @include margin-leader($base-lines);
+  @include margin-trailer($base-lines);
+  margin-left  : 0;
+  margin-right : 0;
+  padding      : 0;
 }
 
 mark { // missing definition: IE 7/8/9
@@ -38,28 +44,82 @@ mark { // missing definition: IE 7/8/9
   color      : #000;
 }
 
-q { // CSS quotes not supported: IE 7
-  quotes : none;
-}
-q:before, q:after { // CSS quotes not supported: Safari 4
-  content : '';
-  content : none;
+// CSS quotes not supported: IE 7
+q { quotes : none; }
+q { font-style : italic;
+  &:before { content : "\201C"; }
+  &:after  { content : "\201D"; }
 }
 
-abbr[title] { // missing definition: IE 7/8/9, Safari 5, Chrome
-  border-bottom : 1px dotted;
-}
+abbr, abbr[title], acronym { @include trailing-border(1px); cursor : help;  }
 
 a:focus { outline : thin dotted; }
 a:active, 
 a:hover { outline : 0; }
 
-// @extend this to force long lines of continuous text to wrap
-.force-wrap {
-  white-space : -moz-pre-wrap;
-  white-space : -pre-wrap;
-  white-space : -o-pre-wrap;
-  white-space : pre-wrap;
-  word-wrap   : break-word;
+p, blockquote, ul, ol, dl { 
+  @include margin-leader($base-lines);
+  @include margin-trailer($base-lines);
 }
+
+p, blockquote, li, dd { @include force-wrap; }
+
+p {
+  margin-left  : 0;
+  margin-right : 0;
+}
+
+blockquote {
+  position  : relative;
+  margin-left  : 2em;
+  margin-right : 2em;
+  cite {
+    font-style : italic;
+    &:before { 
+      content : "\2014"; 
+      padding : { right : .3em; left : .3em; }
+    }
+  }
+}
+
+ul, ol, dl { 
+  margin-left  : 1em;
+  margin-right : 0;
+}
+
+ul { list-style-type     : disc;
+  ul { list-style-type   : circle; 
+    ul { list-style-type : square; }}}
+
+ol { list-style-type     : decimal;
+  ol { list-style-type   : lower-alpha; 
+    ol { list-style-type : lower-roman; }}}
+
+li, dd { 
+  @include margin-leader(.5*$base-lines);
+  @include margin-trailer(.5*$base-lines);
+  margin-left  : 2em;
+  margin-right : 0;
+}
+
+.pullquote-right:before,
+.pullquote-left:before   {
+  content  : attr(data-pullquote);
+
+  padding  : 0;
+  position : relative;
+  width    : 45%;
+  @include adjust-font-size-to(1.4*$base-font-size); 
+}
+
+.pullquote-right:before {
+  @include float-right;
+  @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+}
+
+.pullquote-left:before {
+  @include float-left;
+  @include apply-side-rhythm-border(right, 0, 1.5*$base-lines, 1em, none);
+}
+
 

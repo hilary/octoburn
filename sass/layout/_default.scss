@@ -1,7 +1,24 @@
-@import 'default_grid';
+@import 'shared';
+@import 'default/aside-horizontal';
 
-@import 'follow_me';
-@import 'sharing_menu';
-@import 'footer';
-@import 'info_model';
+@include at-breakpoint($horizontal-aside-layout) {
 
+  #main-content > section, #main-content > article { 
+    @include clearfix;
+    @include span-columns(8 omega, $horizontal-aside-columns); 
+  }
+}
+
+@include at-breakpoint($aside-right-layout) {
+
+  #main-content > section, #main-content > article { 
+
+    $content-columns : 8; 
+    @include span-columns($content-columns, $aside-right-columns);
+
+    > article, > section, > footer { 
+      @include span-columns(8 omega, $content-columns); 
+    }
+
+  } // #main-content > section
+}

@@ -34,10 +34,6 @@ excerpt_link                 : "&hellip; read more &hellip;"
 excerpt_in_feed              : false
 permalink_label              : "permalink"
 permalink_label_feed         : "&#9875; permalink"
-linklog_marker               : "&rarr;"
-linklog_marker_position      : after
-linklog_marker_position_feed : after
-standard_post_marker         :
 
 titlecase                    : false
 

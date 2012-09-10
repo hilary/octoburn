@@ -10,14 +10,14 @@
   {% capture updated_formatted %}{{ dated.updated_formatted }}{% endcapture %}
 
   {% if has_date %}
-    {% capture created_at %}created: <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate {% if updated %}data-updated="true"{% endif %}>{{ date_formatted }}</time>{% endcapture %}
+    {% capture created-at %}created: <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate {% if updated %}data-updated="true"{% endif %}>{{ date_formatted }}</time>{% endcapture %}
   {% endif %}
 
   {% if updated %}
-    {% capture last_updated %}last updated: <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>{% endcapture %}
+    {% capture last-updated %}last updated: <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>{% endcapture %}
   {% endif %}
 
   {% if has_date or updated %}
-    <footer class="pubdate">{{ created_at }}{ last_updated }}</footer>
+    <span class="pubdate">{{ created-at }}{ last-updated }}</span>
   {% endif %}
 {% endif %}
