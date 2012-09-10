@@ -1,0 +1,11 @@
+<!-- invoke as {% include sharing-menu.html with page %}
+            or {% include sharing-menu.html with post %} -->
+{% if sharing-menu.sharing %}
+  <menu class="sharing-menu">
+    <ul>
+      <li><a href="http://twitter.com/share" title="Tweet this" class="twitter-share" target="_blank">Tweet</a></li>
+      <li><a title="+1 on Google Plus" class="googleplus-share" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{site.url}}{{page.url}}" target="_blank">+1</a></li>
+      <li><a title="Share on Facebook" class="facebook-share" href="http://www.facebook.com/sharer.php?u={{site.url}}{{page.url}}" target="_blank">Share</a></li>
+    </ul>
+  </menu>
+{% endif %}

@@ -1,0 +1,8 @@
+{% include helpers/permalink.html %}
+<article class="archive">
+  <header>
+    <h1><a href="{{ permalink }}">{{ post.title }}</a></h1>
+  </header>
+  <footer class="pubdate">{% include footers/dated.html with post %}</footer>
+  {% include menus-and-navigation/tag-list.html with post %}
+</article>

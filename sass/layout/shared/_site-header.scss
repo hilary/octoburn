@@ -1,0 +1,17 @@
+#grid > header { @include clearfix; }
+
+@include at-breakpoint($horizontal-aside-layout) {
+
+  #grid > header {
+    > hgroup { @include span-columns(6      , $horizontal-aside-columns); }
+    > menu   { @include span-columns(2 omega, $horizontal-aside-columns); }
+  }
+}
+
+@include at-breakpoint($aside-right-layout) {
+
+  #grid > header {
+    > hgroup { @include span-columns(8      , $aside-right-columns); }
+    > menu   { @include span-columns(4 omega, $aside-right-columns); }
+  }
+}

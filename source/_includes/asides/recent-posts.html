@@ -1,0 +1,12 @@
+<aside class="recent-posts">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    <!-- if on a post, don't list it as a recent post! -->
+    {% include helpers/offset %}
+    {% for recent_post in site.posts limit: site.recent_posts offset: start %}
+      <li class="post">
+        <a href="{{ root_url }}{{ recent_post.url }}">{{ recent_post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

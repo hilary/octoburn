@@ -1,0 +1,10 @@
+<!-- invoke as {% include tag-list.html with page %}
+            or {% include tag-list.html with post %} -->
+{% if tag-list.tags %}
+  <nav class="tag-list">
+    posted in
+    <ul>
+      {% include menus-and-navigation/tag-link.html for tag-list.tags %}
+    </ul>
+  </nav>
+{% endif %}

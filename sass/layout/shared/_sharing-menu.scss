@@ -1,0 +1,11 @@
+menu.sharing-menu { // may get moved, so using a class
+
+  ul {
+    @include horizontal-list;
+    @include float-left;
+    @include nowrap;
+
+    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+  } //end ul
+}//end menu

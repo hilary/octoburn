@@ -1,0 +1,29 @@
+#primary-navigation { 
+  @include pie-clearfix;
+
+  @include at-breakpoint($horizontal-aside-layout) {
+    @include span-columns(8 omega, $horizontal-aside-columns);
+  }
+
+  @include at-breakpoint($aside-right-layout) {
+    @include span-columns(12 omega, $aside-right-columns); 
+  }
+}
+
+#primary-navigation {
+
+  > nav { 
+    width : 70%;
+    @include horizontal-list;
+    @include float-left;
+    @include nowrap;
+
+    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+  } // > nav
+
+  > form { 
+    @include float-right; 
+    width : 30%;
+  }
+}

@@ -1,0 +1,12 @@
+@include sticky-footer(3em, '#grid', '#sticky-footer', '#contentinfo');
+
+#sticky-footer { 
+
+  @include at-breakpoint($horizontal-aside-layout) {
+    @include span-columns(8 omega, $horizontal-aside-columns);
+  }
+
+  @include at-breakpoint($aside-right-layout) {
+    @include span-columns(12 omega, $aside-right-columns);
+  }
+}
