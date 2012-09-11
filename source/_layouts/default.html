@@ -13,16 +13,18 @@
       {% include sections/simple-search.html %}
       {% include menus-and-navigation/primary-navigation.html %}
     </div>
-    <article id="main-content"> <!-- asides thematically related -->
+    <article id="main-content">
       {{ content | expand_urls: root_url }}
     </article>
-    <div id="sticky-footer"></div>
+    <div id="site-credits"></div>
     {% include head/disqus.html %}
   </div>
   <footer id="contentinfo" role="contentinfo">
     copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
-    <span class="credit">powered by <a href="http://hholz.com/octoburn">Octoburn</a>, 
-    a descendant of <a href="http://octopress.org">Octopress</a></span>
+    <span class="credit">
+      powered by <a href="{{ root_url }}/{{ site.generator.uri }}">{{site.generator_name}}</a>, 
+      a descendant of <a href="http://octopress.org">Octopress</a>
+    </span>
   </footer>
 </body>
 </html>

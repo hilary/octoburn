@@ -1,0 +1,73 @@
+article header {
+  a { @include link-colors($aside-color,
+                           $link-color-visited,
+                           $link-color-visited,
+                           $aside-color,
+                           $link-color-visited);
+    }
+
+header {
+
+  time { text-transform: uppercase; }
+
+  .page-title { @include adjust-font-size-to(1.8*$base-font-size); }
+
+article.excerpt {
+  > header > h1 { @include adjust-font-size-to(1.5*$base-font-size); }
+  > footer { 
+    time {
+      @include adjust-font-size-to(.9*$base-font-size);
+      .month, .day { display: inline-block; }
+      .month { text-transform: uppercase; }
+    }
+  } 
+}
+
+a[rel=full-article] { // read more link
+  display    : inline-block;
+  @include adjust-font-size-to(.85*$base-font-size);
+  @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+}
+
+.page-nav {
+  a[rel=prev] { @include float-left; }
+  a[rel=next] { @include float-right; }
+}
+
+// asides
+$aside-font-size : .9*$base-font-size;
+$aside-lines     : lines-for-font-size($aside-font-size);
+.aside { @include adjust-font-size-to($aside-font-size); }
+aside { @extend .aside; }
+
+#default-aside, #index-aside {
+  @extend .aside; 
+  h1:first-child { @include margin-leader(.2*$aside-lines); }
+  h1             { @include margin-leader($aside-lines);    }
+  ul {
+    @include apply-side-rhythm-border(left, 0, .6*$aside-lines, 1em, none);
+    li {
+      @include padding-leader(.2*$aside-lines);
+      @include padding-trailer(.2*$aside-lines);
+    }
+  }
+}
+
+#primary-navigation {
+  @include adjust-font-size-to(.9*$base-font-size);
+  > form { 
+    text-align : left; 
+    padding-left: .8em;
+    .search {
+      width: 93%;
+      @include adjust-font-size-to(.85*$base-font-size);
+    }
+  }
+}
+
+.no-placeholder {
+  #primary-navigation .search {
+    text-indent: 1.3em;
+  }
+}
+

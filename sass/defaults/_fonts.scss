@@ -1,0 +1,38 @@
+$sans  : Trebuchet MS, Arial, sans-serif;
+$serif : Georgia, Times, Times New Roman, serif;
+$mono  : Menlo, Monaco, lucida console, Courier New, monospace;
+
+.sans  { font-family : $sans;  }
+.serif { font-family : $serif; }
+.mono  { font-family : $mono;  }
+
+.header { @extend .serif; }
+.main   { @extend .sans;  }
+.code   { @extend .mono;  }
+.aside  { @extend .sans;  }
+
+body {
+  @extend .main;
+  header {
+    @extend .header;
+    text-rendering : optimizelegibility;
+    h1, h2, h3, h4, h5, h6 { font-weight : bold; }
+  }
+  pre, pre header { @extend .code; }
+  code, tt, samp { 
+    @extend .code; 
+    header { @extend .header; }
+  }
+  aside {
+    @extend .aside;
+    header { @extend .header; }
+  }
+}
+
+.main, .code, .header {
+  @include hover-link;
+}
+.aside { 
+  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; } 
+}
+

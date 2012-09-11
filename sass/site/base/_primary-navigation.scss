@@ -1,0 +1,67 @@
+$nav-color         : darken($nav-bg, 55);
+$nav-color-hover   : $title-color;
+//$nav-placeholder   : $title-color;
+$nav-placeholder   : white;
+
+$nav-bg            : desaturate(lighten($header-bg, 30), 5);
+$nav-bg-front      : image-url('noise.png');
+$nav-bg-back       : linear-gradient(lighten($nav-bg, 8), 
+                                     $nav-bg, 
+                                     darken($nav-bg, 11));
+
+$nav-border        : darken($nav-bg, 10);
+$nav-border-top    : lighten($nav-bg, 15);
+$nav-border-bottom : darken($nav-bg, 25);
+
+#primary-navigation {
+
+  @extend .main;
+  position : relative;
+
+  background-color : $nav-bg;
+  @include background($nav-bg-front, $nav-bg-back);
+
+  border-top-color    : $nav-border-top;
+  border-bottom-color : $nav-border-bottom;
+  @include h-borders(1px, .35*$base-lines, 1em, solid);
+
+} // #primary-navigation
+
+ // search
+#primary-navigation form {
+
+  @include background-clip;
+  margin: 0; padding: 0;
+
+  .search {
+
+    @include adjust-font-size-to(.85*$base-font-size);
+    width: 93%;
+    @include background-clip;
+    @include single-box-shadow(lighten($nav-bg, 2), 0, 1px);
+    @include border-radius(.5em);
+
+  }
+
+} // > form
+
+#primary-navigation nav a {
+  @include adjust-font-size-to(.9*$base-font-size);
+  font-weight : bold;
+    @include link-colors($nav-color,
+                         $nav-color-hover,
+                         $nav-color-hover,
+                         $nav-color,
+                         $nav-color-hover);
+  } // nav a
+}
+
+} // #primary-navigation
+
+.no-placeholder {
+  #primary-navigation .search {
+    background: lighten($nav-bg, 15) image-url('search.png') .3em .25em no-repeat;
+    text-indent: 1.3em;
+  }
+}
+

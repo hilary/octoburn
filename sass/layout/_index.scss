@@ -1,24 +1,3 @@
-@import 'shared';
-@import 'index/aside-horizontal';
-
-@include at-breakpoint($horizontal-aside-layout) {
-
-  #main-content > article { 
-    @include clearfix;
-    @include span-columns(8 omega, $horizontal-aside-columns);
-  }
-}
-
-@include at-breakpoint($aside-right-layout) {
-
-  #main-content > article { 
-
-    $content-columns : 8; 
-    @include span-columns($content-columns, $aside-right-columns);
-
-    > ul, > header, > footer {
-      @include span-columns(8 omega, $content-columns); 
-    }
-  }
-}
+@import 'shared/shared';
+@import 'index/index';
 

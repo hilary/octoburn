@@ -1,0 +1,162 @@
+$page-border : darken($footer-bg, 5);
+#main-content { border-bottom : 1px solid $page-border; }
+
+// color for site-credits margin-bottom
+$page-bg : desaturate($header-bg, 10);
+html { background : $page-bg image-url('line-tile.png') top left; }
+
+$footer-color       : $title-color;
+$footer-color-hover : darken($footer-color, 10);
+
+$footer-bg  : desaturate(lighten($header-bg, 18), 10);
+
+$footer-bg-front      : image-url('noise.png');
+$footer-bg-back       : linear-gradient(lighten($footer-bg, 8), 
+                                        $footer-bg, darken($footer-bg, 11));
+$footer-border-top    : lighten($footer-bg, 15);
+$footer-border-bottom : darken($footer-bg, 15);
+
+$footer-link-color        : $title-color;
+$footer-link-color-hover  : darken($title-color, 30);
+
+#site-credits {
+  @include background($footer-bg-front, $footer-bg-back);
+  @include border-bottom-radius(.4em);
+  color            : $footer-color;
+  background-color : $footer-bg;
+  text-shadow      : lighten($footer-bg, 5) 0 1px;
+  border-top       : 1px solid $footer-border-top;
+  a {
+    @include link-colors($footer-link-color, 
+                         $footer-link-color-hover, 
+                         $footer-link-color-hover,
+                         $footer-link-color,
+                         $footer-link-color-hover);
+  }
+}
+
+
+
+
+
+// ----
+
+@include at-breakpoint($aside-right-layout) { 
+  @include establish-baseline(16px);
+}
+
+$sans  : Ubuntu, Trebuchet MS, Arial, sans-serif;
+$serif : Quando, Georgia, Times, Times New Roman, serif;
+$mono  : Electrolize, Menlo, Monaco, lucida console, Courier New, monospace;
+
+.heading      { font-family : $serif; }
+.main-content { font-family : $sans;  }
+.aside        { font-family : $sans;  }
+.code         { font-family : $mono;  }
+
+.heading, .aside { 
+  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; }
+}
+.main-content, .code {
+  a, a:visited               { text-decoration : none;      }
+  a:hover, a:focus, a:active { text-decoration : underline; }
+}
+
+body                { @extend .main;  }
+pre, code, tt, samp { @extend .code;  }
+header {              @extend .heading; 
+  text-rendering : optimizelegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  @extend .heading; 
+  font-weight : bold;
+}
+h1             { @include adjust-font-size-to(2*$base-font-size);   }
+h2, section h1 { @include adjust-font-size-to(1.5*$base-font-size); }
+h3, section h2, section section h1 {
+  font-weight  : normal;
+  font-variant : small-caps;
+  @include adjust-font-size-to(1.2*$base-font-size); 
+}
+h4, section h3, section section h2, section section section h1 {
+  @include adjust-font-size-to(1.2*$base-font-size); 
+}
+h5, section h4, section section h3, section section section h2, 
+section section section section h1 {
+  font-variant : small-caps;
+}
+h6, section h5, section section h4, section section section h3, 
+section section section section h2, section section section section section h1 {
+  font-style  : italic;
+}
+
+.separator {
+  content: "\2022 ";
+  padding: 0 .4em 0 .2em;
+  display: inline-block;
+}
+
+header time { text-transform: uppercase; }
+
+.page-title { @include adjust-font-size-to(1.8*$base-font-size); }
+
+article.excerpt {
+  > header > h1 { @include adjust-font-size-to(1.5*$base-font-size); }
+  > footer { 
+    time {
+      @include adjust-font-size-to(.9*$base-font-size);
+      .month, .day { display: inline-block; }
+      .month { text-transform: uppercase; }
+    }
+  } 
+}
+
+a[rel=full-article] { // read more link
+  display    : inline-block;
+  @include adjust-font-size-to(.85*$base-font-size);
+  @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+}
+
+.page-nav {
+  a[rel=prev] { @include float-left; }
+  a[rel=next] { @include float-right; }
+}
+
+// asides
+$aside-font-size : .9*$base-font-size;
+$aside-lines     : lines-for-font-size($aside-font-size);
+.aside { @include adjust-font-size-to($aside-font-size); }
+aside { @extend .aside; }
+
+#default-aside, #index-aside {
+  @extend .aside; 
+  h1:first-child { @include margin-leader(.2*$aside-lines); }
+  h1             { @include margin-leader($aside-lines);    }
+  ul {
+    @include apply-side-rhythm-border(left, 0, .6*$aside-lines, 1em, none);
+    li {
+      @include padding-leader(.2*$aside-lines);
+      @include padding-trailer(.2*$aside-lines);
+    }
+  }
+}
+
+#primary-navigation {
+  @include adjust-font-size-to(.9*$base-font-size);
+  > form { 
+    text-align : left; 
+    padding-left: .8em;
+    .search {
+      width: 93%;
+      @include adjust-font-size-to(.85*$base-font-size);
+    }
+  }
+}
+
+.no-placeholder {
+  #primary-navigation .search {
+    text-indent: 1.3em;
+  }
+}
+

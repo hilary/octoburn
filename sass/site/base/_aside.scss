@@ -1,0 +1,55 @@
+$aside-font-size : .9*$base-font-size;
+$aside-lines     : lines-for-font-size($aside-font-size);
+
+$aside-bg    : #d1dcd9;
+$aside-color : change-color(mix($text-color, $aside-bg, 80), 
+                            $hue: hue($aside-bg), 
+                            $saturation: saturation($aside-bg)/2);
+
+$aside-link-color       : $link-color-visited;
+$aside-link-color-hover : $link-color;
+
+$aside-border           : desaturate(darken($aside-bg, 7), 10);
+
+#default-aside, #index-aside {
+
+  @extend .aside; 
+
+  color        : $aside-color;
+  text-shadow  : lighten($aside-bg, 8) 0 1px;
+  background   : $aside-bg $noise-bg;
+  border-color : $aside-border;
+
+  @include leading-border(1px, $aside-lines, 1em, solid);
+  @include adjust-font-size-to($aside-font-size);
+
+  a {
+    @include force-wrap;
+    color : $aside-link-color;
+    @include link-colors($aside-link-color, 
+                         $aside-link-color-hover, 
+                         $aside-link-color-hover, 
+                         $aside-link-color,
+                         $aside-link-color-hover);
+  }
+
+  &:hover p a, 
+  &:hover li a {
+    color : $aside-link-color;
+    &:hover { color : $aside-link-color-hover; }
+  }
+
+  h1 { 
+    @include margin-leader($aside-lines);    
+    &:first-child { @include margin-leader(.2*$aside-lines); }
+  }
+
+  ul {
+    @include apply-side-rhythm-border(left, 0, .6*$aside-lines, 1em, none);
+    li {
+      @include padding-leader(.2*$aside-lines, 1em);
+      @include padding-trailer(.2*$aside-lines, 1em);
+    }
+  }
+}
+

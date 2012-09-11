@@ -1,31 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://hilary.github.com/blog/2012/on-delicious/</loc>
-        <lastmod>2012-09-03T13:36:27-07:00</lastmod>
+        <loc>http://hholz.com//blog/2012/on-delicious</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/blog/2012/deploying-octopress-on-github/</loc>
-        <lastmod>2012-09-03T13:36:27-07:00</lastmod>
+        <loc>http://hholz.com//blog/2012/deploying-octopress-on-github</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/blog/2012/upgraded-octopress/</loc>
-        <lastmod>2012-09-03T13:36:27-07:00</lastmod>
+        <loc>http://hholz.com//blog/2012/upgraded-octopress</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/about/</loc>
-        <lastmod>2012-09-03T13:37:03-07:00</lastmod>
+        <loc>http://hholz.com//archives/</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/archives/</loc>
-        <lastmod>2012-09-03T13:37:03-07:00</lastmod>
+        <loc>http://hholz.com//blog/</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/blog/</loc>
-        <lastmod>2012-09-03T13:13:48-07:00</lastmod>
+        <loc>http://hholz.com//feeds/integrating_design.xml</loc>
+        <lastmod>2012-09-09T16:21:29-07:00</lastmod>
     </url>
     <url>
-        <loc>http://hilary.github.com/</loc>
-        <lastmod>2012-09-03T13:13:48-07:00</lastmod>
+        <loc>http://hholz.com//</loc>
+        <lastmod>2012-09-10T11:36:02-07:00</lastmod>
     </url>
 </urlset>

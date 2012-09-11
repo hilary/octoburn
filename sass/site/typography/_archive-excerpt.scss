@@ -1,0 +1,27 @@
+#blog-index article.excerpt {
+#blog-archives article.excerpt {
+  > header > h1 { 
+    color: $text-color;
+    a, a:hover { color: $link-color-hover; }
+  }
+  > footer {
+    time { color: $text-color-light; }
+    a:hover { color: $link-color-hover; }
+}
+
+article.excerpt {
+  > header > h1 { @include adjust-font-size-to(1.5*$base-font-size); }
+  > footer { 
+    time {
+      @include adjust-font-size-to(.9*$base-font-size);
+      .month, .day { display: inline-block; }
+      .month { text-transform: uppercase; }
+    }
+  } 
+}
+
+a[rel=full-article] { // read more link
+  display    : inline-block;
+  @include adjust-font-size-to(.85*$base-font-size);
+  @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+}

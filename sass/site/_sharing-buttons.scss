@@ -22,7 +22,7 @@
 .simple-social-button {
   position: relative;
   overflow: hidden;
-  @extend .main-content;
+  @extend .main;
   display: inline-block;
   border: 1px solid #ccc;
   padding: .2em .5em; line-height: 1.45em;

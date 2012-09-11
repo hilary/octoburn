@@ -1,0 +1,31 @@
+$text-color         : #222;
+$text-color-light   : lighten($text-color, 8);
+$content-bg         : #f8f8f8;
+$type-border        : lighten($text-color, 11);
+
+$link-color         : #219cba;
+$link-color-visited : #527e89;
+$link-color-hover   : #55d2f1;
+
+$article-border     : #eeeeee;
+
+#main-content {
+  color         : $text-color;
+  background    : $content-bg $noise-bg;
+
+  a {
+    color : $link-color;
+    @include transition(color .3s);
+    @include link-colors($link-color,            // normal
+                         $link-color-hover,      // hover
+                         $link-color-hover,      // active
+                         $link-color-visited,    // visited
+                         $link-color-hover);     // focus
+  }
+
+  @include at-breakpoint($fullsize-layout) {
+    > article, section { 
+      border-right : 1px solid $aside-border; } // grid border, not text border
+  }
+}
+
