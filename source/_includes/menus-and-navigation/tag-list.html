@@ -1,10 +1,13 @@
-<!-- invoke as {% include tag-list.html with page %}
-            or {% include tag-list.html with post %} -->
-{% if tag-list.tags %}
+{% capture tag_list %}{% if post.tags %}{% post.tags %}{% elsif page.tags %}{% page.tags %}{% endif %}{% endcapture %}
+
+{% if tag_list %}
   <nav class="tag-list">
     posted in
     <ul>
-      {% include menus-and-navigation/tag-link.html for tag-list.tags %}
+      {% for tag in tag_list %}
+        {% capture tag_url %}{{ site.tag_dir }}{{ tag }}-index.html{% endcapture %}
+        <li><a rel="tag" href="{{ tag_url }}">{{ tag }}</a></li>
+      {% endfor %}
     </ul>
   </nav>
 {% endif %}

@@ -7,12 +7,12 @@ body_id     : tag-index
   <header role="header">
     <h1 class="page-title">{{ page.title }}</h1>
   </header>
-  <footer class="pubdate">{% include footers/dated.html with page %}</footer>
-  {% include menus-and-navigation/sharing-menu.html with page %}
+  <footer class="pubdate">{% include footers/dated.html %}</footer>
+  {% include menus-and-navigation/sharing-menu.html %}
   <ul>
     {% for post in site.tags[page.tag] %}
       <li>
-        {% include helpers/index-year.html %}
+        {% include helpers/index-year.html     %}
         {% include articles/excerpt-entry.html %}
       </li>
     {% endfor %}

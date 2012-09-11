@@ -8,10 +8,10 @@ aside_style : default
     {% if page.title %}
       <header role="header"><h1 class="page-title">{{ page.title }}</h1></header>
     {% endif %}
-    <footer class="pubdate">{% include footers/dated.html with page %}</footer>
+<!--    <footer class="pubdate">{% include footers/dated.html %}</footer> -->
     {{ content }}
-    {% include menus-and-navigation/tag-list.html with page     %}
-    {% include menus-and-navigation/sharing-menu.html with page %}
+    {% include menus-and-navigation/tag-list.html     %}
+    {% include menus-and-navigation/sharing-menu.html %}
   </article>
   {% include sections/comments.html %}
 </article>

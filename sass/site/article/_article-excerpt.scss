@@ -12,15 +12,7 @@ article.excerpt {
     @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
   }
 
-  > footer {
-    time { 
-      @include adjust-font-size-to(.9*$base-font-size);
-      color: $text-color-light; 
-      .month, .day { display: inline-block; }
-      .month { text-transform: uppercase; }
-    }
-    a:hover { color: $link-color-hover; }
-  }
+  > footer a:hover { color: $link-color-hover; }
 
 }
 

@@ -1,0 +1,10 @@
+.pubdate, .pubdate time, .pubdate time .month, .pubdate time .day { 
+  display: inline-block; }
+
+.pubdate {
+
+  @include adjust-font-size-to(.9*$base-font-size);
+  color: $text-color-light; 
+
+  time { text-transform: uppercase; }
+}
