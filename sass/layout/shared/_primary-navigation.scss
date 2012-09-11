@@ -2,18 +2,26 @@
   @include pie-clearfix;
 
   @include at-breakpoint($horizontal-aside-layout) {
-    @include span-columns(8 omega, $horizontal-aside-columns);
+
+    > nav[role=navigation] { 
+      @include span-columns(5      , $horizontal-aside-columns); }
+    #simple-search { 
+      @include span-columns(3 omega, $horizontal-aside-columns); }
   }
 
   @include at-breakpoint($aside-right-layout) {
-    @include span-columns(12 omega, $aside-right-columns); 
+
+    > nav[role=navigation] { 
+      @include span-columns(8      , $horizontal-aside-columns); }
+    #simple-search { 
+      @include span-columns(4 omega, $horizontal-aside-columns); }
   }
 }
 
 #primary-navigation {
 
-  > nav { 
-    width : 70%;
+  > nav[role=navigation] ul { 
+
     @include horizontal-list;
     @include float-left;
     @include nowrap;
@@ -22,8 +30,5 @@
 
   } // > nav
 
-  > form { 
-    @include float-right; 
-    width : 30%;
-  }
+  #simple_search form { @include float-right; }
 }

@@ -1,0 +1,26 @@
+article.excerpt {
+
+  > header > h1 { 
+    color: $text-color;
+    @include adjust-font-size-to(1.5*$base-font-size); 
+    a, a:hover { color: $link-color-hover; }
+  }
+
+  a[rel=full-article] { 
+    display    : inline-block;
+    @include adjust-font-size-to(.85*$base-font-size);
+    @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+  }
+
+  > footer {
+    time { 
+      @include adjust-font-size-to(.9*$base-font-size);
+      color: $text-color-light; 
+      .month, .day { display: inline-block; }
+      .month { text-transform: uppercase; }
+    }
+    a:hover { color: $link-color-hover; }
+  }
+
+}
+

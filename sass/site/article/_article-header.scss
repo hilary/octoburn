@@ -1,0 +1,10 @@
+article header {
+  a { @include link-colors($aside-color,
+                           $link-color-visited,
+                           $link-color-visited,
+                           $aside-color,
+                           $link-color-visited);
+    }
+
+  time { text-transform: uppercase; }
+}

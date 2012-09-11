@@ -7,7 +7,6 @@
 .serif { font-family : Quando, $serif;     }
 .mono  { font-family : Electrolize, $mono; }
 
-// Sprites and images
 @import "icon/*.png";
 @include all-icon-sprites($dimensions: true);
 

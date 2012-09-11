@@ -19,10 +19,10 @@
     <div id="site-credits"></div>
     {% include head/disqus.html %}
   </div>
-  <footer id="contentinfo" role="contentinfo">
+  <footer id="contentinfo" role="contentinfo" class="site-credits">
     copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
     <span class="credit">
-      powered by <a href="{{ root_url }}/{{ site.generator.uri }}">{{site.generator_name}}</a>, 
+      powered by <a href="{{ root_url }}/{{ site.generator_uri }}">{{site.generator_name}}</a>, 
       a descendant of <a href="http://octopress.org">Octopress</a>
     </span>
   </footer>

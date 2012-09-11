@@ -45,7 +45,8 @@ $aside-border           : desaturate(darken($aside-bg, 7), 10);
   }
 
   ul {
-    @include apply-side-rhythm-border(left, 0, .6*$aside-lines, 1em, none);
+    @include apply-side-rhythm-border(left, 
+                                      0, .6*$aside-lines, 1em, none);
     li {
       @include padding-leader(.2*$aside-lines, 1em);
       @include padding-trailer(.2*$aside-lines, 1em);
