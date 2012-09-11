@@ -1,12 +1,3 @@
-$nav-color       : darken($nav-bg, 55);
-$nav-color-hover : $title-color;
-
-$nav-bg          : desaturate(lighten($header-bg, 30), 5);
-$nav-placeholder :  desaturate(darken($nav-bg, 10), 15);
-$nav-bg-front    : image-url('noise.png');
-$nav-bg-back     : linear-gradient(lighten($nav-bg, 8), 
-                                     $nav-bg, 
-                                     darken($nav-bg, 11));
 #primary-navigation {
 
   @extend .main;
@@ -40,15 +31,15 @@ $nav-bg-back     : linear-gradient(lighten($nav-bg, 8),
     @include single-box-shadow(lighten($nav-bg, 2), 0, 1px);
     @include border-radius(.5em);
     @include leading-border(1px, .35*$base-lines, 1em, solid);
-    @include apply-side-rhythm-border(left, 1px, .5*$aside-lines, 1em, none);
-    @include apply-side-rhythm-border(right, 1px, .5*$aside-lines, 1em, none);
+    @include apply-side-rhythm-border(left, 1px, .5*$base-lines, 1em, none);
+    @include apply-side-rhythm-border(right, 1px, .5*$base-lines, 1em, none);
     @include trailing-border(1px, 0, 1em, solid);
 
     &:focus {
 
       color            : $nav-color;
       background-color : lighten($nav-bg, 35);
-      border-color     : desaturate(lighten($nav-bg, 45), 7);
+      $border-color    : desaturate(lighten($nav-bg, 45), 7);
       @include box-shadow(0 0 4px $border-color, inset 0 0 3px $border-color);
       outline          : none;
 
@@ -68,8 +59,7 @@ $nav-bg-back     : linear-gradient(lighten($nav-bg, 8),
                        $nav-color-hover,
                        $nav-color,
                        $nav-color-hover);
-  } // nav a
-} // #primary-navigation
+} 
 
 .no-placeholder {
   #primary-navigation .search {

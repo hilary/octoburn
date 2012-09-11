@@ -13,7 +13,7 @@
 $noise-bg   : image-url('noise.png') top left;
 $img-border : inline-image('dotted-border.png');
 
-@import 'site-header';
+@import 'color-theme';
 @import 'primary-navigation';
 @import 'main-content';
 @import 'aside';

@@ -16,28 +16,84 @@ module Jekyll
 
   class TagIndex < Page
 
-    def initialize(service, site, tag, name,
-                   source_dir, layout_dir, dir,
-                   layout_filename, title_prefix, description_prefix)
+    def initialize(site, attr)
+
       @site = site
-      @base = source_dir
-      @dir  = dir
-      @name = name
+      @base = attr[:source_dir]
+      @dir  = attr[:dir]
+      @name = attr[:name]
       self.process(@name)
 
-      self.read_yaml(layout_dir, layout_filename)
+      self.read_yaml(attr[:layout_dir], attr[:layout_filename])
 
-      self.data['tag']         = tag
-      self.data['title']       = "#{title_prefix}#{tag}"
-      self.data['description'] = "#{description_prefix}#{tag}"
+      self.data['tag']         = attr[:tag]
+      self.data['title']       = "#{attr[:title_prefix]}#{attr[:tag]}"
+      self.data['description'] = "#{attr[:description_prefix]}#{attr[:tag]}"
       self.data['date']        = "#{Time.now.strftime('%Y-%m-%d %H:%M')}"
 
-      if service == :atom 
+      if attr[:service] == :atom 
         self.data['feed_url'] = "#{dir}/#{name}" 
       end
-    end
 
-  end
+    end # initialize
+  end # class TagIndex
+
+  class Site # we have to open Site to gain access to site_payload hash
+
+    def index_tags(attr)
+
+      attr[:source_dir] = self.source
+      attr[:layout_dir] = File.join(attr[:source_dir], '_layouts')
+      attr[:tag_dir]    = self.config['tag_dir']
+
+      if self.config['tag_feeds']
+        attr[:feed_dir] = self.config['feed_dir']
+      end
+
+      self.tags.keys.each do |tag|
+
+        attr[:tag] = tag
+
+        self.write_tag_index(attr)
+        if self.config['tag_feeds']
+          self.write_tag_feed(attr)
+        end
+      end
+
+    end # index_tags
+
+
+    def write_tag_index(attr)
+
+      attr[:service]         = :html
+      attr[:name]            = "#{attr[:tag]}_index.html"
+      attr[:dir]             = attr[:tag_dir]
+      attr[:layout_filename] = attr[:index_layout_filename]
+
+      index = TagIndex.new(self, attr)
+
+      index.render(self.layouts, site_payload)
+      index.write(self.dest)
+      self.pages << index
+
+    end # def write_tag_index
+
+    def write_tag_feed(attr)
+
+      attr[:service]         = :atom
+      attr[:name]            = "#{attr[:tag]}_feed.xml"
+      attr[:dir]             = attr[:feed_dir]
+      attr[:layout_filename] = attr[:feed_layout_filename]
+
+      feed = TagIndex.new(self, attr)
+
+      feed.render(self.layouts, site_payload)
+      feed.write(self.dest)
+      self.pages << feed
+
+    end # def write_tag_feed
+
+  end # class Site
 
   class GenerateTagIndexes < Generator
     safe true
@@ -53,46 +109,28 @@ module Jekyll
 
     def generate(site)
 
-      source_dir            = site.source
-      layout_dir            = File.join(source_dir, '_layouts')
-      index_layout_filename = tag_index_layout +
-        ".#{site.config['tag_index_layout_extension'] || TAG_INDEX_LAYOUT_EXTENSION}"
       title_prefix          = site.config['tag_title_prefix'] || TAG_TITLE_PREFIX
-      description_prefix    = site.config['tag_description_prefix'] || 
+      description_prefix    = site.config['tag_description_prefix'] ||
                                 TAG_DESCRIPTION_PREFIX
+      index_layout_filename = tag_index_layout(site) +
+        ".#{site.config['tag_index_layout_extension'] || TAG_INDEX_LAYOUT_EXTENSION}"
+
+      attr = { 
+        :title_prefix => title_prefix,
+        :description_prefix => description_prefix, 
+        :index_layout_filename => index_layout_filename 
+      }
 
       if site.config['tag_feeds']
-        feed_layout_filename = tag_feed_layout + '.xml'
+        attr[:feed_layout_filename] = tag_feed_layout(site) + '.xml'
       end
-
-      site.tags.keys.each do |tag|
-
-        index = TagIndex.new(:html, site, tag, "#{tag}_index.html",
-                             source_dir, layout_dir, site.config['tag_dir'],
-                             index_layout_filename, title_prefix, description_prefix)
-
-        index.render(site.layouts, site_payload)
-        index.write(site.dest)
-        site.pages << index
-
-        if site.config['tag_feeds']
-
-          feed = TagIndex.new(:atom, site, tag, "#{tag}_feed.xml",
-                             source_dir, layout_dir, site.config['feed_dir'],
-                             feed_layout_filename, title_prefix, description_prefix)
-
-          feed.render(site.layouts, site_payload)
-          feed.write(site.dest)
-          site.pages << feed
-        end
-
-      end # site.tags.keys.each
+      site.index_tags(attr)
 
     end # generate
 
     private
 
-    def tag_index_layout
+    def tag_index_layout(site)
 
       index_layout = site.config['tag_index_layout'] || TAG_INDEX_LAYOUT
       unless site.layouts.key? index_layout
@@ -102,7 +140,7 @@ module Jekyll
       return index_layout
     end
 
-    def tag_feed_layout
+    def tag_feed_layout(site)
 
       feed_layout = site.config['tag_feed_layout'] || TAG_FEED_LAYOUT
       unless site.layouts.key? feed_layout

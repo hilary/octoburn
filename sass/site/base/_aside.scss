@@ -1,16 +1,6 @@
 $aside-font-size : .9*$base-font-size;
 $aside-lines     : lines-for-font-size($aside-font-size);
 
-$aside-bg    : #d1dcd9;
-$aside-color : change-color(mix($text-color, $aside-bg, 80), 
-                            $hue: hue($aside-bg), 
-                            $saturation: saturation($aside-bg)/2);
-
-$aside-link-color       : $link-color-visited;
-$aside-link-color-hover : $link-color;
-
-$aside-border           : desaturate(darken($aside-bg, 7), 10);
-
 #default-aside, #index-aside {
 
   @extend .aside; 
