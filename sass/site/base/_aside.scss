@@ -1,7 +1,8 @@
 $aside-font-size : .9*$base-font-size;
 $aside-lines     : lines-for-font-size($aside-font-size);
 
-#default-aside, #index-aside {
+.default-aside, 
+.index-aside {
 
   @extend .aside; 
 

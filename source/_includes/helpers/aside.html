@@ -1,2 +1,5 @@
-{% capture aside_style %}sections/{% if page.aside_style %}{% page.aside_style %}{% else %}default{% endif %}_asides.html{% end capture %}
-{% include aside_style %}
+{% if page.aside_style == index %}
+  {% include sections/index_asides.html %}
+{% else %}
+  {% include sections/default_asides.html %}
+{% endif %}

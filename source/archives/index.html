@@ -12,8 +12,8 @@ title       : "archive"
   <ul>
     {% for post in site.posts limit: site.archive_max_posts %}
       <li>
-        {% include helpers/index-year.html     %}
-        {% include articles/archive-entry.html %}
+        {% include helpers/index_year.html     %}
+        {% include articles/archive_entry.html %}
       </li>
     {% endfor %}
   </ul>

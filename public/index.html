@@ -1,7 +1,43 @@
 
-Liquid syntax error: Unknown tag 'page'
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>integrating design</title>
+
+  <meta name="author" content="hilary j holz">
+  <meta name="Generator" content="Octoburn (http://hholz.com/octoburn/)">
+  <meta name="description" content="coding blog by full stack web dev">
+  
+
+<!--  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <link rel="canonical" href="http://hholz.com//">
+
+  <link href="/stylesheets/default.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
+
+  <link href="" rel="alternate" title="integrating design" type="application/atom+xml">
+
+  <link href="http://fonts.googleapis.com/css?family=Quando|Electrolize|Ubuntu:300" rel="stylesheet" type="text/css">
+
+  <link href="/favicon.png" rel="icon">
+</head>
+
 <body  id="home" >
-  <div id="grid">
+  <div id="#grid">
     <header role="banner">
       <hgroup>
         <h1><a href="/">integrating design</a></h1>
@@ -33,8 +69,8 @@ Liquid syntax error: Unknown tag 'page'
 </menu>
 
     </header>
-    <div id="primary-navigation">
-      <section id="simple-search">
+    <div class="primary-navigation">
+      <section class="simple-search">
   <form action="http://google.com/search" method="get">
     <fieldset role="search">
       <input type="hidden" name="q" value="site:hholz.com/" />
@@ -43,7 +79,7 @@ Liquid syntax error: Unknown tag 'page'
   </form>
 </section>
 
-      <nav role="navigation">
+      <nav class="primary-navlist" role="navigation">
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/blog/">Blog</a></li>
@@ -52,22 +88,19 @@ Liquid syntax error: Unknown tag 'page'
 </nav>
 
     </div>
-    <article id="main-content">
-      <section>
+    <article class="main-content">
+      <section class="content">
   
   
 
 <article class="excerpt" role="article">
   <footer>
-<!-- 
+    
 
 
 
 
 
-
-
-  
 
 
 
@@ -75,9 +108,13 @@ Liquid syntax error: Unknown tag 'page'
 
 
 
-  <span class="pubdate">created: <time datetime="2012-09-03T12:41:00-07:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>{ last_updated }}</span>
+  
 
- &#8211;>
+
+
+  <span class="pubdate">created <time datetime="2012-09-03T12:41:00-07:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>{ last_updated }}</span>
+
+
     <a rel="bookmark" href="/blog/2012/upgraded-octopress">permalink</a>
   </footer>
   <header>
@@ -90,17 +127,48 @@ Liquid syntax error: Unknown tag 'page'
   </section>
 </article>
 
-  <footer>
+  <div>
     Pardon my mess, but I&#8217;m still moving in. Unpacking the last
     of <a href="http://design.hholz.com/">the boxes</a> is lower
     priority than getting on with life here in my new digs, however,
     you are welcome to rummage around in them yourself.
-  </footer>
+  </div>
 </section>
-Liquid syntax error: Unknown tag &#8216;page&#8217;
+<section class="default-aside">
+  <aside class="recent-posts">
+  <h1>Recent Posts</h1>
+  <ul>
+    <!-- if on a post, don't list it as a recent post! -->
+    
+
+  
+
+
+    
+      <li>
+        <a href="/blog/2012/on-delicious">On Delicious, Finally</a>
+      </li>
+    
+  </ul>
+</aside>
+
+  <aside class="delicious">
+  <h1>Delicious Bookmarks</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
+</aside>
+
+  <aside class="github">
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos" data-user="hilary" data-count="3" data-skip="true">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+</aside>
+
+</section>
 
     </article>
-    <div id="site-credits"></div>
+    <footer class="credits" id="site-credits" ></footer>
     
 
 <script type="text/javascript">
@@ -119,11 +187,11 @@ Liquid syntax error: Unknown tag &#8216;page&#8217;
 
 
   </div>
-  <footer id="contentinfo" role="contentinfo" class="site-credits">
+  <footer class="credits" id="contentinfo" role="contentinfo" >
     copyright &copy; 2012 - hilary j holz -
-    <span class="credit">
-      powered by <a href="/octoburn/">Octoburn</a>, 
-      a descendant of <a href="http://octopress.org">Octopress</a>
+    <span class="generator">
+      powered by 
+      <a href="/octoburn/">Octoburn</a>
     </span>
   </footer>
 </body>

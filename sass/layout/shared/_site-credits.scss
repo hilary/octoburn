@@ -1,13 +1,2 @@
 @import 'compass/layout/sticky-footer';
 @include sticky-footer(3em, '#grid', '#site-credits', '#contentinfo');
-
-#site-credits { 
-
-  @include at-breakpoint($horizontal-aside-layout) {
-    @include span-columns(8 omega, $horizontal-aside-columns);
-  }
-
-  @include at-breakpoint($aside-right-layout) {
-    @include span-columns(12 omega, $aside-right-columns);
-  }
-}

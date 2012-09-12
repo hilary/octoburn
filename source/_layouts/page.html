@@ -2,16 +2,16 @@
 layout      : default
 aside_style : default
 ---
-<article>
+<article class="content">
   {% include helpers/permalink.html %}
   <article role="article">
     {% if page.title %}
       <header role="header"><h1 class="page-title">{{ page.title }}</h1></header>
     {% endif %}
-<!--    <footer class="pubdate">{% include footers/dated.html %}</footer> -->
+    <footer class="pubdate">{% include footers/dated.html %}</footer>
     {{ content }}
-    {% include menus-and-navigation/tag-list.html     %}
-    {% include menus-and-navigation/sharing-menu.html %}
+    {% include menus_and_navigation/tag_list.html     %}
+    {% include menus_and_navigation/sharing_menu.html %}
   </article>
   {% include sections/comments.html %}
 </article>

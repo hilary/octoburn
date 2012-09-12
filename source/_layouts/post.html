@@ -3,22 +3,22 @@ layout      : default
 aside_style : default
 single      : true
 ---
-<article>
+<article class="content">
   {% include helpers/permalink.html %}
   <article role="article" class="full-article">
     <header role="header">
       <h1 class="page-title">{{ page.title }}</h1>
     </header>
     <footer class="pubdate">
-<!--  {% include footers/dated.html %} -->
+      {% include footers/dated.html %}
       <p class="bookmark">
         &bull; <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
       </p>
     </footer>
     <p class="tldr">{{ content | excerpt }}</p>
-    {{ content | split("<!--more-->") | last }}
-    {% include menus-and-navigation/tag-list.html     %}
-    {% include menus-and-navigation/sharing-menu.html %}
+    {{ content | split:'<!--more-->' | last }}
+    {% include menus_and_navigation/tag_list.html     %}
+    {% include menus_and_navigation/sharing_menu.html %}
   </article>
   {% include sections/comments.html %}
 </article>

@@ -16,7 +16,7 @@ body {
   header {
     @extend .header;
     text-rendering : optimizelegibility;
-    h1, h2, h3, h4, h5, h6 { font-weight : bold; }
+    h1, h2, h3, h4, h5, h6 { @extend .header; }
   }
   pre, pre header { @extend .code; }
   code, tt, samp { 
@@ -29,10 +29,6 @@ body {
   }
 }
 
-.main, .code, .header {
-  @include hover-link;
+.code, .aside, .header { 
+  a { @include hover-link; } 
 }
-.aside { 
-  a, a:visited, a:hover, a:focus, a:active { text-decoration : none; } 
-}
-

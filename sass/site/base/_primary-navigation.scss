@@ -1,4 +1,4 @@
-#primary-navigation {
+.primary-navigation {
 
   @extend .main;
   @include adjust-font-size-to(.95*$base-font-size);
@@ -14,7 +14,7 @@
 } // #primary-navigation
 
  // search
-#primary-navigation form {
+.primary-navigation form {
 
   @include background-clip;
   margin: 0; padding: 0;
@@ -50,7 +50,7 @@
 
 } // > form
 
-#primary-navigation nav a {
+.primary-navigation nav a {
 
   font-weight : bold;
   text-shadow : lighten($nav-bg, 12) 0 1px;
@@ -62,7 +62,7 @@
 } 
 
 .no-placeholder {
-  #primary-navigation .search {
+  .primary-navigation .search {
     background: lighten($nav-bg, 15) image-url('search.png') .3em .25em no-repeat;
     text-indent: 1.3em;
   }

@@ -1,0 +1,15 @@
+.index-aside { 
+
+  @include at-breakpoint($horizontal-aside-layout) {
+
+    @include clearfix;
+
+    aside.delicious { @include span-columns(4      , $horizontal-aside-columns); }
+    aside.github    { @include span-columns(4 omega, $horizontal-aside-columns); }
+  }
+
+  @include at-breakpoint($aside-right-layout) {
+
+    @include span-columns(4 omega, $aside-right-columns); 
+  }
+}

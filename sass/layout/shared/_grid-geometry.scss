@@ -1,6 +1,6 @@
 $column-width             : 6em;
 $gutter-width             : 1em;
-$grid-padding             : $gutter-width;
+$grid-padding             : 0;
 
 $container-style          : fluid;
 $show-grid-backgrounds    : true;
@@ -11,8 +11,15 @@ $horizontal-aside-layout  : 30em $horizontal-aside-columns 60em;
 $aside-right-columns      : 12;
 $aside-right-layout       : 60em $aside-right-columns;
 
-#grid { @include container($vertical-layout-columns, 
-                           $horizontal-aside-layout, 
-                           $aside-right-layout); }
+body > div { @include container($vertical-layout-columns, 
+                                $horizontal-aside-layout, 
+                                $aside-right-layout); }
 
-#main-content { @include clearfix; }
+body > div > header, .main-content, footer.credits { 
+  @include clearfix; 
+  margin : 0;
+}
+.primary-navigation { 
+  @include pie-clearfix; 
+  margin : 0;
+}

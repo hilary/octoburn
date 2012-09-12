@@ -4,14 +4,18 @@ aside_style : default
 body_id     : home
 updated     : 2012-09-08 22:55
 ---
-<section>
+<section class="content">
   {% assign post = site.posts.first %}
-  {% include articles/excerpt-entry.html %}
-  <footer>
+  {% include articles/excerpt_entry.html %}
+  <div>
     Pardon my mess, but I'm still moving in. Unpacking the last
     of <a href="http://design.hholz.com/">the boxes</a> is lower
     priority than getting on with life here in my new digs, however,
     you are welcome to rummage around in them yourself.
-  </footer>
+  </div>
 </section>
-{% include helpers/aside.html %}
+<section class="default-aside">
+  {% include asides/recent_posts.html %}
+  {% include asides/delicious.html    %}
+  {% include asides/github.html       %}
+</section>

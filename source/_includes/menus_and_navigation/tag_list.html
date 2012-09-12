@@ -1,6 +1,6 @@
-{% capture tag_list %}{% if post.tags %}{% post.tags %}{% elsif page.tags %}{% page.tags %}{% endif %}{% endcapture %}
+{% capture tag_list %}{% if post.tags %}{{ post.tags }}{% elsif page.tags %}{{ page.tags }}{% endif %}{% endcapture %}
 
-{% if tag_list %}
+{% if tag_list.length %}
   <nav class="tag-list">
     posted in
     <ul>

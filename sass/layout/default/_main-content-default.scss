@@ -1,21 +1,14 @@
 @include at-breakpoint($horizontal-aside-layout) {
 
-  #main-content > section, #main-content > article { 
-    @include clearfix;
-    @include span-columns(8 omega, $horizontal-aside-columns); 
-  }
+  .content { @include clearfix; }
 }
 
 @include at-breakpoint($aside-right-layout) {
 
-  #main-content > section, #main-content > article { 
+  .content { 
 
     $content-columns : 8; 
     @include span-columns($content-columns, $aside-right-columns);
 
-    > article, > section, > footer { 
-      @include span-columns(8 omega, $content-columns); 
-    }
-
-  } // #main-content > section
+  } // .content
 }

@@ -1,7 +1,7 @@
 
 //$type-border : lighten($text-color, 11);
 
-#main-content {
+.main-content {
   color         : $text-color;
   background    : $content-bg $noise-bg;
 
@@ -16,7 +16,7 @@
   }
 
   @include at-breakpoint($aside-right-layout) {
-    > article, section { 
+    .content { 
       border-right : 1px solid $aside-border; } // grid border, not text border
   }
 }

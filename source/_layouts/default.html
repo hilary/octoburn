@@ -1,29 +1,29 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head/head.html %}
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
-  <div id="grid">
+  <div id="#grid">
     <header role="banner">
       <hgroup>
         <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
         <h2>{{ site.subtitle }}</h2>
       </hgroup>
-      {% include menus-and-navigation/follow-menu.html %}
+      {% include menus_and_navigation/follow_menu.html %}
     </header>
-    <div id="primary-navigation">
-      {% include sections/simple-search.html %}
-      {% include menus-and-navigation/primary-navigation.html %}
+    <div class="primary-navigation">
+      {% include sections/simple_search.html %}
+      {% include menus_and_navigation/primary_navigation.html %}
     </div>
-    <article id="main-content">
+    <article class="main-content">
       {{ content | expand_urls: root_url }}
     </article>
-    <div id="site-credits"></div>
+    <footer class="credits" id="site-credits" ></footer>
     {% include head/disqus.html %}
   </div>
-  <footer id="contentinfo" role="contentinfo" class="site-credits">
+  <footer class="credits" id="contentinfo" role="contentinfo" >
     copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
-    <span class="credit">
-      powered by <a href="{{ root_url }}/{{ site.generator_uri }}">{{site.generator_name}}</a>, 
-      a descendant of <a href="http://octopress.org">Octopress</a>
+    <span class="generator">
+      powered by 
+      <a href="{{ root_url }}/{{ site.generator_uri }}">{{site.generator_name}}</a>
     </span>
   </footer>
 </body>

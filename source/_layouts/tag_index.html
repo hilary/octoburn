@@ -3,17 +3,17 @@ layout      : default
 aside_style : index
 body_id     : tag-index
 ---
-<article role="article">
+<article class="content" role="article">
   <header role="header">
     <h1 class="page-title">{{ page.title }}</h1>
   </header>
   <footer class="pubdate">{% include footers/dated.html %}</footer>
-  {% include menus-and-navigation/sharing-menu.html %}
+  {% include menus_and_navigation/sharing_menu.html %}
   <ul>
     {% for post in site.tags[page.tag] %}
       <li>
-        {% include helpers/index-year.html     %}
-        {% include articles/excerpt-entry.html %}
+        {% include helpers/index_year.html     %}
+        {% include articles/excerpt_entry.html %}
       </li>
     {% endfor %}
   </ul>

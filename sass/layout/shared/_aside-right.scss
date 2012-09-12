@@ -1,4 +1,0 @@
-@include at-breakpoint($aside-right-layout) {
-
-  #main-content > aside { @include span-columns(4 omega, $aside-right-columns); };
-}
