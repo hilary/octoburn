@@ -1,0 +1,39 @@
+.main-content { 
+
+  margin  : 0;
+  padding : { 
+    left  : $vertical-layout-padding;
+    right : $vertical-layout-padding;
+  }
+
+  .content { 
+
+    margin  : 0;
+
+    @include at-breakpoint($horizontal-aside-layout) { 
+
+      @include span-columns($horizontal-aside-columns omega, 
+                            $horizontal-aside-columns);
+
+      padding : { 
+        left  : $horizontal-aside-padding;
+        right : $horizontal-aside-padding;
+      }
+
+    } // $horizontal-aside-layout
+
+    @include at-breakpoint($aside-right-layout) {
+
+      $content-columns : 8; 
+      @include span-columns($content-columns, $aside-right-columns);
+
+      padding : { 
+        left  : $aside-right-padding;
+        right : $aside-right-padding;
+      }
+
+    } // $aside-right-layout
+
+  } // .content
+
+} // .main-content

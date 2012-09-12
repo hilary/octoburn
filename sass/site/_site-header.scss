@@ -1,10 +1,10 @@
-header[role=banner] {
+body > div > header {
 
   background : $header-bg;
   color      : $subtitle-color;
 
   h1 { 
-    @include padding-leader($base-lines);
+    @include padding-leader(.5*$base-lines);
     display : inline-block;
     margin  : 0;
     a, a:visited, a:hover { color : $title_color; }

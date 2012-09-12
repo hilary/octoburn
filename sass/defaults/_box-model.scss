@@ -6,7 +6,6 @@ figure,
 footer, 
 header, 
 hgroup, 
-nav,
 section, 
 summary { // missing definitions: IE 7/8/9
   display : block;
@@ -32,7 +31,8 @@ audio:not([controls]) {
 .flex-content { max-width: 100%; height: auto; }
 
 body,  // remove default margins and padding
-menu { // so many of my menus are h lists
+menu,
+nav { // so many of my nav and menus are h lists
   margin  : 0;
   padding : 0;
 }

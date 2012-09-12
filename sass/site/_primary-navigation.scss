@@ -1,0 +1,27 @@
+.primary-navigation {
+
+  @extend .main;
+  @include adjust-font-size-to(.95*$base-font-size);
+  position : relative;
+
+  background-color : $nav-bg;
+  @include background($nav-bg-front, $nav-bg-back);
+
+  border-top-color    : lighten($nav-bg, 15);
+  border-bottom-color : darken($nav-bg, 25);
+  @include h-borders(1px, .35*$base-lines, 1em, solid);
+
+} // #primary-navigation
+
+.primary-navlist a {
+
+  text-decoration : none;
+  font-weight     : bold;
+  text-shadow     : lighten($nav-bg, 12) 0 1px;
+  @include link-colors($nav-color,
+                       $nav-color-hover,
+                       $nav-color-hover,
+                       $nav-color,
+                       $nav-color-hover);
+} 
+

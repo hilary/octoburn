@@ -1,0 +1,42 @@
+.primary-navigation { 
+
+  @include clearfix; 
+  margin : 0;
+  padding : { 
+    left  : $vertical-layout-padding;
+    right : $vertical-layout-padding;
+  }
+
+  @include at-breakpoint($horizontal-aside-layout) {
+
+    .primary-navlist { @include span-columns(5      , $horizontal-aside-columns); }
+    .simple-search   { @include span-columns(3 omega, $horizontal-aside-columns); }
+
+    padding : { 
+      left  : $horizontal-aside-padding;
+      right : $horizontal-aside-padding;
+    }
+
+  } // $horizontal-aside-layout
+
+  @include at-breakpoint($aside-right-layout) {
+
+    .primary-navlist { @include span-columns(8      , $horizontal-aside-columns); }
+    .simple-search   { @include span-columns(4 omega, $horizontal-aside-columns); }
+
+    padding : { 
+      left  : $aside-right-padding;
+      right : $aside-right-padding;
+    }
+
+  } // $aside-right-layout
+
+}
+
+.primary-navlist ul { 
+
+  @include horizontal-list;
+
+  a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+}

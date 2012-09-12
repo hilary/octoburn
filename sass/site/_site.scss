@@ -1,3 +1,14 @@
-@import 'base/base';
+@import 'base';
+@import 'color-theme';
+
+@import 'site-header';
+
+@import 'primary-navigation';
+@import 'simple-search';
+
+@import 'main-content';
+@import 'aside';
+@import 'site-credits';
+
 @import 'article/article';
 @import 'syntax/syntax';

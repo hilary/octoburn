@@ -1,10 +1,8 @@
-// I may move follow menu, easiest to give it a class
-
-menu.follow-menu { 
+// follow-menu has class as it may get moved
+.follow-menu { 
 
   ul {
     @include horizontal-list;
-    @include float-right;
     @include nowrap;
 
     a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }

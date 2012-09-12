@@ -1,0 +1,35 @@
+body > div > header {
+
+  @include clearfix; 
+  margin : 0;
+  padding : { 
+    left  : $vertical-layout-padding;
+    right : $vertical-layout-padding;
+  }
+
+  @include at-breakpoint($horizontal-aside-layout) {
+
+    > hgroup     { @include span-columns(6      , $horizontal-aside-columns); }
+    .follow-menu { @include span-columns(2 omega, $horizontal-aside-columns); }
+
+    padding : { 
+      left  : $horizontal-aside-padding;
+      right : $horizontal-aside-padding;
+    }
+
+  } // $horizontal-aside-layout
+
+
+  @include at-breakpoint($aside-right-layout) {
+
+    > hgroup     { @include span-columns(8      , $aside-right-columns); }
+    .follow-menu { @include span-columns(4 omega, $aside-right-columns); }
+
+    padding : { 
+      left  : $aside-right-padding;
+      right : $aside-right-padding;
+    }
+
+  } // $aside-right-layout
+
+}
