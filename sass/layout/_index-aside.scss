@@ -1,32 +1,30 @@
 .index-aside { 
 
   margin  : 0;
-  padding : { 
-    left  : $vertical-layout-padding;
-    right : $vertical-layout-padding;
-  }
+  aside { margin : 0; }
+
+  @include pad(1, 1, $vertical-layout-columns);
 
   @include at-breakpoint($horizontal-aside-layout) {
 
-    aside.delicious { @include span-columns(4      , $horizontal-aside-columns); }
-    aside.github    { @include span-columns(4 omega, $horizontal-aside-columns); }
-
-    padding : { 
-      left  : $horizontal-aside-padding;
-      right : $horizontal-aside-padding;
-    }
-
+    aside {
+      .delicious { 
+        @include pad(1, 1, $horizontal-aside-columns); 
+        @include span-columns(10, $horizontal-aside-columns); 
+      }
+      .github    { 
+        @include pad(1, 1, $horizontal-aside-columns); 
+        @include span-columns(10 omega, $horizontal-aside-columns); 
+      }
+    } // aside
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
-    @include span-columns(4 omega, $aside-right-columns); 
-
-    padding : { 
-      left  : $inside-aside-padding;
-      right : $aside-right-padding;
+    aside {
+      @include pad(1, 1, $aside-right-columns); 
+      @include span-columns(8 omega, $aside-right-columns); 
     }
-
   } // $aside-right-layout
 
 }

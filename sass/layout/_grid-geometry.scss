@@ -1,21 +1,16 @@
-$column-width             : 6em;
-$gutter-width             : 1em;
-$grid-padding             : 0;
+$column-width             : 1em;
+$gutter-width             : .5em;
+$grid-padding             : $gutter-width;
 
 $container-style          : fluid;
 $show-grid-backgrounds    : true;
 
-$vertical-layout-columns  : 4; // default, mobile first
-$horizontal-aside-columns : 8;
+$vertical-layout-columns  : 16; // default, mobile first
+$horizontal-aside-columns : 24;
 $horizontal-aside-layout  : 40em $horizontal-aside-columns 60em;
-$aside-right-columns      : 12;
+$aside-right-columns      : 30;
 $aside-right-layout       : 60em $aside-right-columns;
 
 body > div { @include container($vertical-layout-columns, 
                                 $horizontal-aside-layout, 
                                 $aside-right-layout); }
-
-$vertical-layout-padding  : 5px;
-$horizontal-aside-padding : 15px;
-$aside-right-padding      : 25px;
-$inside-aside-padding     : 10px; // aside-right-layout only

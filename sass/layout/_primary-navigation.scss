@@ -2,41 +2,44 @@
 
   @include clearfix; 
   margin : 0;
-  padding : { 
-    left  : $vertical-layout-padding;
-    right : $vertical-layout-padding;
-  }
+  @include pad(2, 2, $vertical-layout-columns);
 
   @include at-breakpoint($horizontal-aside-layout) {
 
-    .primary-navlist { @include span-columns(5      , $horizontal-aside-columns); }
-    .simple-search   { @include span-columns(3 omega, $horizontal-aside-columns); }
-
-    padding : { 
-      left  : $horizontal-aside-padding;
-      right : $horizontal-aside-padding;
+    .primary-navlist { 
+      @include prefix(3, $horizontal-aside-columns); 
+      @include span-columns(10, $horizontal-aside-columns); 
+    }
+    .simple-search { 
+      @include span-columns(7 omega, $horizontal-aside-columns);
+      @include pad(2, 2, $horizontal-aside-columns);
     }
 
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
-    .primary-navlist { @include span-columns(8      , $horizontal-aside-columns); }
-    .simple-search   { @include span-columns(4 omega, $horizontal-aside-columns); }
-
-    padding : { 
-      left  : $aside-right-padding;
-      right : $aside-right-padding;
+    .primary-navlist { 
+      @include prefix(3, $aside-right-columns); 
+      @include span-columns(17, $aside-right-columns); 
+    }
+    .simple-search { 
+      @include span-columns(6 omega, $aside-right-columns); 
+      @include pad(2, 2, $aside-right-columns); 
     }
 
   } // $aside-right-layout
 
 }
 
-.primary-navlist ul { 
+.primary-navlist {
+
+  ul { 
 
   @include horizontal-list;
 
   a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+  }
 
 }

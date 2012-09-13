@@ -1,3 +1,8 @@
+$nav-bg          : desaturate(lighten($header-bg, 30), 5);
+$nav-color       : darken($nav-bg, 55);
+$nav-color-hover : $title-color;
+$nav-placeholder : desaturate(darken($nav-bg, 10), 15);
+
 .primary-navigation {
 
   @extend .main;
@@ -5,7 +10,9 @@
   position : relative;
 
   background-color : $nav-bg;
-  @include background($nav-bg-front, $nav-bg-back);
+  @include background-image(linear-gradient(lighten($nav-bg, 8),
+                                            $nav-bg,
+                                            darken($nav-bg, 11)));
 
   border-top-color    : lighten($nav-bg, 15);
   border-bottom-color : darken($nav-bg, 25);
@@ -13,15 +20,20 @@
 
 } // #primary-navigation
 
-.primary-navlist a {
+.primary-navlist {
 
-  text-decoration : none;
-  font-weight     : bold;
-  text-shadow     : lighten($nav-bg, 12) 0 1px;
-  @include link-colors($nav-color,
-                       $nav-color-hover,
-                       $nav-color-hover,
-                       $nav-color,
-                       $nav-color-hover);
-} 
+  li {
+    margin : 0;
 
+    a {
+      text-decoration : none;
+      font-weight     : bold;
+      text-shadow     : lighten($nav-bg, 12) 0 1px;
+      @include link-colors($nav-color,
+                           $nav-color-hover,
+                           $nav-color-hover,
+                           $nav-color,
+                           $nav-color-hover);
+    } 
+  }
+}

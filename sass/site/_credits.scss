@@ -1,0 +1,30 @@
+$credits-color            : $title-color;
+$credits-link-color       : $title-color;
+$credits-link-color-hover : darken($title-color, 30);
+
+$credits-bg            : desaturate(lighten($header-bg, 18), 10);
+
+$credits-border-top    : lighten($credits-bg, 15);
+$credits-border-bottom : darken($credits-bg, 15);
+
+footer.credits {
+
+  color            : $credits-color;
+  background-color : $credits-bg;
+  @include background-image(linear-gradient(darken($credits-bg, 11),
+                                            $credits-bg,
+                                            lighten($credits-bg, 8)));
+
+  text-shadow      : lighten($credits-bg, 5) 0 1px;
+
+  border-top       : 1px solid $credits-border-top;
+  border-bottom    : 1px solid $credits-border-bottom;
+
+  a {
+    @include link-colors($credits-link-color,        // normal
+                         $credits-link-color-hover,  // hover
+                         $credits-link-color-hover,  // active
+                         $credits-link-color,        // visited
+                         $credits-link-color-hover); // focus
+  }
+}

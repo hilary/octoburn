@@ -1,0 +1,24 @@
+$header-bg          : #1d2f2b;
+$title-color        : #f2f2f2;
+$subtitle-color     : lighten($header-bg, 65);
+
+body > div > header {
+
+  background : $header-bg;
+  color      : $subtitle-color;
+
+  h1 { 
+    @include padding-leader(.2*$base-lines);
+    display : inline-block;
+    margin  : 0;
+    a, a:visited, a:hover { color : $title_color; }
+  }
+
+  h2 { 
+    margin      : 0; 
+    font-weight : normal;
+    @include adjust-font-size-to(1.2*$base-font-size);
+    @include padding-trailer(.2*$base-lines);
+  }
+
+}

@@ -1,33 +1,34 @@
 .default-aside {
 
   margin  : 0;
-  padding : { 
-    left  : $vertical-layout-padding;
-    right : $vertical-layout-padding;
-  }
+  aside { margin : 0; }
+
+  @include pad(1, 1, $vertical-layout-columns);
 
   @include at-breakpoint($horizontal-aside-layout) {
 
-    aside.recent-posts { @include span-columns(3      , $horizontal-aside-columns); }
-    aside.delicious    { @include span-columns(2      , $horizontal-aside-columns); }
-    aside.github       { @include span-columns(3 omega, $horizontal-aside-columns); }
-
-    padding : { 
-      left  : $horizontal-aside-padding;
-      right : $horizontal-aside-padding;
-    }
-
+    aside {
+      .recent-posts { 
+        @include pad(1, 1, $horizontal-aside-columns); 
+        @include span-columns(7, $horizontal-aside-columns); 
+      }
+      .delicious    { 
+        @include suffix(1, $horizontal-aside-columns); 
+        @include span-columns(6, $horizontal-aside-columns); 
+      }
+      .github       { 
+        @include suffix(1, $horizontal-aside-columns); 
+        @include span-columns(7 omega, $horizontal-aside-columns); 
+      }
+    } // aside
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
-    @include span-columns(4 omega, $aside-right-columns); 
-
-    padding : { 
-      left  : $inside-aside-padding;
-      right : $aside-right-padding;
+    aside {
+      @include pad(1, 1, $aside-right-columns); 
+      @include span-columns(8 omega, $aside-right-columns); 
     }
-
   } // $aside-right-layout
 
 }

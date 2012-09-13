@@ -17,4 +17,5 @@ generated_images_dir       = "source/images"
 
 # sass debugging comments
 line_comments              = true
-output_style               = :compressed
+# output_style               = :compressed
+output_style               = :expanded

@@ -1,39 +1,22 @@
-.main-content { 
-
+.main-content { // a container that creates structure
   margin  : 0;
-  padding : { 
-    left  : $vertical-layout-padding;
-    right : $vertical-layout-padding;
-  }
+  padding : 0;
+}
 
-  .content { 
+.content { 
+  margin  : 0;
+  @include pad(1, 1, $vertical-layout-columns);
 
-    margin  : 0;
+  @include at-breakpoint($horizontal-aside-layout) { 
+    @include pad(1, 1, $horizontal-aside-columns); 
+    @include span-columns(22 omega, $horizontal-aside-columns); 
+  } // $horizontal-aside-layout
 
-    @include at-breakpoint($horizontal-aside-layout) { 
+  @include at-breakpoint($aside-right-layout) {
 
-      @include span-columns($horizontal-aside-columns omega, 
-                            $horizontal-aside-columns);
+    @include pad(2, 1, $aside-right-columns); 
+    @include span-columns(17, $aside-right-columns);
 
-      padding : { 
-        left  : $horizontal-aside-padding;
-        right : $horizontal-aside-padding;
-      }
+  } // $aside-right-layout
 
-    } // $horizontal-aside-layout
-
-    @include at-breakpoint($aside-right-layout) {
-
-      $content-columns : 8; 
-      @include span-columns($content-columns, $aside-right-columns);
-
-      padding : { 
-        left  : $aside-right-padding;
-        right : $aside-right-padding;
-      }
-
-    } // $aside-right-layout
-
-  } // .content
-
-} // .main-content
+} // .content

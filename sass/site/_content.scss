@@ -1,9 +1,15 @@
+$text-color         : #222;
+$text-color-light   : lighten($text-color, 8);
+$content-bg         : #f8f8f8;
+$type-border        : lighten($text-color, 11);
 
-//$type-border : lighten($text-color, 11);
+$link-color         : #219cba;
+$link-color-visited : #527e89;
+$link-color-hover   : #55d2f1;
 
-.main-content {
+.content {
   color         : $text-color;
-  background    : $content-bg $noise-bg;
+  background    : $content-bg;
 
   a {
     color : $link-color;
@@ -15,9 +21,5 @@
                          $link-color-hover);     // focus
   }
 
-  @include at-breakpoint($aside-right-layout) {
-    .content { 
-      border-right : 1px solid $aside-border; } // grid border, not text border
-  }
 }
 
