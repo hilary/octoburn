@@ -16,7 +16,7 @@ $type-border      : lighten($text-color, 11);
   }
 }
 
-@import 'layout';
+@import 'content-layout';
 
 @import 'article-excerpt';
 @import 'article-header';

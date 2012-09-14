@@ -16,15 +16,9 @@
     <article class="main-content">
       {{ content | expand_urls: root_url }}
     </article>
-    <footer class="credits" id="site-credits" ></footer>
+    <footer id="site-credits" ></footer>
     {% include head/disqus.html %}
   </div>
-  <footer class="credits" id="contentinfo" role="contentinfo" >
-    copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
-    <span class="generator">
-      powered by 
-      <a href="{{ root_url }}/{{ site.generator_uri }}">{{site.generator_name}}</a>
-    </span>
-  </footer>
+  {% include footers/credits.html %}
 </body>
 </html>

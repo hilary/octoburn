@@ -15,26 +15,15 @@ $aside-lines     : lines-for-font-size($aside-font-size);
 
   background-color : $aside-bg;
   border-color     : $aside-border;
-  @include leading-border(1px, $aside-lines, 1em, solid);
 
   aside { 
 
-    @include adjust-font-size-to($aside-font-size);
     h1 { 
       @include adjust-font-size-to(1.5*$aside-font-size);
       margin  : 0;
       padding : 0;
     }
 
-    a {
-      @include force-wrap;
-      color : $aside-link-color;
-      @include link-colors($aside-link-color, 
-                           $aside-link-color-hover, 
-                           $aside-link-color-hover, 
-                           $aside-link-color,
-                           $aside-link-color-hover);
-    } // a
 
     ul { 
       list-style : none;
@@ -44,6 +33,16 @@ $aside-lines     : lines-for-font-size($aside-font-size);
       li { 
         margin  : 0;
         padding : 0;
+        a {
+          @include adjust-font-size-to($aside-font-size);
+          @include force-wrap;
+          color : $aside-link-color;
+          @include link-colors($aside-link-color, 
+                               $aside-link-color-hover, 
+                               $aside-link-color-hover, 
+                               $aside-link-color,
+                               $aside-link-color-hover);
+        } // a
       }
     }
 

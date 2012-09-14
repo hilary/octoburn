@@ -7,26 +7,37 @@
   margin   : 0;
   aside { margin : 0; }
 
-  @include span-columns(($vertical-layout-columns - 2) omega, 
-                        $vertical-layout-columns);
+  @include at-breakpoint($vertical-layout-columns) {
+
+    @include clearfix; 
+    padding    : $vertical-layout-gutter; 
+    border-top : 1px solid $aside-border;
+  }
 
   @include at-breakpoint($horizontal-aside-layout) {
 
+    padding : $horizontal-aside-gutter $horizontal-aside-single;
+
     .recent-posts { 
-        @include span-columns(7, $horizontal-aside-columns); 
+      @include span-columns(7, $horizontal-aside-columns); 
+      padding-right : $horizontal-aside-gutter;
+      margin-right  : 0;
     }
     .delicious    { 
-        @include span-columns(6, $horizontal-aside-columns); 
+      @include span-columns(8, $horizontal-aside-columns); 
+      padding-right : $horizontal-aside-gutter;
+      margin-right  : 0;
     }
     .github       { 
-        @include span-columns(7 omega, $horizontal-aside-columns); 
+      @include span-columns(8 omega, $horizontal-aside-columns); 
     }
+
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
-    padding-left: gutter($aside-right-columns); 
-    padding-right: columns(1, $aside-right-columns); 
+    padding-left  : $aside-right-gutter;
+    padding-right : $aside-right-single;
     @include span-columns(8 omega, $aside-right-columns); 
 
     border-left : 1px solid $aside-border;  

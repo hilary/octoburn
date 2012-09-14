@@ -6,20 +6,29 @@
 .content { 
 
   margin  : 0;
-  @include span-columns($vertical-layout-columns - 2 omega, 
-                        $vertical-layout-columns);
+
+  @include at-breakpoint($vertical-layout-columns) {
+
+    @include clearfix; 
+    padding : $vertical-layout-gutter; 
+  }
 
   @include at-breakpoint($horizontal-aside-layout) { 
-    @include span-columns(22 omega, $horizontal-aside-columns); 
+
+    padding : $horizontal-aside-single;
+    @include clearfix; 
+
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
     padding-left  : columns(1, $aside-right-columns); 
     padding-right : gutter($aside-right-columns); 
+    height : 100%;
 
-    @include span-columns(20, $aside-right-columns);
-    margin        : 0;
+    @include span-columns(($aside-right-columns * 2)/3, 
+                          $aside-right-columns);
+    margin-right : 0; // correction for susy bug
 
   } // $aside-right-layout
 

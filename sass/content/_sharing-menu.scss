@@ -13,16 +13,8 @@
 }// .sharing-menu
 
 .twitter-share {
-  @extend .simple-social-button;
-  @include social-button-bg('twitter');
 }
 .googleplus-share {
-  @extend .simple-social-button;
-  @include social-button-bg('googleplus', #db583b);
-  &:before { top: 5px; }
 }
 .facebook-share {
-  @extend .simple-social-button;
-  @include social-button-bg('facebook', #4e5a9b);
-  &:before { top: 3px; }
 }

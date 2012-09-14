@@ -3,7 +3,7 @@ $nav-color       : darken($nav-bg, 55);
 $nav-color-hover : $title-color;
 $nav-placeholder : desaturate(darken($nav-bg, 10), 15);
 
-@import 'layout';
+@import 'nav-layout';
 
 @import 'primary-navigation';
 @import 'primary-navlist';

@@ -5,26 +5,31 @@
   ul {
     @include horizontal-list;
     @include nowrap;
-
-    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
-
+    @include float-right;
   } // ul
 }// menu
 
-.delicious-follow {
-  @extend .simple-social-button;
-  @include social-button-bg('delicious');
+$hover-color : lighten($header-bg, 5);
+
+.follow-button {
+
+  img {
+    background-color : $content-bg;
+    @include border-radius(.3em);
+    border           : 1px solid $subtitle-color;
+    vertical-align : middle;
+
+    a { 
+      text-decoration : none; 
+      margin : 0 .2em;
+    }
+  }
+
 }
-.github-follow {
-  @extend .simple-social-button;
-  @include social-button-bg('github');
-}
-.googleplus-follow {
-  @extend .simple-social-button;
-  @include social-button-bg('googleplus', #db583b);
-  &:before { top: 5px; }
-}
-.rss-follow {
-  @extend .simple-social-button;
-  @include social-button-bg('rss');
+
+li.delicious-follow,
+li.github-follow,
+li.googleplus-follow,
+li.rss-follow { 
+  @extend .follow-button; 
 }

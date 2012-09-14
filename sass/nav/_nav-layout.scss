@@ -1,15 +1,18 @@
 .primary-navigation { 
 
-  padding-left  : columns(1, $vertical-layout-columns);
-  padding-right : columns(1, $vertical-layout-columns);
-
-  @include clearfix; 
   margin : 0;
+  @include clearfix; 
+
+  @include at-breakpoint($vertical-layout-columns) {
+
+    padding-left  : gutter($vertical-layout-columns); 
+    padding-right : gutter($vertical-layout-columns); 
+  }
 
   @include at-breakpoint($horizontal-aside-layout) {
 
-    padding-left  : columns(1, $horizontal-aside-columns); 
-    padding-right : columns(1, $horizontal-aside-columns); 
+    padding-left  : $horizontal-aside-single;
+    padding-right : $horizontal-aside-single;
 
     .primary-navlist { 
       @include span-columns(10, $horizontal-aside-columns); 
@@ -22,14 +25,14 @@
 
   @include at-breakpoint($aside-right-layout) {
 
-    padding-left  : columns(1, $aside-right-columns); 
+    padding-left  : $aside-right-single;
 
     .primary-navlist { 
       @include span-columns(12, $aside-right-columns); 
     }
     .simple-search { 
       @include span-columns(10 omega, $aside-right-columns); 
-      padding-right  : columns(1, $aside-right-columns); 
+      padding-right  : $aside-right-single;
     }
 
   } // $aside-right-layout

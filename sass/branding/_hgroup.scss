@@ -2,13 +2,15 @@ hgroup {
 
   @include rhythm(0, 0.2, 0.2, 0);
 
-  h1, h2 { margin : 0; padding : 0; }
+  h1, h2 { 
+    margin : 0; padding : 0; 
+    font-weight : normal;
+  }
 
   h1 { a, a:visited, a:hover { color : $title_color; } }
 
   h2 { 
     color       : $subtitle-color;
-    font-weight : normal;
     @include adjust-font-size-to(1.2*$base-font-size);
   }
 

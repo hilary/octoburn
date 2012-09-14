@@ -8,8 +8,10 @@ footer.credits {
 
   text-shadow      : lighten($credits-bg, 5) 0 1px;
 
-  border-top       : 1px solid $credits-border-top;
-  border-bottom    : 1px solid $credits-border-bottom;
+  border : {
+    top    : 1px solid $credits-border-top;
+    bottom : 1px solid $credits-border-bottom;
+  }
 
   a {
     @include link-colors($credits-link-color,        // normal
@@ -18,4 +20,5 @@ footer.credits {
                          $credits-link-color,        // visited
                          $credits-link-color-hover); // focus
   }
+
 }
