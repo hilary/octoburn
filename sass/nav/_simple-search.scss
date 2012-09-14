@@ -5,14 +5,14 @@
   text-align : left;
 
   fieldset { 
-    width   : 70%;
+    width   : auto;
     border  : none;
     margin  : 0;
     padding : 0;
 
     .search {
 
-      width            : 95%;
+      width            : auto;
       color            : $nav-placeholder;
       background-color : lighten($nav-bg, 15);
       border-color     : darken($nav-bg, 10);
@@ -23,7 +23,7 @@
       @include leading-border(1px, .25*$base-lines, 1em, solid);
       @include apply-side-rhythm-border(left, 1px, .5*$base-lines, 1em, none);
       @include apply-side-rhythm-border(right, 1px, .5*$base-lines, 1em, none);
-      @include trailing-border(1px, .15*$base-lines, 1em, solid);
+      @include trailing-border(1px, .2*$base-lines, 1em, solid);
 
       &:focus {
 
@@ -44,4 +44,3 @@
     text-indent: 1.3em;
   }
 }
-

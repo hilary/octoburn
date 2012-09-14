@@ -1,7 +1,7 @@
 # -*- mode: markdown -*-
 ---
 layout      : post
-title       : "Repository Naming for Octopress on Github"
+title       : "repository naming for Octopress on Github"
 date        : 2012-08-30 10:40
 comments    : true
 description : Detailed walkthrough of repository naming when deploying Octopress on Github

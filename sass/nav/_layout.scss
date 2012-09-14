@@ -1,31 +1,35 @@
 .primary-navigation { 
 
+  padding-left  : columns(1, $vertical-layout-columns);
+  padding-right : columns(1, $vertical-layout-columns);
+
   @include clearfix; 
   margin : 0;
-  @include pad(2, 2, $vertical-layout-columns);
 
   @include at-breakpoint($horizontal-aside-layout) {
 
+    padding-left  : columns(1, $horizontal-aside-columns); 
+    padding-right : columns(1, $horizontal-aside-columns); 
+
     .primary-navlist { 
-      @include prefix(3, $horizontal-aside-columns); 
       @include span-columns(10, $horizontal-aside-columns); 
     }
     .simple-search { 
       @include span-columns(7 omega, $horizontal-aside-columns);
-      @include pad(2, 2, $horizontal-aside-columns);
     }
 
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
+    padding-left  : columns(1, $aside-right-columns); 
+
     .primary-navlist { 
-      @include prefix(3, $aside-right-columns); 
-      @include span-columns(17, $aside-right-columns); 
+      @include span-columns(12, $aside-right-columns); 
     }
     .simple-search { 
-      @include span-columns(6 omega, $aside-right-columns); 
-      @include pad(2, 2, $aside-right-columns); 
+      @include span-columns(10 omega, $aside-right-columns); 
+      padding-right  : columns(1, $aside-right-columns); 
     }
 
   } // $aside-right-layout

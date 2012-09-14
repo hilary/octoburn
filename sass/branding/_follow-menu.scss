@@ -1,0 +1,30 @@
+// follow-menu self-contained to make it easy to move around
+
+.follow-menu { 
+
+  ul {
+    @include horizontal-list;
+    @include nowrap;
+
+    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+  } // ul
+}// menu
+
+.delicious-follow {
+  @extend .simple-social-button;
+  @include social-button-bg('delicious');
+}
+.github-follow {
+  @extend .simple-social-button;
+  @include social-button-bg('github');
+}
+.googleplus-follow {
+  @extend .simple-social-button;
+  @include social-button-bg('googleplus', #db583b);
+  &:before { top: 5px; }
+}
+.rss-follow {
+  @extend .simple-social-button;
+  @include social-button-bg('rss');
+}

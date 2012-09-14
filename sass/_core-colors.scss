@@ -1,0 +1,13 @@
+$text-color         : #222;
+$content-bg         : #f1f1f1;
+
+$link-color         : #219cba;
+$link-color-visited : #527e89;
+$link-color-hover   : #55d2f1;
+
+$aside-bg           : #d1dcd9;
+$aside-color        : change-color(mix($text-color, $aside-bg, 80), 
+                                   $hue: hue($aside-bg), 
+                                   $saturation: saturation($aside-bg)/2);
+
+html { background-color : $content-bg; }

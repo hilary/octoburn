@@ -1,7 +1,7 @@
 # -*- mode: markdown -*-
 ---
 layout      : post
-title       : "On Delicious, Finally"
+title       : "on delicious, finally"
 date        : 2012-08-28 14:28
 comments    : true
 description : Why the author joined Delicious.

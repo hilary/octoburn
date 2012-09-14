@@ -2,5 +2,16 @@
 @import 'susy';
 
 @import 'defaults/defaults';
-@import 'layout/default';
-@import 'site/site';
+@import 'resources/resources';
+
+@import 'grid-geometry';
+@import 'core-colors';
+
+@import 'branding/branding';
+@import 'nav/nav';
+@import 'content/content';
+
+@import 'aside/default-aside';
+
+@import 'credits/credits';
+

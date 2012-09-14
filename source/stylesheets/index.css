@@ -335,7 +335,7 @@ pre {
 }
 
 /* line 5, /Users/hholz/coding/ruby/octopress/sass/defaults/_fonts.scss */
-.sans, .main, body, .primary-navigation, .simple-social-button, .googleplus-share, .googleplus-follow, .facebook-share, .twitter-share, .github-follow, .delicious-follow, .rss-follow, .aside, body aside, .default-aside, .index-aside {
+.sans, .main, body, .primary-navigation, .aside, body aside, .aside-base, .simple-social-button, .delicious-follow, .github-follow, .googleplus-follow, .rss-follow, .twitter-share, .googleplus-share, .facebook-share {
   font-family: Trebuchet MS, Arial, sans-serif;
 }
 
@@ -355,11 +355,11 @@ body header {
 }
 
 /* line 33, /Users/hholz/coding/ruby/octopress/sass/defaults/_fonts.scss */
-.code a, body pre a, body pre header a, body code a, body tt a, body samp a, .aside a, body aside a, .default-aside a, .index-aside a, .header a, body header a, body header h1 a, body header h2 a, body header h3 a, body header h4 a, body header h5 a, body header h6 a, body code header a, body tt header a, body samp header a, body aside header a {
+.code a, body pre a, body pre header a, body code a, body tt a, body samp a, .aside a, body aside a, .aside-base a, .header a, body header a, body header h1 a, body header h2 a, body header h3 a, body header h4 a, body header h5 a, body header h6 a, body code header a, body tt header a, body samp header a, body aside header a {
   text-decoration: none;
 }
 /* line 4, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
-.code a:hover, body pre a:hover, body pre header a:hover, body code a:hover, body tt a:hover, body samp a:hover, .aside a:hover, body aside a:hover, .default-aside a:hover, .index-aside a:hover, .header a:hover, body header a:hover, body header h1 a:hover, body header h2 a:hover, body header h3 a:hover, body header h4 a:hover, body header h5 a:hover, body header h6 a:hover, body code header a:hover, body tt header a:hover, body samp header a:hover, body aside header a:hover {
+.code a:hover, body pre a:hover, body pre header a:hover, body code a:hover, body tt a:hover, body samp a:hover, .aside a:hover, body aside a:hover, .aside-base a:hover, .header a:hover, body header a:hover, body header h1 a:hover, body header h2 a:hover, body header h3 a:hover, body header h4 a:hover, body header h5 a:hover, body header h6 a:hover, body code header a:hover, body tt header a:hover, body samp header a:hover, body aside header a:hover {
   text-decoration: underline;
 }
 
@@ -489,14 +489,147 @@ nav ol {
   list-style-image: none;
 }
 
-@media (min-width: 21.4375em) {
-  /* line 14, /Users/hholz/coding/ruby/octopress/sass/layout/_grid-geometry.scss */
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/resources/_fonts.scss */
+.sans, .main, body, .primary-navigation, .aside, body aside, .aside-base, .simple-social-button, .delicious-follow, .github-follow, .googleplus-follow, .rss-follow, .twitter-share, .googleplus-share, .facebook-share {
+  font-family: Ubuntu, Trebuchet MS, Arial, sans-serif;
+}
+
+/* line 2, /Users/hholz/coding/ruby/octopress/sass/resources/_fonts.scss */
+.serif, .header, body header, body header h1, body header h2, body header h3, body header h4, body header h5, body header h6, body code header, body tt header, body samp header, body aside header {
+  font-family: Quando, Georgia, Times, Times New Roman, serif;
+}
+
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_fonts.scss */
+.mono, .code, body pre, body pre header, body code, body tt, body samp {
+  font-family: Electrolize, Menlo, Monaco, lucida console, Courier New, monospace;
+}
+
+/* line 98, icon/*.png */
+.icon-sprite, .icon-delicious, .delicious-follow:before, .icon-email, .icon-facebook, .facebook-share:before, .icon-github, .github-follow:before, .icon-googleplus, .googleplus-follow:before, .googleplus-share:before, .icon-rss, .rss-follow:before, .icon-twitter-bird, .icon-twitter, .twitter-share:before {
+  background: url('/images/icon-sf8f61bc547.png') no-repeat;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-delicious, .delicious-follow:before {
+  background-position: 0 0;
+  height: 29px;
+  width: 29px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-email {
+  background-position: 0 -131px;
+  height: 22px;
+  width: 28px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-facebook, .facebook-share:before {
+  background-position: 0 -153px;
+  height: 16px;
+  width: 12px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-github, .github-follow:before {
+  background-position: 0 -99px;
+  height: 16px;
+  width: 16px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-googleplus, .googleplus-follow:before, .googleplus-share:before {
+  background-position: 0 -115px;
+  height: 16px;
+  width: 11px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-rss, .rss-follow:before {
+  background-position: 0 -77px;
+  height: 22px;
+  width: 22px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-twitter-bird {
+  background-position: 0 -29px;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-twitter, .twitter-share:before {
+  background-position: 0 -61px;
+  height: 16px;
+  width: 14px;
+}
+
+/* line 22, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.simple-social-button, .delicious-follow, .github-follow, .googleplus-follow, .rss-follow, .twitter-share, .googleplus-share, .facebook-share {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: .2em .5em;
+  line-height: 1.45em;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: #fff 0 1px;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  background-color: #e5e5e5;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+  background-image: -moz-linear-gradient(#ffffff, #dddddd);
+  background-image: -o-linear-gradient(#ffffff, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
+}
+/* line 41, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.simple-social-button:hover, .delicious-follow:hover, .github-follow:hover, .googleplus-follow:hover, .rss-follow:hover, .twitter-share:hover, .googleplus-share:hover, .facebook-share:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5f5f5), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(#f5f5f5, #cccccc);
+  background-image: -moz-linear-gradient(#f5f5f5, #cccccc);
+  background-image: -o-linear-gradient(#f5f5f5, #cccccc);
+  background-image: linear-gradient(#f5f5f5, #cccccc);
+  border-color: #b5b5b5;
+  background-color: #ddd;
+}
+/* line 47, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.simple-social-button:before, .delicious-follow:before, .github-follow:before, .googleplus-follow:before, .rss-follow:before, .twitter-share:before, .googleplus-share:before, .facebook-share:before {
+  content: "";
+  display: inline-block;
+}
+
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/_grid-geometry.scss */
+body > div {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-position: left top;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+}
+@media (min-width: 20.5625em) {
+  /* line 14, /Users/hholz/coding/ruby/octopress/sass/_grid-geometry.scss */
   body > div {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0;
+    padding-right: 0;
   }
   /* line 38, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   body > div:after {
@@ -506,19 +639,41 @@ nav ol {
   }
 }
 @media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 14, /Users/hholz/coding/ruby/octopress/sass/layout/_grid-geometry.scss */
+  /* line 14, /Users/hholz/coding/ruby/octopress/sass/_grid-geometry.scss */
   body > div {
     width: auto;
   }
 }
 @media (min-width: 52.5em) {
-  /* line 14, /Users/hholz/coding/ruby/octopress/sass/layout/_grid-geometry.scss */
+  /* line 14, /Users/hholz/coding/ruby/octopress/sass/_grid-geometry.scss */
   body > div {
     width: auto;
   }
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/layout/_banner.scss */
+@media (min-width: 52.5em) {
+  /* line 61, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+  * html {
+    font-size: 100%;
+  }
+
+  /* line 64, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+  html {
+    font-size: 16px;
+    line-height: 1.3125em;
+  }
+}
+/* line 13, /Users/hholz/coding/ruby/octopress/sass/_core-colors.scss */
+html {
+  background-color: #f1f1f1;
+}
+
+/* line 5, /Users/hholz/coding/ruby/octopress/sass/branding/_branding.scss */
+body > div > header {
+  background: #1d2f2b;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/branding/_layout.scss */
 body > div > header {
   overflow: hidden;
   *zoom: 1;
@@ -527,7 +682,7 @@ body > div > header {
   padding-right: 6.38298%;
 }
 @media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 9, /Users/hholz/coding/ruby/octopress/sass/layout/_banner.scss */
+  /* line 9, /Users/hholz/coding/ruby/octopress/sass/branding/_layout.scss */
   body > div > header > hgroup {
     padding-left: 4.22535%;
     padding-right: 4.22535%;
@@ -535,17 +690,16 @@ body > div > header {
     float: left;
     margin-right: 1.40845%;
   }
-  /* line 13, /Users/hholz/coding/ruby/octopress/sass/layout/_banner.scss */
+  /* line 13, /Users/hholz/coding/ruby/octopress/sass/branding/_layout.scss */
   body > div > header .follow-menu {
-    padding-left: 4.22535%;
     padding-right: 4.22535%;
-    width: 23.94366%;
+    width: 28.16901%;
     float: right;
     margin-right: 0;
   }
 }
 @media (min-width: 52.5em) {
-  /* line 23, /Users/hholz/coding/ruby/octopress/sass/layout/_banner.scss */
+  /* line 23, /Users/hholz/coding/ruby/octopress/sass/branding/_layout.scss */
   body > div > header > hgroup {
     padding-left: 6.74157%;
     padding-right: 3.37079%;
@@ -553,181 +707,40 @@ body > div > header {
     float: left;
     margin-right: 1.1236%;
   }
-  /* line 27, /Users/hholz/coding/ruby/octopress/sass/layout/_banner.scss */
+  /* line 27, /Users/hholz/coding/ruby/octopress/sass/branding/_layout.scss */
   body > div > header .follow-menu {
-    padding-left: 3.37079%;
     padding-right: 3.37079%;
-    width: 25.8427%;
+    width: 29.21348%;
     float: right;
     margin-right: 0;
   }
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-.primary-navigation {
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0;
-  padding-left: 12.76596%;
-  padding-right: 12.76596%;
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/branding/_hgroup.scss */
+hgroup {
+  margin-top: 0em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin-bottom: 0em;
 }
-@media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 9, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-  .primary-navigation .primary-navlist {
-    padding-left: 12.67606%;
-    width: 40.84507%;
-    float: left;
-    margin-right: 1.40845%;
-  }
-  /* line 13, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-  .primary-navigation .simple-search {
-    width: 28.16901%;
-    float: right;
-    margin-right: 0;
-    padding-left: 8.4507%;
-    padding-right: 8.4507%;
-  }
-}
-@media (min-width: 52.5em) {
-  /* line 22, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-  .primary-navigation .primary-navlist {
-    padding-left: 10.11236%;
-    width: 56.17978%;
-    float: left;
-    margin-right: 1.1236%;
-  }
-  /* line 26, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-  .primary-navigation .simple-search {
-    width: 19.10112%;
-    float: right;
-    margin-right: 0;
-    padding-left: 6.74157%;
-    padding-right: 6.74157%;
-  }
-}
-
-/* line 37, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-.primary-navlist ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-.primary-navlist ul li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-  white-space: nowrap;
-  display: inline;
-  float: left;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-.primary-navlist ul li:first-child, .primary-navlist ul li.first {
-  padding-left: 0;
-}
-/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-.primary-navlist ul li:last-child {
-  padding-right: 0;
-}
-/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-.primary-navlist ul li.last {
-  padding-right: 0;
-}
-/* line 41, /Users/hholz/coding/ruby/octopress/sass/layout/_primary-navigation.scss */
-.primary-navlist ul a:link, .primary-navlist ul a:visited, .primary-navlist ul a:active, .primary-navlist ul a:focus, .primary-navlist ul a:hover {
-  padding: 0.2em 0.5em;
-}
-
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/layout/_main-content.scss */
-.main-content {
+/* line 5, /Users/hholz/coding/ruby/octopress/sass/branding/_hgroup.scss */
+hgroup h1, hgroup h2 {
   margin: 0;
   padding: 0;
 }
-
-/* line 6, /Users/hholz/coding/ruby/octopress/sass/layout/_main-content.scss */
-.content {
-  margin: 0;
-  padding-left: 6.38298%;
-  padding-right: 6.38298%;
+/* line 7, /Users/hholz/coding/ruby/octopress/sass/branding/_hgroup.scss */
+hgroup h1 a, hgroup h1 a:visited, hgroup h1 a:hover {
+  color: #f2f2f2;
 }
-@media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 6, /Users/hholz/coding/ruby/octopress/sass/layout/_main-content.scss */
-  .content {
-    padding-left: 4.22535%;
-    padding-right: 4.22535%;
-    width: 91.5493%;
-    float: right;
-    margin-right: 0;
-  }
-}
-@media (min-width: 52.5em) {
-  /* line 6, /Users/hholz/coding/ruby/octopress/sass/layout/_main-content.scss */
-  .content {
-    padding-left: 6.74157%;
-    padding-right: 3.37079%;
-    width: 56.17978%;
-    float: left;
-    margin-right: 1.1236%;
-  }
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/branding/_hgroup.scss */
+hgroup h2 {
+  color: #c0d8d2;
+  font-weight: normal;
+  font-size: 1.2em;
+  line-height: 1.25em;
 }
 
-/* line 10, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 12, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#grid {
-  clear: both;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -3em;
-}
-/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#grid #site-credits {
-  height: 3em;
-}
-
-/* line 20, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#contentinfo {
-  clear: both;
-  position: relative;
-  height: 3em;
-}
-
-/* line 4, /Users/hholz/coding/ruby/octopress/sass/layout/_credits.scss */
-footer.credits {
-  margin: 0;
-  padding-left: 12.76596%;
-  padding-right: 12.76596%;
-}
-@media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 4, /Users/hholz/coding/ruby/octopress/sass/layout/_credits.scss */
-  footer.credits {
-    padding-left: 8.4507%;
-    padding-right: 8.4507%;
-    width: 83.09859%;
-    float: right;
-    margin-right: 0;
-  }
-}
-@media (min-width: 52.5em) {
-  /* line 4, /Users/hholz/coding/ruby/octopress/sass/layout/_credits.scss */
-  footer.credits {
-    padding-left: 6.74157%;
-    padding-right: 6.74157%;
-    width: 86.51685%;
-    float: right;
-    margin-right: 0;
-  }
-}
-
-/* line 4, /Users/hholz/coding/ruby/octopress/sass/layout/_follow-menu.scss */
+/* line 5, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
 .follow-menu ul {
   margin: 0;
   padding: 0;
@@ -759,12 +772,415 @@ footer.credits {
 .follow-menu ul li.last {
   padding-right: 0;
 }
-/* line 8, /Users/hholz/coding/ruby/octopress/sass/layout/_follow-menu.scss */
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
 .follow-menu ul a:link, .follow-menu ul a:visited, .follow-menu ul a:active, .follow-menu ul a:focus, .follow-menu ul a:hover {
   padding: 0.2em 0.5em;
 }
 
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/layout/_sharing-menu.scss */
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
+.delicious-follow {
+  color: #333333;
+  padding-left: 35px;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.delicious-follow:visited, .delicious-follow:hover, .delicious-follow:visited:hover {
+  color: #333333;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.delicious-follow:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+
+/* line 18, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
+.github-follow {
+  color: #333333;
+  padding-left: 22px;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.github-follow:visited, .github-follow:hover, .github-follow:visited:hover {
+  color: #333333;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.github-follow:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+
+/* line 22, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
+.googleplus-follow {
+  color: #db583b;
+  padding-left: 17px;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.googleplus-follow:visited, .googleplus-follow:hover, .googleplus-follow:visited:hover {
+  color: #db583b;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.googleplus-follow:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+/* line 25, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
+.googleplus-follow:before {
+  top: 5px;
+}
+
+/* line 27, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
+.rss-follow {
+  color: #333333;
+  padding-left: 28px;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.rss-follow:visited, .rss-follow:hover, .rss-follow:visited:hover {
+  color: #333333;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.rss-follow:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+.primary-navigation {
+  padding-left: 4.25532%;
+  padding-right: 4.25532%;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0;
+}
+@media (min-width: 35em) and (max-width: 52.5em) {
+  /* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation {
+    padding-left: 2.8169%;
+    padding-right: 2.8169%;
+  }
+  /* line 14, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation .primary-navlist {
+    width: 40.84507%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+  /* line 17, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation .simple-search {
+    width: 28.16901%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 52.5em) {
+  /* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation {
+    padding-left: 2.24719%;
+  }
+  /* line 27, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation .primary-navlist {
+    width: 39.32584%;
+    float: left;
+    margin-right: 1.1236%;
+  }
+  /* line 30, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+  .primary-navigation .simple-search {
+    width: 25.8427%;
+    float: right;
+    margin-right: 0;
+    padding-right: 2.24719%;
+  }
+}
+
+/* line 41, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+.primary-navlist ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.primary-navlist ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.primary-navlist ul li:first-child, .primary-navlist ul li.first {
+  padding-left: 0;
+}
+/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.primary-navlist ul li:last-child {
+  padding-right: 0;
+}
+/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+.primary-navlist ul li.last {
+  padding-right: 0;
+}
+/* line 45, /Users/hholz/coding/ruby/octopress/sass/nav/_layout.scss */
+.primary-navlist ul a:link, .primary-navlist ul a:visited, .primary-navlist ul a:active, .primary-navlist ul a:focus, .primary-navlist ul a:hover {
+  padding: 0.2em 0.5em;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navigation.scss */
+.primary-navigation {
+  font-size: 0.95em;
+  line-height: 1.57895em;
+  background-color: #5d887e;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #709d93), color-stop(50%, #5d887e), color-stop(100%, #46675f));
+  background-image: -webkit-linear-gradient(#709d93, #5d887e, #46675f);
+  background-image: -moz-linear-gradient(#709d93, #5d887e, #46675f);
+  background-image: -o-linear-gradient(#709d93, #5d887e, #46675f);
+  background-image: linear-gradient(#709d93, #5d887e, #46675f);
+  border-top-color: #86aca3;
+  border-bottom-color: #293c38;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 6px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 6px;
+}
+
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+.primary-navlist li {
+  margin: 0;
+}
+/* line 6, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+.primary-navlist li a {
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: #7da69d 0 1px;
+  color: black;
+}
+/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.primary-navlist li a:visited {
+  color: black;
+}
+/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.primary-navlist li a:focus {
+  color: #f2f2f2;
+}
+/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.primary-navlist li a:hover {
+  color: #f2f2f2;
+}
+/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.primary-navlist li a:active {
+  color: #f2f2f2;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_simple-search.scss */
+.simple-search form {
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+/* line 7, /Users/hholz/coding/ruby/octopress/sass/nav/_simple-search.scss */
+.simple-search form fieldset {
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 13, /Users/hholz/coding/ruby/octopress/sass/nav/_simple-search.scss */
+.simple-search form fieldset .search {
+  width: auto;
+  color: #565c5b;
+  background-color: #86aca3;
+  border-color: #486a62;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 5px #618e84;
+  -moz-box-shadow: 0 1px 5px #618e84;
+  box-shadow: 0 1px 5px #618e84;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border-radius: 0.5em;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 4px;
+  border-left-style: none;
+  border-left-width: 1px;
+  padding-left: 9px;
+  border-right-style: none;
+  border-right-width: 1px;
+  padding-right: 9px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 3px;
+}
+/* line 28, /Users/hholz/coding/ruby/octopress/sass/nav/_simple-search.scss */
+.simple-search form fieldset .search:focus {
+  color: black;
+  background-color: #c2d5d1;
+  -webkit-box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
+  -moz-box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
+  box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
+  outline: none;
+}
+
+/* line 42, /Users/hholz/coding/ruby/octopress/sass/nav/_simple-search.scss */
+.no-placeholder .simple-search .search {
+  background: #86aca3 url('/images/search.png?1346475000') 0.3em 0.25em no-repeat;
+  text-indent: 1.3em;
+}
+
+/* line 4, /Users/hholz/coding/ruby/octopress/sass/content/_content.scss */
+.content {
+  color: #222222;
+  background-color: #f1f1f1;
+}
+/* line 8, /Users/hholz/coding/ruby/octopress/sass/content/_content.scss */
+.content a {
+  color: #219cba;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+  color: #219cba;
+}
+/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.content a:visited {
+  color: #527e89;
+}
+/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.content a:focus {
+  color: #55d2f1;
+}
+/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.content a:hover {
+  color: #55d2f1;
+}
+/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.content a:active {
+  color: #55d2f1;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/content/_layout.scss */
+.main-content {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, /Users/hholz/coding/ruby/octopress/sass/content/_layout.scss */
+.content {
+  margin: 0;
+  width: 87.23404%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -0.5em;
+  display: inline;
+}
+@media (min-width: 35em) and (max-width: 52.5em) {
+  /* line 6, /Users/hholz/coding/ruby/octopress/sass/content/_layout.scss */
+  .content {
+    width: 91.5493%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 52.5em) {
+  /* line 6, /Users/hholz/coding/ruby/octopress/sass/content/_layout.scss */
+  .content {
+    padding-left: 2.24719%;
+    padding-right: 1.1236%;
+    width: 66.29213%;
+    float: left;
+    margin-right: 1.1236%;
+    margin: 0;
+  }
+}
+
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/content/_article-excerpt.scss */
+article.excerpt > header > h1 {
+  color: #222222;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+/* line 6, /Users/hholz/coding/ruby/octopress/sass/content/_article-excerpt.scss */
+article.excerpt > header > h1 a, article.excerpt > header > h1 a:hover {
+  color: #55d2f1;
+}
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/content/_article-excerpt.scss */
+article.excerpt a[rel=full-article] {
+  display: inline-block;
+  font-size: 0.85em;
+  line-height: 1.76471em;
+  border-left-style: none;
+  border-left-width: 0;
+  padding-left: 31px;
+}
+/* line 15, /Users/hholz/coding/ruby/octopress/sass/content/_article-excerpt.scss */
+article.excerpt > footer a:hover {
+  color: #55d2f1;
+}
+
+/* line 2, /Users/hholz/coding/ruby/octopress/sass/content/_article-header.scss */
+article header a {
+  color: #414b48;
+}
+/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+article header a:visited {
+  color: #414b48;
+}
+/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+article header a:focus {
+  color: #527e89;
+}
+/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+article header a:hover {
+  color: #527e89;
+}
+/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+article header a:active {
+  color: #527e89;
+}
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/content/_article-header.scss */
+article header time {
+  text-transform: uppercase;
+}
+
+/* line 2, /Users/hholz/coding/ruby/octopress/sass/content/_page-nav.scss */
+.page-nav a[rel=prev] {
+  display: inline;
+  float: left;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/content/_page-nav.scss */
+.page-nav a[rel=next] {
+  display: inline;
+  float: right;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/content/_pubdate.scss */
+.pubdate, .pubdate time, .pubdate time .month, .pubdate time .day {
+  display: inline-block;
+}
+
+/* line 4, /Users/hholz/coding/ruby/octopress/sass/content/_pubdate.scss */
+.pubdate {
+  font-size: 0.9em;
+  line-height: 1.66667em;
+  color: #363636;
+}
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/content/_pubdate.scss */
+.pubdate time {
+  text-transform: uppercase;
+}
+
+/* line 5, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
 .sharing-menu ul {
   margin: 0;
   padding: 0;
@@ -798,264 +1214,92 @@ footer.credits {
 .sharing-menu ul li.last {
   padding-right: 0;
 }
-/* line 8, /Users/hholz/coding/ruby/octopress/sass/layout/_sharing-menu.scss */
+/* line 10, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
 .sharing-menu ul a:link, .sharing-menu ul a:visited, .sharing-menu ul a:active, .sharing-menu ul a:focus, .sharing-menu ul a:hover {
   padding: 0.2em 0.5em;
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/layout/_index-aside.scss */
-.index-aside {
-  margin: 0;
-  padding-left: 6.38298%;
-  padding-right: 6.38298%;
+/* line 15, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
+.twitter-share {
+  color: #333333;
+  padding-left: 20px;
 }
-/* line 4, /Users/hholz/coding/ruby/octopress/sass/layout/_index-aside.scss */
-.index-aside aside {
-  margin: 0;
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.twitter-share:visited, .twitter-share:hover, .twitter-share:visited:hover {
+  color: #333333;
 }
-@media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 11, /Users/hholz/coding/ruby/octopress/sass/layout/_index-aside.scss */
-  .index-aside aside .delicious {
-    padding-left: 4.22535%;
-    padding-right: 4.22535%;
-    width: 40.84507%;
-    float: left;
-    margin-right: 1.40845%;
-  }
-  /* line 15, /Users/hholz/coding/ruby/octopress/sass/layout/_index-aside.scss */
-  .index-aside aside .github {
-    padding-left: 4.22535%;
-    padding-right: 4.22535%;
-    width: 40.84507%;
-    float: right;
-    margin-right: 0;
-  }
-}
-@media (min-width: 52.5em) {
-  /* line 24, /Users/hholz/coding/ruby/octopress/sass/layout/_index-aside.scss */
-  .index-aside aside {
-    padding-left: 3.37079%;
-    padding-right: 3.37079%;
-    width: 25.8427%;
-    float: right;
-    margin-right: 0;
-  }
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.twitter-share:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
 }
 
-@media (min-width: 52.5em) {
-  /* line 61, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-  * html {
-    font-size: 100%;
-  }
-
-  /* line 64, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-  html {
-    font-size: 16px;
-    line-height: 1.3125em;
-  }
+/* line 19, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
+.googleplus-share {
+  color: #db583b;
+  padding-left: 17px;
 }
-/* line 6, /Users/hholz/coding/ruby/octopress/sass/site/_fonts.scss */
-.sans, .main, body, .primary-navigation, .simple-social-button, .googleplus-share, .googleplus-follow, .facebook-share, .twitter-share, .github-follow, .delicious-follow, .rss-follow, .aside, body aside, .default-aside, .index-aside {
-  font-family: Ubuntu, Trebuchet MS, Arial, sans-serif;
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.googleplus-share:visited, .googleplus-share:hover, .googleplus-share:visited:hover {
+  color: #db583b;
 }
-
-/* line 7, /Users/hholz/coding/ruby/octopress/sass/site/_fonts.scss */
-.serif, .header, body header, body header h1, body header h2, body header h3, body header h4, body header h5, body header h6, body code header, body tt header, body samp header, body aside header {
-  font-family: Quando, Georgia, Times, Times New Roman, serif;
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.googleplus-share:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+/* line 22, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
+.googleplus-share:before {
+  top: 5px;
 }
 
-/* line 8, /Users/hholz/coding/ruby/octopress/sass/site/_fonts.scss */
-.mono, .code, body pre, body pre header, body code, body tt, body samp {
-  font-family: Electrolize, Menlo, Monaco, lucida console, Courier New, monospace;
+/* line 24, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
+.facebook-share {
+  color: #4e5a9b;
+  padding-left: 18px;
+}
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.facebook-share:visited, .facebook-share:hover, .facebook-share:visited:hover {
+  color: #4e5a9b;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/resources/_simple-social-buttons.scss */
+.facebook-share:before {
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+}
+/* line 27, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
+.facebook-share:before {
+  top: 3px;
 }
 
-/* line 98, icon/*.png */
-.icon-sprite, .icon-delicious, .delicious-follow:before, .icon-email, .icon-facebook, .facebook-share:before, .icon-github, .github-follow:before, .icon-googleplus, .googleplus-share:before, .googleplus-follow:before, .icon-rss, .rss-follow:before, .icon-twitter-bird, .icon-twitter, .twitter-share:before {
-  background: url('/images/icon-sf8f61bc547.png') no-repeat;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-delicious, .delicious-follow:before {
-  background-position: 0 0;
-  height: 29px;
-  width: 29px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-email {
-  background-position: 0 -131px;
-  height: 22px;
-  width: 28px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-facebook, .facebook-share:before {
-  background-position: 0 -153px;
-  height: 16px;
-  width: 12px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-github, .github-follow:before {
-  background-position: 0 -99px;
-  height: 16px;
-  width: 16px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-googleplus, .googleplus-share:before, .googleplus-follow:before {
-  background-position: 0 -115px;
-  height: 16px;
-  width: 11px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-rss, .rss-follow:before {
-  background-position: 0 -77px;
-  height: 22px;
-  width: 22px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-twitter-bird {
-  background-position: 0 -29px;
-  height: 32px;
-  width: 32px;
-}
-
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icon-twitter, .twitter-share:before {
-  background-position: 0 -61px;
-  height: 16px;
-  width: 14px;
-}
-
-/* line 5, /Users/hholz/coding/ruby/octopress/sass/site/_banner.scss */
-body > div > header {
-  background: #1d2f2b;
-  color: #c0d8d2;
-}
-/* line 10, /Users/hholz/coding/ruby/octopress/sass/site/_banner.scss */
-body > div > header h1 {
-  padding-top: 0.3em;
-  display: inline-block;
-  margin: 0;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/_banner.scss */
-body > div > header h1 a, body > div > header h1 a:visited, body > div > header h1 a:hover {
-  color: #f2f2f2;
-}
-/* line 17, /Users/hholz/coding/ruby/octopress/sass/site/_banner.scss */
-body > div > header h2 {
-  margin: 0;
-  font-weight: normal;
-  font-size: 1.2em;
-  line-height: 1.25em;
-  padding-bottom: 0.3em;
-}
-
-/* line 6, /Users/hholz/coding/ruby/octopress/sass/site/_primary-navigation.scss */
-.primary-navigation {
-  font-size: 0.95em;
-  line-height: 1.57895em;
-  position: relative;
-  background-color: #5d887e;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #709d93), color-stop(50%, #5d887e), color-stop(100%, #46675f));
-  background-image: -webkit-linear-gradient(#709d93, #5d887e, #46675f);
-  background-image: -moz-linear-gradient(#709d93, #5d887e, #46675f);
-  background-image: -o-linear-gradient(#709d93, #5d887e, #46675f);
-  background-image: linear-gradient(#709d93, #5d887e, #46675f);
-  border-top-color: #86aca3;
-  border-bottom-color: #293c38;
-  border-top-style: solid;
-  border-top-width: 1px;
-  padding-top: 6px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  padding-bottom: 6px;
-}
-
-/* line 25, /Users/hholz/coding/ruby/octopress/sass/site/_primary-navigation.scss */
-.primary-navlist li {
-  margin: 0;
-}
-/* line 28, /Users/hholz/coding/ruby/octopress/sass/site/_primary-navigation.scss */
-.primary-navlist li a {
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: #7da69d 0 1px;
-  color: black;
-}
-/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.primary-navlist li a:visited {
-  color: black;
-}
-/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.primary-navlist li a:focus {
-  color: #f2f2f2;
-}
-/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.primary-navlist li a:hover {
-  color: #f2f2f2;
-}
-/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.primary-navlist li a:active {
-  color: #f2f2f2;
-}
-
-/* line 10, /Users/hholz/coding/ruby/octopress/sass/site/_content.scss */
-.content {
-  color: #222222;
-  background: #f8f8f8;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/_content.scss */
-.content a {
-  color: #219cba;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -o-transition: color 0.3s;
-  transition: color 0.3s;
-  color: #219cba;
-}
-/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.content a:visited {
-  color: #527e89;
-}
-/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.content a:focus {
-  color: #55d2f1;
-}
-/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.content a:hover {
-  color: #55d2f1;
-}
-/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.content a:active {
-  color: #55d2f1;
-}
-
-/* line 13, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-.default-aside, .index-aside {
+/* non highlighted code colors */
+/* line 9, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base {
   color: #414b48;
+  text-shadow: #e8eeec 0 1px;
   background-color: #d1dcd9;
   border-color: #c3c7c6;
-  text-shadow: #e8eeec 0 1px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 20px;
+}
+/* line 20, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base aside {
   font-size: 0.9em;
   line-height: 1.66667em;
 }
-@media (min-width: 52.5em) {
-  /* line 13, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-  .default-aside, .index-aside {
-    border-left: 1px solid #c3c7c6;
-  }
-}
-/* line 31, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-.default-aside aside h1, .index-aside aside h1 {
+/* line 23, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base aside h1 {
+  font-size: 1.35em;
+  line-height: 1.66667em;
   margin: 0;
-  padding: .5em 0;
+  padding: 0;
 }
-/* line 36, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-.default-aside aside a, .index-aside aside a {
+/* line 29, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base aside a {
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -1068,34 +1312,126 @@ body > div > header h2 {
   color: #527e89;
 }
 /* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.default-aside aside a:visited, .index-aside aside a:visited {
+.aside-base aside a:visited {
   color: #527e89;
 }
 /* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.default-aside aside a:focus, .index-aside aside a:focus {
+.aside-base aside a:focus {
   color: #219cba;
 }
 /* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.default-aside aside a:hover, .index-aside aside a:hover {
+.aside-base aside a:hover {
   color: #219cba;
 }
 /* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.default-aside aside a:active, .index-aside aside a:active {
+.aside-base aside a:active {
   color: #219cba;
 }
-/* line 46, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-.default-aside aside ul, .index-aside aside ul {
+/* line 39, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base aside ul {
   list-style: none;
   margin: 0 0 0 1em;
   padding: 0;
 }
-/* line 51, /Users/hholz/coding/ruby/octopress/sass/site/_aside.scss */
-.default-aside aside ul li, .index-aside aside ul li {
+/* line 44, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
+.aside-base aside ul li {
   margin: 0;
   padding: 0;
 }
 
-/* line 10, /Users/hholz/coding/ruby/octopress/sass/site/_credits.scss */
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/aside/_index-aside.scss */
+.index-aside {
+  margin: 0;
+  padding-left: 6.38298%;
+  padding-right: 6.38298%;
+}
+/* line 6, /Users/hholz/coding/ruby/octopress/sass/aside/_index-aside.scss */
+.index-aside aside {
+  margin: 0;
+}
+@media (min-width: 35em) and (max-width: 52.5em) {
+  /* line 12, /Users/hholz/coding/ruby/octopress/sass/aside/_index-aside.scss */
+  .index-aside .delicious {
+    padding-left: 4.22535%;
+    padding-right: 4.22535%;
+    width: 40.84507%;
+    float: left;
+    margin-right: 1.40845%;
+  }
+  /* line 16, /Users/hholz/coding/ruby/octopress/sass/aside/_index-aside.scss */
+  .index-aside .github {
+    padding-left: 4.22535%;
+    padding-right: 4.22535%;
+    width: 40.84507%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 52.5em) {
+  /* line 3, /Users/hholz/coding/ruby/octopress/sass/aside/_index-aside.scss */
+  .index-aside {
+    padding-left: 3.37079%;
+    padding-right: 3.37079%;
+    width: 25.8427%;
+    float: right;
+    margin-right: 0;
+    border-left: 1px solid #c3c7c6;
+  }
+}
+
+/* line 10, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 12, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#grid {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -3em;
+}
+/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#grid #site-credits {
+  height: 3em;
+}
+
+/* line 20, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#contentinfo {
+  clear: both;
+  position: relative;
+  height: 3em;
+}
+
+/* line 4, /Users/hholz/coding/ruby/octopress/sass/credits/_layout.scss */
+footer.credits {
+  margin: 0;
+  padding-left: 12.76596%;
+  padding-right: 12.76596%;
+}
+@media (min-width: 35em) and (max-width: 52.5em) {
+  /* line 4, /Users/hholz/coding/ruby/octopress/sass/credits/_layout.scss */
+  footer.credits {
+    padding-left: 8.4507%;
+    padding-right: 8.4507%;
+    width: 83.09859%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media (min-width: 52.5em) {
+  /* line 4, /Users/hholz/coding/ruby/octopress/sass/credits/_layout.scss */
+  footer.credits {
+    padding-left: 6.74157%;
+    padding-right: 6.74157%;
+    width: 86.51685%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/credits/_footer.scss */
 footer.credits {
   color: #f2f2f2;
   background-color: #485f5a;
@@ -1108,7 +1444,7 @@ footer.credits {
   border-top: 1px solid #698b83;
   border-bottom: 1px solid #273431;
 }
-/* line 23, /Users/hholz/coding/ruby/octopress/sass/site/_credits.scss */
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/credits/_footer.scss */
 footer.credits a {
   color: #f2f2f2;
 }
@@ -1127,300 +1463,4 @@ footer.credits a:hover {
 /* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 footer.credits a:active {
   color: #a5a5a5;
-}
-
-/* line 2, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-header.scss */
-article header a {
-  color: #414b48;
-}
-/* line 18, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-article header a:visited {
-  color: #414b48;
-}
-/* line 21, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-article header a:focus {
-  color: #527e89;
-}
-/* line 24, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-article header a:hover {
-  color: #527e89;
-}
-/* line 27, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-article header a:active {
-  color: #527e89;
-}
-/* line 9, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-header.scss */
-article header time {
-  text-transform: uppercase;
-}
-
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-excerpt.scss */
-article.excerpt > header > h1 {
-  color: #222222;
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-/* line 6, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-excerpt.scss */
-article.excerpt > header > h1 a, article.excerpt > header > h1 a:hover {
-  color: #55d2f1;
-}
-/* line 9, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-excerpt.scss */
-article.excerpt a[rel=full-article] {
-  display: inline-block;
-  font-size: 0.85em;
-  line-height: 1.76471em;
-  border-left-style: none;
-  border-left-width: 0;
-  padding-left: 31px;
-}
-/* line 15, /Users/hholz/coding/ruby/octopress/sass/site/article/_article-excerpt.scss */
-article.excerpt > footer a:hover {
-  color: #55d2f1;
-}
-
-/* line 2, /Users/hholz/coding/ruby/octopress/sass/site/article/_page-nav.scss */
-.page-nav a[rel=prev] {
-  display: inline;
-  float: left;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_page-nav.scss */
-.page-nav a[rel=next] {
-  display: inline;
-  float: right;
-}
-
-/* line 22, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.simple-social-button, .googleplus-share, .googleplus-follow, .facebook-share, .twitter-share, .github-follow, .delicious-follow, .rss-follow {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  border: 1px solid #ccc;
-  padding: .2em .5em;
-  line-height: 1.45em;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: #fff 0 1px;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-  background-color: #e5e5e5;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
-  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
-  background-image: -moz-linear-gradient(#ffffff, #dddddd);
-  background-image: -o-linear-gradient(#ffffff, #dddddd);
-  background-image: linear-gradient(#ffffff, #dddddd);
-}
-/* line 36, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.simple-social-button:hover, .googleplus-share:hover, .googleplus-follow:hover, .facebook-share:hover, .twitter-share:hover, .github-follow:hover, .delicious-follow:hover, .rss-follow:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5f5f5), color-stop(100%, #cccccc));
-  background-image: -webkit-linear-gradient(#f5f5f5, #cccccc);
-  background-image: -moz-linear-gradient(#f5f5f5, #cccccc);
-  background-image: -o-linear-gradient(#f5f5f5, #cccccc);
-  background-image: linear-gradient(#f5f5f5, #cccccc);
-  border-color: #b5b5b5;
-  background-color: #ddd;
-}
-/* line 41, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.simple-social-button:before, .googleplus-share:before, .googleplus-follow:before, .facebook-share:before, .twitter-share:before, .github-follow:before, .delicious-follow:before, .rss-follow:before {
-  content: "";
-  display: inline-block;
-}
-
-/* line 47, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-#fb-root {
-  display: none;
-}
-
-/* line 49, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.googleplus-share, .googleplus-follow {
-  color: #db583b;
-  padding-left: 17px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.googleplus-share:visited, .googleplus-share:hover, .googleplus-share:visited:hover, .googleplus-follow:visited, .googleplus-follow:hover, .googleplus-follow:visited:hover {
-  color: #db583b;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.googleplus-share:before, .googleplus-follow:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-/* line 52, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.googleplus-share:before, .googleplus-follow:before {
-  top: 5px;
-}
-
-/* line 54, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.facebook-share {
-  color: #4e5a9b;
-  padding-left: 18px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.facebook-share:visited, .facebook-share:hover, .facebook-share:visited:hover {
-  color: #4e5a9b;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.facebook-share:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-/* line 57, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.facebook-share:before {
-  top: 3px;
-}
-
-/* line 59, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.twitter-share {
-  color: #333333;
-  padding-left: 20px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.twitter-share:visited, .twitter-share:hover, .twitter-share:visited:hover {
-  color: #333333;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.twitter-share:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-
-/* line 63, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.github-follow {
-  color: #333333;
-  padding-left: 22px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.github-follow:visited, .github-follow:hover, .github-follow:visited:hover {
-  color: #333333;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.github-follow:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-
-/* line 67, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.delicious-follow {
-  color: #333333;
-  padding-left: 35px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.delicious-follow:visited, .delicious-follow:hover, .delicious-follow:visited:hover {
-  color: #333333;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.delicious-follow:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-
-/* line 71, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.rss-follow {
-  color: #333333;
-  padding-left: 28px;
-}
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.rss-follow:visited, .rss-follow:hover, .rss-follow:visited:hover {
-  color: #333333;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/site/article/_sharing-buttons.scss */
-.rss-follow:before {
-  vertical-align: middle;
-  position: absolute;
-  left: 3px;
-}
-
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/site/article/_pubdate.scss */
-.pubdate, .pubdate time, .pubdate time .month, .pubdate time .day {
-  display: inline-block;
-}
-
-/* line 4, /Users/hholz/coding/ruby/octopress/sass/site/article/_pubdate.scss */
-.pubdate {
-  font-size: 0.9em;
-  line-height: 1.66667em;
-  color: #363636;
-}
-/* line 9, /Users/hholz/coding/ruby/octopress/sass/site/article/_pubdate.scss */
-.pubdate time {
-  text-transform: uppercase;
-}
-
-/* non highlighted code colors */
-/* line 3, /Users/hholz/coding/ruby/octopress/sass/site/_follow-menu.scss */
-.follow-menu h1 {
-  font-size: 0.7em;
-  line-height: 2.14286em;
-  color: #c0d8d2;
-  display: inline-block;
-}
-
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/site/_simple-search.scss */
-.simple-search form {
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-/* line 7, /Users/hholz/coding/ruby/octopress/sass/site/_simple-search.scss */
-.simple-search form fieldset {
-  width: 70%;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-/* line 13, /Users/hholz/coding/ruby/octopress/sass/site/_simple-search.scss */
-.simple-search form fieldset .search {
-  width: 95%;
-  color: #565c5b;
-  background-color: #86aca3;
-  border-color: #486a62;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 1px 5px #618e84;
-  -moz-box-shadow: 0 1px 5px #618e84;
-  box-shadow: 0 1px 5px #618e84;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -o-border-radius: 0.5em;
-  border-radius: 0.5em;
-  border-top-style: solid;
-  border-top-width: 1px;
-  padding-top: 4px;
-  border-left-style: none;
-  border-left-width: 1px;
-  padding-left: 9px;
-  border-right-style: none;
-  border-right-width: 1px;
-  padding-right: 9px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  padding-bottom: 2px;
-}
-/* line 28, /Users/hholz/coding/ruby/octopress/sass/site/_simple-search.scss */
-.simple-search form fieldset .search:focus {
-  color: black;
-  background-color: #c2d5d1;
-  -webkit-box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
-  -moz-box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
-  box-shadow: 0 0 4px #e2e8e7, inset 0 0 3px #e2e8e7;
-  outline: none;
-}
-
-/* line 42, /Users/hholz/coding/ruby/octopress/sass/site/_simple-search.scss */
-.no-placeholder .simple-search .search {
-  background: #86aca3 url('/images/search.png?1346475000') 0.3em 0.25em no-repeat;
-  text-indent: 1.3em;
 }

@@ -1,0 +1,15 @@
+.primary-navigation {
+
+  @extend .main;
+  @include adjust-font-size-to(.95*$base-font-size);
+
+  background-color : $nav-bg;
+  @include background-image(linear-gradient(lighten($nav-bg, 8),
+                                            $nav-bg,
+                                            darken($nav-bg, 11)));
+
+  border-top-color    : lighten($nav-bg, 15);
+  border-bottom-color : darken($nav-bg, 25);
+  @include h-borders(1px, .35*$base-lines, 1em, solid);
+
+} // #primary-navigation

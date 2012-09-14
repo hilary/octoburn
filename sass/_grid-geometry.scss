@@ -1,6 +1,6 @@
 $column-width             : 1em;
 $gutter-width             : .5em;
-$grid-padding             : $gutter-width;
+$grid-padding             : 0;
 
 $container-style          : fluid;
 $show-grid-backgrounds    : true;
@@ -13,4 +13,10 @@ $aside-right-layout       : 60em $aside-right-columns;
 
 body > div { @include container($vertical-layout-columns, 
                                 $horizontal-aside-layout, 
-                                $aside-right-layout); }
+                                $aside-right-layout); 
+             @include susy-grid-background;
+}
+
+@include at-breakpoint($aside-right-layout) { 
+  @include establish-baseline(16px);
+}

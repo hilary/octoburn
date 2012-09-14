@@ -1,0 +1,28 @@
+// self-contained for ease of relocation
+
+.sharing-menu { 
+
+  ul {
+    @include horizontal-list;
+    @include float-left;
+    @include nowrap;
+
+    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
+
+  } // ul
+}// .sharing-menu
+
+.twitter-share {
+  @extend .simple-social-button;
+  @include social-button-bg('twitter');
+}
+.googleplus-share {
+  @extend .simple-social-button;
+  @include social-button-bg('googleplus', #db583b);
+  &:before { top: 5px; }
+}
+.facebook-share {
+  @extend .simple-social-button;
+  @include social-button-bg('facebook', #4e5a9b);
+  &:before { top: 3px; }
+}

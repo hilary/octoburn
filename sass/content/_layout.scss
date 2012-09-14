@@ -4,18 +4,22 @@
 }
 
 .content { 
+
   margin  : 0;
-  @include pad(1, 1, $vertical-layout-columns);
+  @include span-columns($vertical-layout-columns - 2 omega, 
+                        $vertical-layout-columns);
 
   @include at-breakpoint($horizontal-aside-layout) { 
-    @include pad(1, 1, $horizontal-aside-columns); 
     @include span-columns(22 omega, $horizontal-aside-columns); 
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
 
-    @include pad(2, 1, $aside-right-columns); 
-    @include span-columns(17, $aside-right-columns);
+    padding-left  : columns(1, $aside-right-columns); 
+    padding-right : gutter($aside-right-columns); 
+
+    @include span-columns(20, $aside-right-columns);
+    margin        : 0;
 
   } // $aside-right-layout
 

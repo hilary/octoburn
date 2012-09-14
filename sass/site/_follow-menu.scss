@@ -1,9 +1,0 @@
-.follow-menu {
-
-  h1 {
-    @include adjust-font-size-to(.7*$base-font-size);
-    color   : $subtitle-color;
-    display : inline-block;
-  }
-
-}

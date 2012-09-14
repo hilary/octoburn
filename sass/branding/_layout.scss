@@ -11,8 +11,8 @@ body > div > header {
       @include span-columns(14, $horizontal-aside-columns); 
     }
     .follow-menu { 
-      @include pad(1, 1, $horizontal-aside-columns); 
-      @include span-columns(6 omega, $horizontal-aside-columns); 
+      @include suffix(1, $horizontal-aside-columns); 
+      @include span-columns(7 omega, $horizontal-aside-columns); 
     }
 
   } // $horizontal-aside-layout
@@ -25,8 +25,8 @@ body > div > header {
       @include span-columns(17, $aside-right-columns); 
     }
     .follow-menu { 
-      @include pad(1, 1, $aside-right-columns); 
-      @include span-columns(8 omega, $aside-right-columns); 
+      @include suffix(1, $aside-right-columns); 
+      @include span-columns(9 omega, $aside-right-columns); 
     }
  
   } // $aside-right-layout

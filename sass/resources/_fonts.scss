@@ -1,8 +1,3 @@
-@include at-breakpoint($aside-right-layout) { 
-  @include establish-baseline(16px);
-}
-
-// add in site fonts
 .sans  { font-family : Ubuntu, $sans;      }
 .serif { font-family : Quando, $serif;     }
 .mono  { font-family : Electrolize, $mono; }

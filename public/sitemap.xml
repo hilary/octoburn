@@ -2,11 +2,11 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://hholz.com//blog/2012/on-delicious</loc>
-        <lastmod>2012-09-11T21:31:23-07:00</lastmod>
+        <lastmod>2012-09-13T16:59:30-07:00</lastmod>
     </url>
     <url>
         <loc>http://hholz.com//blog/2012/deploying-octopress-on-github</loc>
-        <lastmod>2012-09-11T21:31:23-07:00</lastmod>
+        <lastmod>2012-09-13T16:59:52-07:00</lastmod>
     </url>
     <url>
         <loc>http://hholz.com//blog/2012/upgraded-octopress</loc>
@@ -14,11 +14,11 @@
     </url>
     <url>
         <loc>http://hholz.com//archives/</loc>
-        <lastmod>2012-09-11T21:31:23-07:00</lastmod>
+        <lastmod>2012-09-13T16:59:52-07:00</lastmod>
     </url>
     <url>
         <loc>http://hholz.com//blog/</loc>
-        <lastmod>2012-09-11T21:31:23-07:00</lastmod>
+        <lastmod>2012-09-13T16:59:52-07:00</lastmod>
     </url>
     <url>
         <loc>http://hholz.com//feeds/integrating_design.xml</loc>
@@ -26,6 +26,6 @@
     </url>
     <url>
         <loc>http://hholz.com//</loc>
-        <lastmod>2012-09-11T21:31:23-07:00</lastmod>
+        <lastmod>2012-09-13T16:59:52-07:00</lastmod>
     </url>
 </urlset>
