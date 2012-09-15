@@ -6,29 +6,33 @@ $mono  : Menlo, Monaco, lucida console, Courier New, monospace;
 .serif { font-family : $serif; }
 .mono  { font-family : $mono;  }
 
-.header { @extend .serif; }
-.main   { @extend .sans;  }
-.code   { @extend .mono;  }
-.aside  { @extend .sans;  }
-
-body {
-  @extend .main;
-  header {
-    @extend .header;
-    text-rendering : optimizelegibility;
-    h1, h2, h3, h4, h5, h6 { @extend .header; }
-  }
-  pre, pre header { @extend .code; }
-  code, tt, samp { 
-    @extend .code; 
-    header { @extend .header; }
-  }
-  aside {
-    @extend .aside;
-    header { @extend .header; }
-  }
+.main { @extend .sans;  }
+.header { 
+  @extend .serif; 
+  text-rendering : optimizelegibility; 
+  a { @include hover-link; } 
+}
+.code { 
+  @extend .mono;  
+  text-rendering : optimizelegibility; 
+  a { @include hover-link; } 
+}
+.aside { 
+  @extend .sans;  
+  a { @include hover-link; } 
 }
 
-.code, .aside, .header { 
-  a { @include hover-link; } 
+body { @extend .main; }
+header, h1, h2, h3, h4, h5, h6 { @extend .header; }
+pre {
+  @extend .code;
+  header, h1, h2, h3, h4, h5, h6 { @extend .code; }
+}
+code, kbd, var, tt, samp { 
+  @extend .code; 
+  header, h1, h2, h3, h4, h5, h6 { @extend .header; }
+}
+aside {
+  @extend .aside;
+  header, h1, h2, h3, h4, h5, h6 { @extend .header; }
 }

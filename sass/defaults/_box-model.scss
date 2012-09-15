@@ -30,9 +30,8 @@ audio:not([controls]) {
 
 .flex-content { max-width: 100%; height: auto; }
 
-body,  // remove default margins and padding
-menu,
-nav { // so many of my nav and menus are h lists
+body, 
+nav { 
   margin  : 0;
   padding : 0;
 }

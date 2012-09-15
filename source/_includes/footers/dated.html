@@ -7,13 +7,18 @@
 {% capture was_updated %}{{ updated | size }}{% endcapture %}
 
 {% if has_date %}
-  {% capture created_at %}created <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate {% if was_updated %}data-updated="true"{% endif %}>{{ date_formatted }}</time>{% endcapture %}
-{% endif %}
-
-{% if was_updated %}
-  {% capture last_updated %}last updated <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>{% endcapture %}
-{% endif %}
-
-{% if has_date or was_updated %}
-  <span class="pubdate">{{ created_at }}{{ last_updated }}</span>
+  {% if was_updated and was_updated > '0' %}
+    <span class="pubdate">
+      <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate data-updated="true">{{ date_formatted }}</time> 
+      (last updated <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>)
+    </span>
+  {% else %}
+    <span class="pubdate">
+      <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate>{{ date_formatted }}</time>
+    </span>
+  {% endif %}
+{% elsif was_updated and was_updated > '0' %}
+  <span class="pubdate">
+    last updated <time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">{{ updated_formatted }}</time>
+  </span>
 {% endif %}

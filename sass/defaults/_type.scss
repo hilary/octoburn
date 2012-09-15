@@ -21,8 +21,6 @@ p {
   margin-right : 0;
 }
 
-p, blockquote, li, dd { @include force-wrap; }
-
 q { quotes : none; } // CSS quotes not supported: IE 7
 q { font-style : italic;
   &:before { content : '\201C'; }

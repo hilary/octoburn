@@ -1,4 +1,4 @@
-body > div > header {
+.banner {
 
   margin : 0;
   @include clearfix; 
@@ -18,10 +18,9 @@ body > div > header {
       @include span-columns(14, $horizontal-aside-columns); 
       margiin-right : 0;
     }
-    .follow-menu { 
+    menu[label=follow] { 
       @include span-columns(9 omega, $horizontal-aside-columns); 
     }
-
 
   } // $horizontal-aside-layout
 
@@ -34,7 +33,7 @@ body > div > header {
     > hgroup     { 
       @include span-columns(17, $aside-right-columns); 
     }
-    .follow-menu { 
+    menu[label=follow] { 
       @include span-columns(10 omega, $aside-right-columns); 
     }
  

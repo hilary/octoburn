@@ -1,31 +1,22 @@
-// follow-menu self-contained to make it easy to move around
-
-.follow-menu { 
-
-  ul {
-    @include horizontal-list;
-    @include nowrap;
-    @include float-right;
-  } // ul
-}// menu
-
-$hover-color : lighten($header-bg, 5);
+menu[label=follow]:after {
+  content       : "follow";
+  color         : $subtitle-color; 
+  display       : inline;
+  float         : right;
+  margin        : 0;
+  padding-right : 0.8em;
+}
 
 .follow-button {
+  margin : 0;
 
   img {
     background-color : $content-bg;
-    @include border-radius(.3em);
     border           : 1px solid $subtitle-color;
-    vertical-align : middle;
+    vertical-align   : middle;
+  } // img
 
-    a { 
-      text-decoration : none; 
-      margin : 0 .2em;
-    }
-  }
-
-}
+} // .follow-button
 
 li.delicious-follow,
 li.github-follow,
@@ -33,3 +24,25 @@ li.googleplus-follow,
 li.rss-follow { 
   @extend .follow-button; 
 }
+
+menu[label=follow] { @include horizontal-list(.1em, right); }
+.follow-button img { @include border-radius(.3em); }
+
+@include at-breakpoint($horizontal-aside-layout) {
+
+  menu[label=follow] { @include horizontal-list(.2em, right); }
+  .follow-button img { 
+    @include border-bottom-radius(.3em); 
+    @include border-top-radius(0);
+  }
+}
+
+@include at-breakpoint($aside-right-layout) {
+
+  menu[label=follow] { @include horizontal-list(.4em, right); }
+  .follow-button img { 
+    @include border-bottom-radius(.3em); 
+    @include border-top-radius(0);
+  }
+}
+

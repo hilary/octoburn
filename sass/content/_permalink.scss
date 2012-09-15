@@ -1,3 +1,7 @@
-a[rel=bookmark] {
-  &:before { @extend .bullet; }
+p.bookmark {
+  display : inline;
+  a[rel=bookmark] { 
+    @include hover-link;
+    &:before { @extend .bullet; } 
+  }
 }

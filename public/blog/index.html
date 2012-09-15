@@ -38,37 +38,40 @@
 
 <body  id="blog-index" >
   <div id="#grid">
-    <header role="banner">
-      <hgroup>
-        <h1><a href="/">integrating design</a></h1>
-        <h2>your friendly native guide</h2>
-      </hgroup>
-      <menu class="follow-menu" role="menubar">
-  <ul>
-    <li class="delicious-follow">
-      <a title="follow on delicious" 
-         href="https://delicious.com/hilzh" ><img src="/images/icon/delicious.png" alt="delicious"></a>
-    </li>
-    <li class="github-follow">
-      <a title="follow on github"
-         href="https://github.com/hilary" 
-         alt="Github icon"><img src="/images/icon/github.png" alt="github"></a>
-    </li>
-    <li class="googleplus-follow">
-      <a title="follow via g+1"
-         href="https://plus.google.com/holz.hilary@gmail.com?rel=author"><img src="/images/icon/googleplus.png" alt="googleplus"></a>
-    </li>
-    <li class="rss-follow">
-      <a href="feeds/integrating_design.xml" 
-         rel="subscribe-rss" 
-         title="subscribe via RSS"><img src="/images/icon/rss.png" alt="rss"></a>
-    </li>
-  </ul>
+    <header>
+      <div class="banner">
+        <hgroup>
+          <h1><a href="/">integrating design</a></h1>
+          <h2>your friendly native guide</h2>
+        </hgroup>
+        <menu type="list" label="follow" role="menubar">
+  <li class="delicious-follow">
+    <a title="follow on delicious" 
+       target="_blank"
+       href="https://www.delicious.com/settings/networkedit?action=add&username=hilzh&jump=/hilzh" ><img src="/images/icon/delicious.png"
+               alt="delicious"></a></li>
+  <li class="rss-follow">
+    <a href="feeds/integrating_design.xml" 
+       target="_blank"
+       rel="subscribe-rss" 
+       title="subscribe via RSS"><img src="/images/icon/rss.png" 
+                                      alt="rss"></a></li>
+  <li class="googleplus-follow">
+    <a title="follow via g+1"
+       target="_blank"
+       href="https://plus.google.com/holz.hilary@gmail.com?rel=author"><img 
+               src="/images/icon/googleplus.png" alt="googleplus"></a></li>
+  <li class="github-follow">
+    <a title="follow on github"
+       target="_blank"
+       href="https://github.com/users/follow?target=hilary" 
+       alt="Github icon"><img src="/images/icon/github.png" 
+                              alt="github"></a></li>
 </menu>
 
-    </header>
-    <div class="primary-navigation">
-      <section class="simple-search">
+      </div>
+      <div class="primary-navigation">
+        <section class="simple-search">
   <form action="http://google.com/search" method="get">
     <fieldset role="search">
       <input type="hidden" name="q" value="site:hholz.com/" />
@@ -77,7 +80,7 @@
   </form>
 </section>
 
-      <nav class="primary-navlist" role="navigation">
+        <nav class="primary-navlist" role="navigation">
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/blog/">Blog</a></li>
@@ -85,7 +88,8 @@
   </ul>
 </nav>
 
-    </div>
+      </div>
+    </header>
     <article class="main-content">
       <article role="article">
   <ul>
@@ -104,14 +108,11 @@
 
 
   
-
-
-
+    <span class="pubdate">
+      <time datetime="2012-09-03T12:41:00-07:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time> 
+      (last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time>)
+    </span>
   
-
-
-
-  <span class="pubdate">created <time datetime="2012-09-03T12:41:00-07:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2012</time>last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time></span>
 
 
     <a rel="bookmark" href="/blog/2012/upgraded-octopress">permalink</a>
@@ -141,14 +142,11 @@
 
 
   
-
-
-
+    <span class="pubdate">
+      <time datetime="2012-08-30T10:40:00-07:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time> 
+      (last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time>)
+    </span>
   
-
-
-
-  <span class="pubdate">created <time datetime="2012-08-30T10:40:00-07:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time>last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time></span>
 
 
     <a rel="bookmark" href="/blog/2012/deploying-octopress-on-github">permalink</a>
@@ -181,14 +179,11 @@ other folks hours of research and head-scratching.
 
 
   
-
-
-
+    <span class="pubdate">
+      <time datetime="2012-08-28T14:28:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2012</time> 
+      (last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time>)
+    </span>
   
-
-
-
-  <span class="pubdate">created <time datetime="2012-08-28T14:28:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2012</time>last updated <time datetime="2012-09-08T22:55:00-07:00" class="updated">Sep 8<span>th</span>, 2012</time></span>
 
 
     <a rel="bookmark" href="/blog/2012/on-delicious">permalink</a>
@@ -211,33 +206,18 @@ original social bookmarking web service.
   </footer>
 </article>
 
-  <section class="default-aside aside-base">
-  <!-- if on a post, don't list it as a recent post! -->
-
-
-
-<aside class="recent-posts">
-  <h1>Recent Posts</h1>
-  <ul>
-    
-      <li><a href="/blog/2012/deploying-octopress-on-github">repository naming for Octopress on Github</a></li>
-    
-      <li><a href="/blog/2012/on-delicious">on delicious, finally</a></li>
-    
+  <section class="index-aside aside-base">
+  <aside class="github">
+  <h1>github</h1>
+  <ul id="gh_repos" data-user="hilary" data-count="3" data-skip="true">
+    <li class="loading">Status updating&#8230;</li>
   </ul>
 </aside>
 
   <aside class="delicious">
-  <h1>Delicious Bookmarks</h1>
+  <h1>bookmarks</h1>
   <div id="delicious"></div>
   <script type="text/javascript" src="http://feeds.delicious.com/v2/json/hilzh?count=3&amp;sort=date&amp;callback=octopress.renderDeliciousLinks"></script>
-</aside>
-
-  <aside class="github">
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos" data-user="hilary" data-count="3" data-skip="true">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
 </aside>
 
 </section>

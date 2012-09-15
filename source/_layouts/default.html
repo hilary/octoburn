@@ -2,17 +2,19 @@
 {% include head/head.html %}
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
   <div id="#grid">
-    <header role="banner">
-      <hgroup>
-        <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
-        <h2>{{ site.subtitle }}</h2>
-      </hgroup>
-      {% include menus_and_navigation/follow_menu.html %}
+    <header>
+      <div class="banner">
+        <hgroup>
+          <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+          <h2>{{ site.subtitle }}</h2>
+        </hgroup>
+        {% include menus_and_navigation/follow_menu.html %}
+      </div>
+      <div class="primary-navigation">
+        {% include sections/simple_search.html %}
+        {% include menus_and_navigation/primary_navigation.html %}
+      </div>
     </header>
-    <div class="primary-navigation">
-      {% include sections/simple_search.html %}
-      {% include menus_and_navigation/primary_navigation.html %}
-    </div>
     <article class="main-content">
       {{ content | expand_urls: root_url }}
     </article>

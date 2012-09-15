@@ -1,11 +1,11 @@
 @import 'compass/layout/sticky-footer';
-@include sticky-footer(2.5em,
+@include sticky-footer(2em,
                        '#grid', '#site-credits', '#contentinfo');
 
 footer.credits { 
 
   @include clearfix; 
-  padding-top : 1em;
+  padding-top : .5em;
 
   @include at-breakpoint($vertical-layout-columns) {
 

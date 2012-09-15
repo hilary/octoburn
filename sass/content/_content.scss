@@ -20,9 +20,12 @@ $type-border      : lighten($text-color, 11);
 
 @import 'article-excerpt';
 @import 'article-header';
+@import 'page-title';
 @import 'page-nav';
 @import 'permalink';
 @import 'pubdate';
 @import 'sharing-menu';
 @import 'solarized';
 
+// site index page
+@import 'index';

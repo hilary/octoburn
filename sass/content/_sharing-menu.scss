@@ -1,20 +1,34 @@
-// self-contained for ease of relocation
+menu[label=share] { 
 
-.sharing-menu { 
 
-  ul {
-    @include horizontal-list;
-    @include float-left;
-    @include nowrap;
+  @include horizontal-list(.2em, left);
 
-    a:link, a:visited, a:active, a:focus, a:hover { padding : 0.2em 0.5em; }
-
-  } // ul
-}// .sharing-menu
-
-.twitter-share {
+  &:before { 
+    content : "share";
+    color   : darken($subtitle-color, 20);
+    display : inline;
+    float   : left;
+    margin  : 0;
+    padding : 0 0.8em 0 2em;
+  }
 }
-.googleplus-share {
-}
-.facebook-share {
+
+.share-button {
+  margin : 0;
+
+  img {
+    background-color : $content-bg;
+    border           : 1px solid $subtitle-color;
+    padding          : 4px;
+    vertical-align   : middle;
+
+    @include border-radius(.4em);
+  } // img
+
+} // .share-button
+
+li.twitter-share,
+li.googleplus-share,
+li.facebook-share {
+  @extend .share-button;
 }

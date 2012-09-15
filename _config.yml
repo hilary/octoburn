@@ -1,11 +1,13 @@
-url                          : http://hholz.com/
-title                        : integrating design
-subtitle                     : your friendly native guide
-author                       : hilary j holz
-simple_search                : http://google.com/search
-description                  : coding blog by full stack web dev
-date_format                  : "ordinal"
-feed_url                     : feeds/integrating_design.xml
+url            : http://hholz.com/
+title          : integrating design
+subtitle       : your friendly native guide
+author         : hilary j holz
+simple_search  : http://google.com/search
+description    : coding blog by full stack web dev
+date_format    : "ordinal"
+
+feed_url       : feeds/integrating_design.xml
+
 tag_dir                      : tags/
 tag_feeds                    : true
 feed_dir                     : feeds/
@@ -41,13 +43,15 @@ facebook_like                : true
 google_plus_one              : true
 google_plus_one_size         : small
 
-github_user                  : hilary
-github_repo_count            : 3
-github_show_profile_link     : false
-github_skip_forks            : true
+github_follow_url        : https://github.com/users/follow?target=      
+github_user              : hilary
+github_repo_count        : 3
+github_show_profile_link : false
+github_skip_forks        : true
 
-delicious_user               : hilzh
-delicious_count              : 3
+delicious_follow_url : https://www.delicious.com/settings/networkedit?action=add&username=
+delicious_user       : hilzh
+delicious_count      : 3
 
 disqus_short_name            : integrating
 disqus_show_comment_count    : false
@@ -57,10 +61,5 @@ google_plus_user             : holz.hilary@gmail.com
 google_plus_image_size       : 16
 google_plus_hidden           : false  # doesn't work
 
-# twitter_user                 :
-# twitter_tweet_count          : 4
-# twitter_show_replies         : false
-# twitter_follow_button        : true
-# twitter_show_follower_count  : false
 
 

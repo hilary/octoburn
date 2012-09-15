@@ -1,47 +1,5 @@
 @import 'aside-base';
 
-.default-aside {
+@import 'default-layout';
+@import 'github';
 
-  position : relative;
-  display  : block;
-  margin   : 0;
-  aside { margin : 0; }
-
-  @include at-breakpoint($vertical-layout-columns) {
-
-    @include clearfix; 
-    padding    : $vertical-layout-gutter; 
-    border-top : 1px solid $aside-border;
-  }
-
-  @include at-breakpoint($horizontal-aside-layout) {
-
-    padding : $horizontal-aside-gutter $horizontal-aside-single;
-
-    .recent-posts { 
-      @include span-columns(7, $horizontal-aside-columns); 
-      padding-right : $horizontal-aside-gutter;
-      margin-right  : 0;
-    }
-    .delicious    { 
-      @include span-columns(8, $horizontal-aside-columns); 
-      padding-right : $horizontal-aside-gutter;
-      margin-right  : 0;
-    }
-    .github       { 
-      @include span-columns(8 omega, $horizontal-aside-columns); 
-    }
-
-  } // $horizontal-aside-layout
-
-  @include at-breakpoint($aside-right-layout) {
-
-    padding-left  : $aside-right-gutter;
-    padding-right : $aside-right-single;
-    @include span-columns(8 omega, $aside-right-columns); 
-
-    border-left : 1px solid $aside-border;  
-
-  } // $aside-right-layout
-
-}

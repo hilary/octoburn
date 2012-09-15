@@ -6,10 +6,8 @@ date        : 2012-08-30 10:40
 comments    : true
 description : Detailed walkthrough of repository naming when deploying Octopress on Github
 keywords    : octopress, github, walkthrough, naming
-tags        : 
-- Octopress
-- Github
-- walkthrough
+sharing     : true
+tags        : Octopress, Github, walkthrough
 ---
 
 While the [Octopress instructions][1] for deploying an
