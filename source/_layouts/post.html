@@ -13,7 +13,7 @@ single      : true
     <h1 class="page-title">{{ page.title }}</h1>
     <p class="tldr">{{ content | excerpt }}</p>
     {{ content | split:'<!--more-->' | last }}
-    {% include menus_and_navigation/tag_list.html     %}
+    {% include menus_and_navigation/page_tag_list.html %}
     {% include menus_and_navigation/sharing_menu.html %}
   </article>
   {% include sections/comments.html %}
