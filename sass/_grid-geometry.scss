@@ -6,22 +6,31 @@ $container-style          : fluid;
 $show-grid-backgrounds    : true;
 
 $vertical-layout-columns  : 16; // default, mobile first
-$vertical-layout-gutter   : gutter($vertical-layout-columns); 
-$vertical-layout-single   : columns(1, $vertical-layout-columns);
+$vertical-layout          : $vertical-layout-columns 40em;
 
 $horizontal-aside-columns : 24;
 $horizontal-aside-layout  : 40em $horizontal-aside-columns 60em;
-$horizontal-aside-gutter  : gutter($horizontal-aside-columns);
-$horizontal-aside-single  : columns(1, $horizontal-aside-columns);
 
 $aside-right-columns      : 30;
 $aside-right-layout       : 60em $aside-right-columns;
+
+body > div { 
+  margin : 0;
+  @include container($vertical-layout,
+                     $horizontal-aside-layout,
+                     $aside-right-layout);
+//             @include susy-grid-background;
+}
+
+// for convenience
+$vertical-layout-gutter   : gutter($vertical-layout-columns); 
+$vertical-layout-single   : columns(1, $vertical-layout-columns);
+
+$horizontal-aside-gutter  : gutter($horizontal-aside-columns);
+$horizontal-aside-single  : columns(1, $horizontal-aside-columns);
+
 $aside-right-gutter       : gutter($aside-right-columns);
 $aside-right-single       : columns(1, $aside-right-columns); 
 
-body > div { @include container($vertical-layout-columns, 
-                                $horizontal-aside-layout, 
-                                $aside-right-layout); 
-//             @include susy-grid-background;
-}
+
 

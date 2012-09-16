@@ -1,6 +1,6 @@
-.default-aside {
+.index-aside { 
 
-  margin   : 0;
+  margin  : 0;
   aside { margin : 0; }
 
   @include at-breakpoint($vertical-layout) {
@@ -15,18 +15,16 @@
     @include clearfix; 
     padding : $horizontal-aside-gutter $horizontal-aside-single;
 
-    .recent-posts { 
-      @include span-columns(7, $horizontal-aside-columns); 
-      padding-right : $horizontal-aside-gutter;
-      margin-right  : 0;
+    $aside-cols : ( $horizontal-aside-columns - 4 ) / 2;
+
+    .delicious { 
+      @include span-columns($aside-cols,
+                             $horizontal-aside-columns); 
+      padding-right : $horizontal-aside-single;
     }
-    .delicious    { 
-      @include span-columns(8, $horizontal-aside-columns); 
-      padding-right : $horizontal-aside-gutter;
-      margin-right  : 0;
-    }
-    .github       { 
-      @include span-columns(8 omega, $horizontal-aside-columns); 
+    .github    { 
+      @include span-columns($aside-cols omega, 
+                            $horizontal-aside-columns); 
     }
 
   } // $horizontal-aside-layout

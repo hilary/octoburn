@@ -14,4 +14,6 @@ $aside-color        : change-color(mix($text-color, $aside-bg, 80),
                                    $hue: hue($aside-bg), 
                                    $saturation: saturation($aside-bg)/2);
 
-html { background-color : $content-bg; }
+$page-bg            : desaturate(lighten($header-bg, 10), 15);
+
+html { background-color : $page-bg; }

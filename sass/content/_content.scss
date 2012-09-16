@@ -20,10 +20,10 @@ $type-border      : lighten($text-color, 11);
 
 @import 'article-excerpt';
 @import 'article-header';
+@import 'pubdate';
+@import 'permalink';
 @import 'page-title';
 @import 'page-nav';
-@import 'permalink';
-@import 'pubdate';
 @import 'sharing-menu';
 @import 'solarized';
 

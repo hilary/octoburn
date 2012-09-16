@@ -1,7 +1,13 @@
-<nav class="primary-navlist" role="navigation">
-  <ul>
-    <li><a href="{{ root_url }}/">Home</a></li>
-    <li><a href="{{ root_url }}/blog/">Blog</a></li>
-    <li><a href="{{ root_url }}/archives/">Archives</a></li>
-  </ul>
-</nav>
+<div class="primary-navigation">
+  {% include menus_and_navigation/simple_search.html %}
+  <nav class="primary-navlist" role="navigation">
+    <ul>
+      <li><a href="{{ root_url }}/"
+             itemprop="relatedLink">Home</a></li>
+      <li><a href="{{ root_url }}/blog/"
+             itemprop="relatedLink">Blog</a></li>
+      <li><a href="{{ root_url }}/archives/"
+             itemprop="relatedLink">Archives</a></li>
+    </ul>
+  </nav>
+</div>

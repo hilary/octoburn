@@ -1,21 +1,24 @@
 ---
-layout      : default
+layout      : blog
 aside_style : default
 single      : true
 ---
-<article class="content">
-  {% include helpers/permalink.html %}
-  <article role="article" class="full-article">
-    <footer class="pubdate">
-      {% include footers/dated.html %}
-      <p class="bookmark"><a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a></p>
-    </footer>
-    <h1 class="page-title">{{ page.title }}</h1>
-    <p class="tldr">{{ content | excerpt }}</p>
-    {{ content | split:'<!--more-->' | last }}
+<article class="content" 
+         itemscope 
+         itemtype="http://schema.org/BlogPosting">
+  <header>
+    {% include snippets/meta.html %}
+    <h1 itemprop="headline" class="page-title">{{ page.title }}</h1>
     {% include menus_and_navigation/page_tag_list.html %}
     {% include menus_and_navigation/sharing_menu.html %}
-  </article>
+  </header>
+  <section itemprop="articleBody">
+    <p class="tldr">{{ content | excerpt }}</p>
+    {{ content | split:'<!--more-->' | last }}
+  </section>
+  {% include menus_and_navigation/page_tag_list.html %}
+  {% include menus_and_navigation/sharing_menu.html %}
+  {% include menus_and_navigation/page_nav.html %}
   {% include sections/comments.html %}
 </article>
 {% include helpers/aside.html %}

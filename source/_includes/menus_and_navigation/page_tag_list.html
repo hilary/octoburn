@@ -1,6 +1,6 @@
 {% if page.tags %}
-  <nav class="tag-list">
-    <ul>
+  <nav class="page-tag-list">
+    <ul itemprop="keywords">
       {% for tag in page.tags %}
         {% capture tag_url %}{{ site.tag_dir }}{{ tag }}-index.html{% endcapture %}
         <li><a rel="tag" href="{{ tag_url }}">{{ tag }}</a></li>

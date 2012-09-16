@@ -1,19 +1,26 @@
 .primary-navlist {
 
-  li {
-    margin : 0;
+  ul { 
+    @include horizontal-list;
 
-    a {
-      text-decoration : none;
-      font-weight     : bold;
-      text-shadow     : lighten($nav-bg, 12) 0 1px;
-      @include link-colors($nav-color,
-                           $nav-color-hover,
-                           $nav-color-hover,
-                           $nav-color,
-                           $nav-color-hover);
-    } // a
+    li {
+      margin : 0;
 
-  } // li
+      a {
+        text-decoration : none;
+        font-weight     : bold;
+        text-shadow     : lighten($nav-bg, 12) 0 1px;
+        @include link-colors($nav-color,
+                             $nav-color-hover,
+                             $nav-color-hover,
+                             $nav-color,
+                             $nav-color-hover);
+        &:link, &:visited, &:active, &:focus, &:hover { padding : 0.2em 0.5em; }
+      } // a
+
+    } // li
+
+  } // ul
 
 } // .primary-navlist
+

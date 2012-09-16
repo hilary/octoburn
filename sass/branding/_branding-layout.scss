@@ -2,41 +2,28 @@
 
   margin : 0;
   @include clearfix; 
-
-  @include at-breakpoint($vertical-layout-columns) {
-
-    padding-left  : gutter($vertical-layout-columns); 
-    padding-right : gutter($vertical-layout-columns); 
-  }
+  padding : $vertical-layout-gutter;
 
   @include at-breakpoint($horizontal-aside-layout) {
-
-    padding-left  : $horizontal-aside-single;
-    padding-right : $horizontal-aside-single;
+    padding : $horizontal-aside-single;
 
     > hgroup     { 
       @include span-columns(14, $horizontal-aside-columns); 
       margiin-right : 0;
     }
-    menu[label=follow] { 
+
+    menu[label=follow] {
       @include span-columns(9 omega, $horizontal-aside-columns); 
     }
 
   } // $horizontal-aside-layout
 
-
   @include at-breakpoint($aside-right-layout) {
+    padding : $aside-right-single;
 
-    padding-left  : $aside-right-single;
-    padding-right : $aside-right-single;
-
-    > hgroup     { 
-      @include span-columns(17, $aside-right-columns); 
-    }
-    menu[label=follow] { 
-      @include span-columns(10 omega, $aside-right-columns); 
-    }
+    > hgroup { @include span-columns(17, $aside-right-columns); }
+    menu[label=follow] { @include span-columns(10 omega, $aside-right-columns); }
  
   } // $aside-right-layout
 
-}
+} // .banner

@@ -1,28 +1,21 @@
-{% include head/page_title.html %}
-{% include head/metadata.html %}
-{% include head/canonical.html %}
-{% include head/stylesheet.html %}
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>{{ page_title }}</title>
+  {% include head/page_title.html %}
 
   <meta name="author" content="{{ site.author }}">
-  <meta name="Generator" content="{{ meta_generator }}">
-  <meta name="description" content="{{ meta_description }}">
-  {% if page.keywords %}
-    <meta name="keywords" content="{{ page.keywords }}">
-  {% endif %}
+  {% include head/generator.html %}
+  {% include head/description.html %}
+  {% include head/keywords.html %}
 
 <!--  <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
-  <link rel="canonical" href="{{ canonical }}">
-
-  <link href="{{ stylesheet_url }}" media="screen, projection" rel="stylesheet" type="text/css">
+  {% include head/canonical.html %}
+  {% include head/stylesheet.html %}
   <script src="{{ root_url }}/javascripts/octopress.min.js" type="text/javascript"></script>
 
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">

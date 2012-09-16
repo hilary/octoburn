@@ -3,14 +3,13 @@ layout      : default
 aside_style : default
 ---
 <article class="content">
-  {% include helpers/permalink.html %}
-  <article role="article">
-    <footer class="pubdate">{% include footers/dated.html %}</footer>
+  <header>
     <h1 class="page-title">{{ page.title }}</h1>
-    {{ content }}
-    {% include menus_and_navigation/tag_list.html     %}
+    {% include snippets/meta.html %}
     {% include menus_and_navigation/sharing_menu.html %}
-  </article>
+  </header>
+  {{ content }}
+  {% include menus_and_navigation/sharing_menu.html %}
   {% include sections/comments.html %}
 </article>
 {% include helpers/aside.html %}

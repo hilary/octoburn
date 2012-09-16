@@ -1,14 +1,8 @@
-{% include helpers/permalink.html %}
 <article class="excerpt" role="article">
-  <footer>
-    {% include footers/dated.html %}
-    <a rel="bookmark" href="{{ permalink }}">{{ site.permalink_label }}</a>
-  </footer>
   <header>
+    {% include snippets/meta.html %}
     <h1><a href="{{ permalink }}">{{ post.title }}</a></h1>
   </header>
-  <section class="excerpt">
-    {{ post.content | excerpt }}
-    <a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a>
-  </section>
+  {{ post.content | excerpt }}
+  <a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a>
 </article>

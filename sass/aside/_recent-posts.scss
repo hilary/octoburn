@@ -1,12 +1,7 @@
 aside.recent-posts {
 
-  > ul > li {
-    
-    p {
-      @include adjust-font-size-to(.9*$aside-font-size);
-      margin : 0 0 .5em 1em;
-    }
+  h1 { padding-top : 0; }
 
-  }
+  nav { display : inline; }
 
 }

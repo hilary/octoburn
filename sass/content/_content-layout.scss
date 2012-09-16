@@ -1,35 +1,15 @@
-.main-content { // a container that creates structure
-  margin  : 0;
-  padding : 0;
-}
-
 .content { 
 
   margin  : 0;
-
-  @include at-breakpoint($vertical-layout-columns) {
-
-    @include clearfix; 
-    padding : $vertical-layout-gutter; 
-  }
+  @include clearfix; 
+  padding : $vertical-layout-gutter; 
 
   @include at-breakpoint($horizontal-aside-layout) { 
-
     padding : $horizontal-aside-single;
-    @include clearfix; 
-
-  } // $horizontal-aside-layout
+  }
 
   @include at-breakpoint($aside-right-layout) {
-
-    padding-left  : columns(1, $aside-right-columns); 
-    padding-right : gutter($aside-right-columns); 
-    height : 100%;
-
-    @include span-columns(($aside-right-columns * 2)/3, 
-                          $aside-right-columns);
-    margin-right : 0; // correction for susy bug
-
-  } // $aside-right-layout
+    padding : $aside-right-single; 
+  }
 
 } // .content

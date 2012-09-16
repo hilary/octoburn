@@ -1,10 +1,20 @@
-.pubdate, .pubdate time, .pubdate time .month, .pubdate time .day { 
-  display: inline-block; }
-
-.pubdate {
+time[itemprop="datePublished"], time[itemprop="dateModified"] {
 
   @include adjust-font-size-to(.9*$base-font-size);
-  color: $text-color-light; 
+  color          : $text-color-light; 
+  text-transform : uppercase;
+  margin         : 0;
+  padding        : 0;
 
-  time { text-transform: uppercase; }
+  &, .month, .day { display : inline-block; }
+}
+
+time[itemprop="dateModified"]:before {
+  content      : "last updated";
+  font-variant : normal;
+  font-style   : italic;
+  display      : inline;
+  margin       : 0;
+  padding      : 0 .2em 0 .5em;
+  @include adjust-font-size-to(.85*$base-font-size);
 }
