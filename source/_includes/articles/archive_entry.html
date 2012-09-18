@@ -1,6 +1,9 @@
 {% include helpers/permalink.html %}
-<article class="archive">
-  <h1><a href="{{ permalink }}">{{ post.title }}</a></h1>
-  {% include snippets/meta.html %}
-  {% include menus_and_navigation/tag_list.html %}
+{% include helpers/pubdates.html %}
+<article class="archive" itemscope 
+         itemtype="http://schema.org/BlogPosting"
+         role="article">
+  <h1><a href="{{ permalink_url }}">{{ post.title }}</a></h1>
+  {{ date_published }}{{ date_modified }}{{ permalink }}
+  {{ post.tags | tag_links }}
 </article>

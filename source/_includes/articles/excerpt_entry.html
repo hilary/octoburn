@@ -1,8 +1,13 @@
-<article class="excerpt" role="article">
+{% include helpers/permalink.html %}
+{% include helpers/pubdates.html %}
+<article class="excerpt" itemscope 
+         itemtype="http://schema.org/BlogPosting"
+         role="article">
   <header>
-    {% include snippets/meta.html %}
-    <h1><a href="{{ permalink }}">{{ post.title }}</a></h1>
+    {{ date_published }}{{ date_modified }}{{ permalink }}
+    <h1><a href="{{ permalink_url }}">{{ post.title }}</a></h1>
+    {{ post.tags | tag_links }}
   </header>
   {{ post.content | excerpt }}
-  <a rel="full-article" href="{{ permalink }}">{{ site.excerpt_link }}</a>
+  <a rel="full-article" href="{{ permalink_url }}">{{ site.excerpt_link }}</a>
 </article>

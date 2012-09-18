@@ -5,9 +5,11 @@ body_id     : blog-archives
 updated     : 2012-09-08 22:55
 title       : "archive"
 ---
-<article role="article">
-  <header role="header">
+{% include helpers/pubdates.html %}
+<article class="content">
+  <header>
     <h1 class="page-title">{{ page.title }}</h1>
+    {{ date_published }}{{ date_modified }}
   </header>
   <ul>
     {% for post in site.posts limit: site.archive_max_posts %}

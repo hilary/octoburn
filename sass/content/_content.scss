@@ -18,14 +18,19 @@ $type-border      : lighten($text-color, 11);
 
 @import 'content-layout';
 
-@import 'article-excerpt';
-@import 'article-header';
-@import 'pubdate';
+// these two are invoked from snippets/meta.html
+@import 'dated';
 @import 'permalink';
+
 @import 'page-title';
+
+@import 'article-excerpt';
 @import 'page-nav';
 @import 'sharing-menu';
 @import 'solarized';
 
 // site index page
 @import 'index';
+
+
+@import 'article-header';

@@ -3,10 +3,12 @@ layout      : default
 aside_style : index
 body_id     : tag-index
 ---
+{% include helpers/pubdates.html %}
+{% include helpers/permalink.html %}
 <article class="content" role="article">
   <header role="header">
     <h1 class="page-title">{{ page.title }}</h1>
-    {% include snippets/meta.html %}
+    {{ date_published }}{{ date_modified }}
     {% include menus_and_navigation/sharing_menu.html %}
   </header>
   <ul>

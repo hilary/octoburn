@@ -1,1 +1,3 @@
-{% capture permalink %}{{ root_url }}{% if post.url %}{{ post.url }}{% else %}{{ page.url }}{% endif %}{% endcapture %}
+{% capture permalink_url %}{{ root_url }}{% if post.url %}{{ post.url }}{% else %}{{ page.url }}{% endif %}{% endcapture %}
+
+{% capture permalink %}<a rel="bookmark" href="{{ permalink }}" itemprop="url">{{ site.permalink_label }}</a>{% endcapture %}

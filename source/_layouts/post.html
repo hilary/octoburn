@@ -3,20 +3,22 @@ layout      : blog
 aside_style : default
 single      : true
 ---
-<article class="content" 
-         itemscope 
-         itemtype="http://schema.org/BlogPosting">
+{% include helpers/permalink.html %}
+{% include helpers/pubdates.html %}
+<article class="content" itemscope 
+         itemtype="http://schema.org/BlogPosting"
+         role="article">
   <header>
-    {% include snippets/meta.html %}
-    <h1 itemprop="headline" class="page-title">{{ page.title }}</h1>
-    {% include menus_and_navigation/page_tag_list.html %}
+    {{ date_published }}{{ date_modified }}{{ permalink }}
+    <h1 itemprop="headline">{{ page.title }}</h1>
+    {{ page.tags | tag_links }}
     {% include menus_and_navigation/sharing_menu.html %}
   </header>
   <section itemprop="articleBody">
-    <p class="tldr">{{ content | excerpt }}</p>
-    {{ content | split:'<!--more-->' | last }}
+    <p class="tldr">page.tldr</p>
+    {{ content }}
   </section>
-  {% include menus_and_navigation/page_tag_list.html %}
+  {{ page.tags | tag_links }}
   {% include menus_and_navigation/sharing_menu.html %}
   {% include menus_and_navigation/page_nav.html %}
   {% include sections/comments.html %}

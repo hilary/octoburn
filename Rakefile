@@ -147,13 +147,11 @@ task :new_post, :title do |t, args|
     post.puts "external-url : "
     if extra_meta_in_headers
       post.puts "published    : false"
-      post.puts "#updated      : "
-      post.puts "keywords     : "
-      post.puts "description  : "
+      post.puts "tldr         : "
       post.puts "tags         : "
     end
     post.puts "comments     : true"
-    post.puts "categories   : "
+    post.puts "sharing      : true"
     post.puts "---"
   end
 end
@@ -188,16 +186,12 @@ task :new_page, :filename do |t, args|
       page.puts "title    : \"#{title}\""
       page.puts "date         : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
       if extra_meta_in_headers
-        page.puts "#updated      : "
         page.puts "published    : false"
-        page.puts "keywords     : "
-        page.puts "description  : "
+        page.puts "tldr         : "
         page.puts "tags         : "
-        page.puts "categories   : "
       end
       page.puts "comments : true"
       page.puts "sharing  : true"
-      page.puts "footer   : true"
       page.puts "---"
     end
   else
