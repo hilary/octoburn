@@ -880,17 +880,14 @@ li.rss-follow img {
   border-bottom: 1px solid #293c38;
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
-.primary-navlist {
-  display: inline-block;
-}
-/* line 5, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+/* line 3, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
 .primary-navlist ul {
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
+  margin-top: .2em;
 }
 /* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .primary-navlist ul li {
@@ -915,11 +912,11 @@ li.rss-follow img {
 .primary-navlist ul li.last {
   padding-right: 0;
 }
-/* line 8, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+/* line 7, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
 .primary-navlist ul li {
   margin: 0;
 }
-/* line 11, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+/* line 10, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
 .primary-navlist ul li a {
   text-decoration: none;
   font-weight: bold;
@@ -942,7 +939,7 @@ li.rss-follow img {
 .primary-navlist ul li a:active {
   color: #f2f2f2;
 }
-/* line 20, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
+/* line 19, /Users/hholz/coding/ruby/octopress/sass/nav/_primary-navlist.scss */
 .primary-navlist ul li a:link, .primary-navlist ul li a:visited, .primary-navlist ul li a:active, .primary-navlist ul li a:focus, .primary-navlist ul li a:hover {
   padding: 0.2em 0.5em;
 }

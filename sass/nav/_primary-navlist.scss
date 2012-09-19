@@ -1,9 +1,8 @@
 .primary-navlist {
 
-  display : inline-block;
-
   ul { 
     @include horizontal-list;
+    margin-top : .2em;
 
     li {
       margin : 0;
