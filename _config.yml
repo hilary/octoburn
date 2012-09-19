@@ -6,60 +6,42 @@ simple_search  : http://google.com/search
 description    : coding blog by full stack web dev
 date_format    : "ordinal"
 
-feed_url       : feeds/integrating_design.xml
+generator_uri  : octoburn/
+generator_name : Octoburn
 
-tag_dir                      : tags/
-tag_feeds                    : true
-feed_dir                     : feeds/
+root           : /
+source         : source
+destination    : public
+plugins        : plugins
+code_dir       : downloads/code
+tag_dir        : tags
+markdown       : kramdown      # default is rdiscount
+pygments       : false
 
-generator_uri                : octoburn/
-generator_name               : Octoburn
+tag_feeds       : true
+feed_dir        : feeds
+feed_url        : feeds/integrating_design.xml
+excerpt_in_feed : false
 
-root                         : /
-permalink                    : /blog/:year/:title
-source                       : source
-destination                  : public
-plugins                      : plugins
-code_dir                     : downloads/code
-markdown                     : kramdown      # default is rdiscount
+permalink       : /blog/:year/:title
+permalink_label : "permalink"
+permalink_label_feed : "&#9875; permalink"
 
-# default python pygments replaced by pygments.rb, set to true for Albino + Python pygments
-pygments                     : false
+index_posts       : 6
+excerpt_link      : "&hellip; read more &hellip;"
+archive_max_posts : 20
 
-# pagination is very unpopular (to the point of hatred) with users. 
-# Simply limit entries on various pages and offer date and category indexes
-index_posts                  : 6
-archive_max_posts            : 20
+disqus_short_name : integrating
 
-recent_posts                 : 5
-excerpt_link                 : "&hellip; read more &hellip;"
-excerpt_in_feed              : false
-permalink_label              : "permalink"
-permalink_label_feed         : "&#9875; permalink"
+recent_posts      : 5
 
-titlecase                    : false
+github_user          : hilary
+github_repo_count    : 3
+github_skip_forks    : true
+github_follow_url    : https://github.com/users/follow?target=      
 
-facebook_like                : true
-google_plus_one              : true
-google_plus_one_size         : small
-
-github_follow_url        : https://github.com/users/follow?target=      
-github_user              : hilary
-github_repo_count        : 3
-github_show_profile_link : false
-github_skip_forks        : true
-
-delicious_follow_url : https://www.delicious.com/settings/networkedit?action=add&username=
 delicious_user       : hilzh
 delicious_count      : 3
+delicious_follow_url : https://www.delicious.com/settings/networkedit?action=add&username=
 
-disqus_short_name            : integrating
-disqus_show_comment_count    : false
-disqus_developer             : 0
-
-google_plus_user             : holz.hilary@gmail.com
-google_plus_image_size       : 16
-google_plus_hidden           : false  # doesn't work
-
-
-
+google_plus_user     : holz.hilary@gmail.com

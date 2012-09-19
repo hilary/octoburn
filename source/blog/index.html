@@ -4,13 +4,10 @@ aside_style : index
 body_id     : blog-index
 updated     : 2012-09-08 22:55
 ---
-{% include helpers/pubdates.html %}
 <article role="article">
-  <ul>
-    {% for post in site.posts limit: site.index_posts %}
-      <li>{% include articles/excerpt_entry.html %}</li>
-    {% endfor %}
-  </ul>
+  <ul>{% for post in site.posts limit: site.index_posts %}
+    <li>{% include articles/excerpt_entry.html %}</li>
+  {% endfor %}</ul>
   <footer id="index-footer">
     <a href="/archives">blog archives</a>
   </footer>

@@ -1,6 +1,0 @@
-{% capture has_date %}{{ date | size }}{% endcapture %}
-{% capture date_published %}{% if has_date > '0' %}<time datetime="{{ date | datetime | date_to_xmlschema }}" itemprop="datePublished">{{ date_formatted }}</time>{% endif %}{% endcapture %}
-
-{% capture was_updated %}{{ updated | size }}{% endcapture %}
-{% capture date_modified %}{% if was_updated > '0' %}<time datetime="{{ updated | datetime | date_to_xmlschema }}" itemprop="dateModified">{{ updated_formatted }}</time>{% endif %}{% endcapture %}
-

@@ -2,14 +2,16 @@
 layout      : blog
 aside_style : default
 single      : true
+published   : false
+tldr        : 
+tags        :
 ---
-{% include helpers/permalink.html %}
-{% include helpers/pubdates.html %}
 <article class="content" itemscope 
          itemtype="http://schema.org/BlogPosting"
          role="article">
   <header>
-    {{ date_published }}{{ date_modified }}{{ permalink }}
+    {{ page.date | date_published }}
+      {{ page.updated | date_published: 'modified' }}{{ page.url | permalink }}
     <h1 itemprop="headline">{{ page.title }}</h1>
     {{ page.tags | tag_links }}
     {% include menus_and_navigation/sharing_menu.html %}

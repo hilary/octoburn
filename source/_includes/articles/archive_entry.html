@@ -1,9 +1,11 @@
-{% include helpers/permalink.html %}
-{% include helpers/pubdates.html %}
 <article class="archive" itemscope 
          itemtype="http://schema.org/BlogPosting"
          role="article">
-  <h1><a href="{{ permalink_url }}">{{ post.title }}</a></h1>
-  {{ date_published }}{{ date_modified }}{{ permalink }}
+  <h1>
+    <a href="{{ post.url | permalink_url }}"><span itemprop="headline">
+        {{ post.title }}</span></a>
+  </h1>
+  {{ post.date | date_published }}
+    {{ post.updated | date_published: 'modified' }}{{ post.url | permalink }}
   {{ post.tags | tag_links }}
 </article>

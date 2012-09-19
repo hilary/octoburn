@@ -1,2 +1,2 @@
-{% capture meta_description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+{% capture meta_description %}{% if page.tldr %}{{ page.tldr }}{% elsif page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}{% endcapture %}
 <meta name="description" content="{{ meta_description }}">

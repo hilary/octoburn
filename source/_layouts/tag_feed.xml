@@ -6,11 +6,11 @@ layout: nil
   <title><![CDATA[{{ site.title }}: {{ page.title }}]]></title>
   <link href="{{ site.url }}{{ page.feed_url }}" rel="self"/>
   <link href="{{ site.url }}"/>
-  <updated>{{ page.updated | date_to_xmlschema }}</updated>
-  {% include helpers/site-meta.xml %}
+  <updated>{{ page.date | date_to_xmlschema }}</updated>
+  {% include head/site_meta.xml %}
 
   {% for post in site.tags[page.tag] limit: 20 %}
-    {% include articles/feed-entry.xml %}
+    {% include articles/feed_entry.xml %}
   {% endfor %}
 </feed>
 

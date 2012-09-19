@@ -1,25 +1,26 @@
-require 'to_slug'
-
 # encoding: utf-8
 #
 # Jekyll tag page generator.
 #
 # Version: 0.0.3 (20120917)
 #
-# Copyright (c) 2012 Hilary J Holz, http://hholz.com/
-# Licensed under the MIT license 
-#  (http://www.opensource.org/licenses/mit-license.php)
+# This work is licensed by Hilary J Holz (http://hholz.com/,
+# hilary@hholz.com) under the Creative Commons
+# Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a
+# copy of this license, visit
+# http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter
+# to Creative Commons, 444 Castro Street, Suite 900, Mountain View,
+# California, 94041, USA.
 # 
 # Generates tag index pages and tag feeds for hholz.com
 #
-# Also includes related filters (due to Liquid's limitations)
-# - tag_link  : outputs a microdata compliant link to a single tag index page
-# - tag_links : outputs a <nav class="tag-list"> block containing a <ul> 
-#                comprised of a tag_link (as above) per tag. 
+# See microdata_filters.rb plugin for related filters
 #
 # see constants in GenerateTagIndexes class for available
 # _config.yml settings
 #
+require 'to_slug'
+
 module Jekyll
 
   class TagIndex < Page
@@ -37,11 +38,9 @@ module Jekyll
       self.data['tag']         = attr[:tag]
       self.data['title']       = "#{attr[:title_prefix]}#{attr[:tag]}"
       self.data['description'] = "#{attr[:description_prefix]}#{attr[:tag]}"
-      self.data['date']        = "#{Time.now.strftime('%Y-%m-%d %H:%M')}"
+      self.data['date']        = attr[:updated]
 
-      if attr[:service] == :atom 
-        self.data['feed_url'] = "#{dir}/#{name}" 
-      end
+      self.data['feed_url'] = "#{dir}/#{name}" if attr[:service] == :atom 
 
     end # initialize
   end # class TagIndex
@@ -50,18 +49,24 @@ module Jekyll
 
     def write_tag_index(attr)
 
-      attr[:service]         = :html
-      attr[:name]            = "#{attr[:tag_slug]}.html"
-      attr[:dir]             = attr[:tag_dir]
-      attr[:layout_filename] = attr[:index_layout_filename]
-
       index = TagIndex.new(self, attr)
 
       index.render(self.layouts, site_payload)
       index.write(self.dest)
       self.pages << index
 
-    end # def write_tag_index
+    end # write_tag_index
+
+    def write_tag_page(attr)
+
+      attr[:service]         = :html
+      attr[:name]            = "#{attr[:tag_slug]}.html"
+      attr[:dir]             = attr[:tag_dir]
+      attr[:layout_filename] = attr[:page_layout_filename]
+
+      write_tag_index(attr)
+
+    end # write_tag_page
 
     def write_tag_feed(attr)
 
@@ -70,33 +75,27 @@ module Jekyll
       attr[:dir]             = attr[:feed_dir]
       attr[:layout_filename] = attr[:feed_layout_filename]
 
-      feed = TagIndex.new(self, attr)
+      write_tag_index(attr)
 
-      feed.render(self.layouts, site_payload)
-      feed.write(self.dest)
-      self.pages << feed
-
-    end # def write_tag_feed
+    end # write_tag_feed
 
     def index_tags(attr)
 
       attr[:source_dir] = self.source
       attr[:layout_dir] = File.join(attr[:source_dir], '_layouts')
       attr[:tag_dir]    = self.config['tag_dir']
+      attr[:updated]    = "#{Time.now.strftime('%Y-%m-%d %H:%M')}"
 
-      if self.config['tag_feeds']
-        attr[:feed_dir] = self.config['feed_dir']
-      end
+      attr[:feed_dir] = self.config['feed_dir'] if self.config['tag_feeds']
 
       self.tags.keys.each do |tag|
 
         attr[:tag]      = tag
         attr[:tag_slug] = tag.to_slug
 
-        self.write_tag_index(attr)
-        if self.config['tag_feeds']
-          self.write_tag_feed(attr)
-        end
+        self.write_tag_page(attr)
+        self.write_tag_feed(attr) if self.config['tag_feeds']
+
       end
 
     end # index_tags
@@ -107,29 +106,28 @@ module Jekyll
     safe true
     priority :low
 
-    TAG_TITLE_PREFIX           = ''
-    TAG_DESCRIPTION_PREFIX     = 'index of posts tagged: '
-    TAG_INDEX_LAYOUT           = 'tag_index'
+    TAG_TITLE_PREFIX       = ''
+    TAG_DESCRIPTION_PREFIX = 'index of posts tagged: '
+    TAG_PAGE_LAYOUT        = 'tag_page'
 
-    TAG_FEEDS                  = false
-    TAG_FEED_LAYOUT            = 'tag_feed'
+    TAG_FEEDS              = false
+    TAG_FEED_LAYOUT        = 'tag_feed'
 
     def generate(site)
 
       title_prefix          = site.config['tag_title_prefix'] || TAG_TITLE_PREFIX
       description_prefix    = site.config['tag_description_prefix'] ||
                                 TAG_DESCRIPTION_PREFIX
-      index_layout_filename = tag_layout(site, 'index') + ".html"
+      page_layout_filename = tag_layout(site, 'page') + ".html"
 
       attr = { 
         :title_prefix => title_prefix,
         :description_prefix => description_prefix, 
-        :index_layout_filename => index_layout_filename 
+        :page_layout_filename => page_layout_filename 
       }
 
-      if site.config['tag_feeds']
-        attr[:feed_layout_filename] = tag_layout(site, 'feed') + '.xml'
-      end
+      attr[:feed_layout_filename] = tag_layout(site, 'feed') + '.xml' if site.config['tag_feeds']
+
       site.index_tags(attr)
 
     end # generate
@@ -141,36 +139,10 @@ module Jekyll
       layout = site.config["tag_#{service}_layout"] || 
                GenerateTagIndexes.const_get("TAG_#{service}_LAYOUT".upcase)
 
-      if site.layouts.key? layout
-        return layout
-      else
-        throw "Could not find layout #{layout}"
-      end
-        
+      site.layouts.key?(layout) ? return layout : throw "Could not find layout #{layout}"
     end
 
   end # class GenerateTagIndexes
-
-  module Filters
-
-    def tag_link(entry)
-      tag_url = "#{context.registers[:site].config['root']}/" +
-                "#{context.registers[:site].config['tag_dir']}/" +
-                "#{entry.to_slug}.html"
-      '<a rel="tag" href="' + tag_url + 
-        '"><span itemprop="keywords">' + "#{entry}</span></a>"
-    end
-
-    def tag_links(tag_list)
-      tags = tag_list.sort!.map { |entry| "<li>#{tag_link(entry)}</li>" }
-      
-      if tags.length == 0
-        ""
-      else
-        '<nav class="tag-list"><ul>' + tags.to_s + '</ul></nav>'
-      end
-
-    end
 
 end
 

@@ -24,9 +24,6 @@ new_post_ext    = "markdown"
 new_page_ext    = "markdown"  
 server_port     = "4000"      # preview server eg. localhost:4000
 
-# Do you want keywords and description in post and page headers by default?
-extra_meta_in_headers = true
-
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
 task :install, :theme do |t, args|
   if File.directory?(source_dir) || File.directory?("sass")
@@ -145,11 +142,6 @@ task :new_post, :title do |t, args|
     post.puts "title        : \"#{title.gsub(/&/,'&amp;')}\""
     post.puts "date         : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
     post.puts "external-url : "
-    if extra_meta_in_headers
-      post.puts "published    : false"
-      post.puts "tldr         : "
-      post.puts "tags         : "
-    end
     post.puts "comments     : true"
     post.puts "sharing      : true"
     post.puts "---"
@@ -184,12 +176,7 @@ task :new_page, :filename do |t, args|
       page.puts "---"
       page.puts "layout   : page"
       page.puts "title    : \"#{title}\""
-      page.puts "date         : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-      if extra_meta_in_headers
-        page.puts "published    : false"
-        page.puts "tldr         : "
-        page.puts "tags         : "
-      end
+      page.puts "date     : #{Time.now.strftime('%Y-%m-%d %H:%M')}"
       page.puts "comments : true"
       page.puts "sharing  : true"
       page.puts "---"
