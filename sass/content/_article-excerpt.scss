@@ -1,9 +1,14 @@
 article.excerpt {
 
   > header > h1 { 
-    color: $text-color;
-    @include adjust-font-size-to(1.5*$base-font-size); 
-    a, a:hover { color: $link-color-hover; }
+    margin : 0;
+    color  : $text-color;
+    @include adjust-font-size-to(1.8*$base-font-size); 
+    a { @include link-colors($article-title-link-color,
+                             $hover   : $article-title-link-hover-color,
+                             $active  : $article-title-link-hover-color,
+                             $visited : $article-title-link-color);
+      }
   }
 
   a[rel=full-article] { 

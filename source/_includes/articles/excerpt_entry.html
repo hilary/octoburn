@@ -3,12 +3,12 @@
          role="article">
   <header>
     {{ post.date | date_published }}
-      {{ post.updated | date_published modified }}{{ post.url | permalink }}
+      {{ post.updated | date_published modified }}
+        {{ post.url | permalink }}{{ post.tags | tag_links }}
     <h1>
       <a href="{{ post.url | permalink_url }}"><span itemprop="headline">
           {{ post.title }}</span></a>
     </h1>
-    {{ post.tags | tag_links }}
   </header>
   {{ post.content | excerpt }}{{ post.url | excerpt_link }}
 </article>

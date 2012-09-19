@@ -40,11 +40,11 @@ module MicrodataLiquidFilters
   end
 
   def absolute_root
-    @context.registers[:site].config['url']
+    @context.registers[:site].config['root']
   end
 
   def tag_link(entry)
-    root = absolute_root
+    root = @context.registers[:site].config['root']
     tag_dir = @context.registers[:site].config['tag_dir']
     '<a rel="tag" href="' + "#{root}#{tag_dir}/#{entry.to_slug}.html" +
       '"><span itemprop="keywords">' + "#{entry}</span></a>"
@@ -57,8 +57,8 @@ module MicrodataLiquidFilters
   end
 
   def permalink_url(url)
-    root = absolute_root
-    "#{root}/#{url}"
+    root = @context.registers[:site].config['root']
+    "#{root}#{url}"
   end
 
   def permalink(url)

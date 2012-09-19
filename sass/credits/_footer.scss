@@ -1,6 +1,6 @@
 footer.credits {
 
-  @include adjust-font-size-to(0.9*$base-font-size);
+  @extend .bars;
   color            : $credits-color;
   background-color : $credits-bg;
   @include background-image(linear-gradient(darken($credits-bg, 11),

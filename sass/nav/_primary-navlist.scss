@@ -1,5 +1,7 @@
 .primary-navlist {
 
+  display : inline-block;
+
   ul { 
     @include horizontal-list;
 

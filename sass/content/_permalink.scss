@@ -1,7 +1,9 @@
 a[rel=bookmark] { 
-  @include adjust-font-size-to(0.9*$base-font-size);
+
+  @extend .header;
+  @extend .meta;
   @include hover-link;
   padding : 0;
   margin  : 0;
-  &:before { @extend .bullet; } 
+  &:before, &:after { @extend .bullet; } 
 }

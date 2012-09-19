@@ -2,5 +2,21 @@
 
   @extend .meta;
   display : inline-block;
-  
+
+  ul { 
+    @include horizontal-list(.1em);
+    @include float-right;
+    margin  : 0; 
+    padding : 0; 
+    li { margin : 0; }
+  } // ul
+
+  &:before {
+    content : 'posted under';
+    color   : $date-color;
+    display : inline;
+    margin  : 0;
+    padding-right : 0.4em;
+  }
 }
+

@@ -1,6 +1,7 @@
 .primary-navigation { 
 
   @include pie-clearfix; 
+  @extend .bars;
   margin  : 0;
   padding : .2em;
 

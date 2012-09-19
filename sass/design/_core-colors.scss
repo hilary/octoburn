@@ -9,11 +9,15 @@ $link-color         : #219cba;
 $link-color-visited : #527e89;
 $link-color-hover   : #55d2f1;
 
+$article-title-link-color       : saturate($link-color-visited, 25);
+$article-title-link-hover-color : desaturate($link-color-visited, 5);
+$date-color                     : lighten($link-color-visited, 30);
+
 $aside-bg           : #d1dcd9;
 $aside-color        : change-color(mix($text-color, $aside-bg, 80), 
                                    $hue: hue($aside-bg), 
                                    $saturation: saturation($aside-bg)/2);
-$aside-link-color   : $link-color-visited;
-$aside-link-hover   : $link-color;
 
-html { background-color : $content-bg; }
+$aside-link-color       : $link-color-visited;
+$aside-link-color-hover : $link-color;
+
