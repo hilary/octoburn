@@ -15,7 +15,7 @@ destination    : public
 plugins        : plugins
 code_dir       : downloads/code
 tag_dir        : tags
-markdown       : kramdown      # default is rdiscount
+markdown       : rdiscount
 pygments       : false
 
 tag_feeds       : true
@@ -33,7 +33,7 @@ archive_max_posts : 20
 
 disqus_short_name : integrating
 
-recent_posts      : 5
+recent_posts         : 5
 
 github_user          : hilary
 github_repo_count    : 3
@@ -41,7 +41,7 @@ github_skip_forks    : true
 github_follow_url    : https://github.com/users/follow?target=      
 
 delicious_user       : hilzh
-delicious_count      : 3
+delicious_count      : 6
 delicious_follow_url : https://www.delicious.com/settings/networkedit?action=add&username=
 
 google_plus_user     : holz.hilary@gmail.com

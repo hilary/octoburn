@@ -6,8 +6,7 @@ footer.credits {
   @include background-image(linear-gradient(darken($credits-bg, 11),
                                             $credits-bg,
                                             lighten($credits-bg, 8)));
-
-  text-shadow      : lighten($credits-bg, 5) 0 1px;
+//  text-shadow      : lighten($credits-bg, 5) 0 1px;
 
   border : {
     top    : 1px solid $credits-border-top;
@@ -15,11 +14,10 @@ footer.credits {
   }
 
   a {
-    @include link-colors($credits-link-color,        // normal
-                         $credits-link-color-hover,  // hover
-                         $credits-link-color-hover,  // active
-                         $credits-link-color,        // visited
-                         $credits-link-color-hover); // focus
+    @include link-colors($credits-link-color,
+                         $hover: $credits-link-color-hover,
+                         $active: $credits-link-color-hover,
+                         $visited: $credits-link-color);
   }
 
 }

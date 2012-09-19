@@ -1,4 +1,4 @@
-$nav-bg          : desaturate(lighten($header-bg, 30), 8);
+$nav-bg          : desaturate(lighten($header-bg, 30), 5);
 $nav-color       : darken($nav-bg, 55);
 $nav-color-hover : $title-color;
 $nav-placeholder : desaturate(darken($nav-bg, 10), 15);

@@ -3,7 +3,7 @@
          role="article">
   <header>
     {{ post.date | date_published }}
-      {{ post.updated | date_published: 'modified' }}{{ post.url | permalink }}
+      {{ post.updated | date_published modified }}{{ post.url | permalink }}
     <h1>
       <a href="{{ post.url | permalink_url }}"><span itemprop="headline">
           {{ post.title }}</span></a>

@@ -17,9 +17,7 @@ $type-border      : lighten($text-color, 11);
 }
 
 @import 'content-layout';
-
-// these two are invoked from snippets/meta.html
-@import 'dated';
+@import 'date-published';
 @import 'permalink';
 
 @import 'page-title';
@@ -31,6 +29,5 @@ $type-border      : lighten($text-color, 11);
 
 // site index page
 @import 'index';
-
 
 @import 'article-header';

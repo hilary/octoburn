@@ -5,13 +5,13 @@ $grid-padding             : 0;
 $container-style          : fluid;
 $show-grid-backgrounds    : true;
 
-$vertical-layout-columns  : 16; // default, mobile first
+$vertical-layout-columns  : 15; // default, mobile first
 $vertical-layout          : $vertical-layout-columns 40em;
 
-$horizontal-aside-columns : 24;
+$horizontal-aside-columns : 23;
 $horizontal-aside-layout  : 40em $horizontal-aside-columns 60em;
 
-$aside-right-columns      : 30;
+$aside-right-columns      : 31;
 $aside-right-layout       : 60em $aside-right-columns;
 
 body > div { 
@@ -23,14 +23,14 @@ body > div {
 }
 
 // for convenience
-$vertical-layout-gutter   : gutter($vertical-layout-columns); 
-$vertical-layout-single   : columns(1, $vertical-layout-columns);
+$vertical-layout-gutter  : gutter($vertical-layout-columns); 
+$vertical-layout-single  : columns(1, $vertical-layout-columns);
 
-$horizontal-aside-gutter  : gutter($horizontal-aside-columns);
-$horizontal-aside-single  : columns(1, $horizontal-aside-columns);
+$horizontal-aside-gutter : gutter($horizontal-aside-columns);
+$horizontal-aside-single : columns(1, $horizontal-aside-columns);
 
-$aside-right-gutter       : gutter($aside-right-columns);
-$aside-right-single       : columns(1, $aside-right-columns); 
-
+$aside-right-gutter      : gutter($aside-right-columns);
+$aside-right-single      : columns(1, $aside-right-columns); 
+$aside-right-space       : space(1, $aside-right-columns);
 
 

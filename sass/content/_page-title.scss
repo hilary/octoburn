@@ -1,4 +1,12 @@
-article[itemtype=http://schema.org/BlogPosting]
+.page-title { 
+  margin : 0;
 
-.page-title { margin : 0 0 .5em; }
+  a {
+    @include link-colors($aside-color,
+                         $hover: $aside-link-color,
+                         $active: $aside-link-color,
+                         $visited: $aside-color);
+  }
+
+}
 

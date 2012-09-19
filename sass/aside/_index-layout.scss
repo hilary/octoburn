@@ -13,30 +13,19 @@
   @include at-breakpoint($horizontal-aside-layout) {
 
     @include clearfix; 
-    padding : $horizontal-aside-gutter $horizontal-aside-single;
-
-    $aside-cols : ( $horizontal-aside-columns - 4 ) / 2;
+    padding : $horizontal-aside-gutter;
 
     .delicious { 
-      @include span-columns($aside-cols,
+      @include span-columns($horizontal-aside-columns - 1,
                              $horizontal-aside-columns); 
-      padding-right : $horizontal-aside-single;
+      margin-right  : 0;
+      padding-right : $horizontal-aside-gutter;
     }
     .github    { 
-      @include span-columns($aside-cols omega, 
+      @include span-columns(($horizontal-aside-columns - 1) omega, 
                             $horizontal-aside-columns); 
     }
 
   } // $horizontal-aside-layout
-
-  @include at-breakpoint($aside-right-layout) {
-
-    @include float-right;
-    width         : columns(8, $aside-right-single);
-    padding       : $aside-right-single $aside-right-gutter;
-    border-left   : 1px solid $aside-border;
-    border-bottom : 1px solid $aside-border;
-
-  } // $aside-right-layout
 
 }

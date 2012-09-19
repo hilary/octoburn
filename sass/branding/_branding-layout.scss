@@ -5,24 +5,48 @@
   padding : $vertical-layout-gutter;
 
   @include at-breakpoint($horizontal-aside-layout) {
-    padding : $horizontal-aside-single;
+
+    padding : 0 $horizontal-aside-single;
 
     > hgroup     { 
+
       @include span-columns(14, $horizontal-aside-columns); 
       margiin-right : 0;
-    }
+      padding : { 
+        top    : $horizontal-aside-single;
+        bottom : $horizontal-aside-gutter;
+      }
+    } // > hgroup
 
     menu[label=follow] {
+
       @include span-columns(9 omega, $horizontal-aside-columns); 
-    }
+      padding-top : 0;
+
+    } // menu[label=follow]
 
   } // $horizontal-aside-layout
 
   @include at-breakpoint($aside-right-layout) {
-    padding : $aside-right-single;
 
-    > hgroup { @include span-columns(17, $aside-right-columns); }
-    menu[label=follow] { @include span-columns(10 omega, $aside-right-columns); }
+    padding : 0 $aside-right-single;
+
+    > hgroup { 
+
+      @include span-columns(17, $aside-right-columns); 
+      margiin-right : 0;
+      padding : { 
+        top    : $aside-right-single;
+        bottom : $aside-right-gutter;
+      }
+    } // > hgroup
+
+    menu[label=follow] { 
+
+      @include span-columns(10 omega, $aside-right-columns); 
+      padding-top : 0;
+
+    } // menu[label=follow]
  
   } // $aside-right-layout
 

@@ -1,25 +1,19 @@
-$aside-border : desaturate(darken($aside-bg, 7), 10);
-
-$aside-link-color       : $link-color-visited;
-$aside-link-color-hover : $link-color;
-
+$aside-border    : desaturate(darken($aside-bg, 7), 10);
 $aside-font-size : .9*$base-font-size;
 $aside-lines     : lines-for-font-size($aside-font-size);
 
 .aside-base {
 
   @extend .aside; 
-
   color            : $aside-color;
   text-shadow      : lighten($aside-bg, 8) 0 1px;
-
   background-color : $aside-bg;
   border-color     : $aside-border;
 
   aside { 
 
     h1 { 
-      @include adjust-font-size-to(1.4*$aside-font-size);
+      @include adjust-font-size-to(1.3*$aside-font-size);
       margin  : 0;
       padding : $aside-right-gutter 0 0;
     }
@@ -37,10 +31,10 @@ $aside-lines     : lines-for-font-size($aside-font-size);
           @include force-wrap;
           color : $aside-link-color;
           @include link-colors($aside-link-color, 
-                               $aside-link-color-hover, 
-                               $aside-link-color-hover, 
-                               $aside-link-color,
-                               $aside-link-color-hover);
+                               $hover: $aside-link-color-hover, 
+                               $active: $aside-link-color-hover, 
+                               $visited: $aside-link-color,
+                               $focus: $aside-link-color-hover);
         } // a
       }
     }

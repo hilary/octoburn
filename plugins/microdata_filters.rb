@@ -25,47 +25,51 @@ require 'to_slug'
 require './plugins/date'
 
 module MicrodataLiquidFilters
+  include Octopress::Date
 
   def date_published(date, property = "published")
-    return unless date.size > 0
+    return unless date.to_s.size > 0
 
     itemprop = (property == 'published') ? 'datePublished' : 'dateModified'
 
-    date_formatted = Date::format_date(date, 
+    date_formatted = format_date(date, 
       @context.registers[:site].config['date_format'])
 
-    '<time datetime="' + date_to_xmlschema(Date::datetime(date)) +
+    '<time datetime="' + date_to_xmlschema(datetime(date)) +
       '" itemprop="' + itemprop + '">' + "#{date_formatted}</time>"
   end
 
   def absolute_root
-    "#{context.registers[:site].config['url']}/#{context.registers[:site].config['root']}/"
+    @context.registers[:site].config['url']
   end
 
   def tag_link(entry)
-    '<a rel="tag" href="' + 
-      "#{absolute_root}#{context.registers[:site].config['tag_dir']}/#{entry.to_slug}.html" +
+    root = absolute_root
+    tag_dir = @context.registers[:site].config['tag_dir']
+    '<a rel="tag" href="' + "#{root}#{tag_dir}/#{entry.to_slug}.html" +
       '"><span itemprop="keywords">' + "#{entry}</span></a>"
   end
 
   def tag_links(tag_list)
     tags = tag_list.sort!.map { |entry| "<li>#{tag_link(entry)}</li>" }
       
-    tags.length == 0 ? "" : '<nav class="tag-links"><ul>' + tags.to_s + '</ul></nav>'
+    tags.length == 0 ? "" : '<nav class="tag-links"><ul>' + tags.join + '</ul></nav>'
   end
 
   def permalink_url(url)
-    "#{absolute_root}/#{url}"
+    root = absolute_root
+    "#{root}/#{url}"
   end
 
   def permalink(url)
-    '<a rel="bookmark" href="' + permalink_url(url) + '" itemprop="url">' +
-      "#{context.registers[:site].config['permalink_label']}</a>"
+    label = @context.registers[:site].config['permalink_label']
+    '<a rel="bookmark" href="' + permalink_url(url) + '" itemprop="url">' + "#{label}</a>"
   end
 
   def excerpt_link(url)
+    link_label = @context.registers[:site].config['excerpt_link']
     '<a rel="full-article" href="' + permalink_url(url) + '" itemprop="url">' + 
-      "#{context.registers[:site].config['excerpt_link']}</a>"
+      "#{link_label}</a>"
   end
 
 end

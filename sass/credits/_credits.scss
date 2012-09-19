@@ -1,6 +1,6 @@
 $credits-color            : $title-color;
 $credits-link-color       : $title-color;
-$credits-link-color-hover : darken($title-color, 30);
+$credits-link-color-hover : $subtitle-color;
 
 $credits-bg               : desaturate(lighten($header-bg, 18), 10);
 

@@ -6,7 +6,19 @@ updated     : 2012-09-08 22:55
 ---
 <section class="content">
   {% assign post = site.posts.first %}
-  {% include articles/excerpt_entry.html %}
+  <article class="excerpt" itemscope 
+           itemtype="http://schema.org/BlogPosting"
+           role="article">
+    <header>
+      {{ post.updated | date_published modified }}{{ post.url | permalink }}
+      <h1 class="page-title">
+        <a href="{{ post.url | permalink_url }}"><span itemprop="headline">
+            {{ post.title }}</span></a>
+      </h1>
+      {{ post.tags | tag_links }}
+    </header>
+    {{ post.content | excerpt }}{{ post.url | excerpt_link }}
+  </article>
   <p class="moving-in">
     Pardon my mess, but I'm still moving in. Unpacking the last
     of <a href="http://design.hholz.com/">the boxes</a> is lower

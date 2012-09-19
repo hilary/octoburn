@@ -1,21 +1,16 @@
 @import 'compass/layout/sticky-footer';
-@include sticky-footer(2.5em, '#grid', '#site-credits', '#contentinfo');
+@include sticky-footer(2em, '#grid', '#credits', '#contentinfo');
 
-footer.credits { 
+footer.credits {
 
-  margin : 0;
-  @include clearfix; 
+  padding : 0 $vertical-layout-gutter;   
 
-  @include at-breakpoint($vertical-layout-columns) {
-    padding : $vertical-layout-gutter $vertical-layout-single;
+  @include at-breakpoint($horizontal-aside-layout) { 
+    padding-left : $horizontal-aside-single;
   }
 
-  @include at-breakpoint($horizontal-aside-layout) {
-    padding : $horizontal-aside-gutter $horizontal-aside-single;
-  } 
-
   @include at-breakpoint($aside-right-layout) {
-    padding : $aside-right-gutter $aside-right-single; 
+    padding-left : $aside-right-single;
   }
 
 }

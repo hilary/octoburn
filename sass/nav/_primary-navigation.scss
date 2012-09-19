@@ -1,7 +1,7 @@
 .primary-navigation {
 
-  @extend .main;
-  @include adjust-font-size-to(.95*$base-font-size);
+  @extend .header;
+  @extend .meta;
 
   background-color : $nav-bg;
   @include background-image(linear-gradient(lighten($nav-bg, 8),

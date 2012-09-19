@@ -2,12 +2,12 @@
 {% include head/head.html %}
 <body itemscope {% if page.body_id %} id="{{ page.body_id }}" {% endif %}
       itemtype="http://schema.org/WebPage">
-  <div id="#grid">
+  <div id="grid">
     {% include sections/default_header.html %}
     <article class="main-content">
       {{ content | expand_urls: root_url }}
     </article>
-    <div id="site-credits" ></div>
+    <div id="credits" ></div>
     {% include script/disqus.html %}
   </div>
   {% include footers/credits.html %}

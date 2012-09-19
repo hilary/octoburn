@@ -136,10 +136,14 @@ module Jekyll
 
     def tag_layout(site, service)
 
-      layout = site.config["tag_#{service}_layout"] || 
+      service_layout = site.config["tag_#{service}_layout"] || 
                GenerateTagIndexes.const_get("TAG_#{service}_LAYOUT".upcase)
 
-      site.layouts.key?(layout) ? return layout : throw "Could not find layout #{layout}"
+      if site.layouts.key? service_layout 
+        return service_layout 
+      else 
+        throw "Could not find layout #{layout}"
+      end
     end
 
   end # class GenerateTagIndexes

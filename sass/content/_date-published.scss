@@ -1,7 +1,7 @@
 time[itemprop="datePublished"], time[itemprop="dateModified"] {
 
   @include adjust-font-size-to(.9*$base-font-size);
-  color          : $text-color-light; 
+  color          : $subtitle-color;
   text-transform : uppercase;
   margin         : 0;
   padding        : 0;
@@ -10,7 +10,7 @@ time[itemprop="datePublished"], time[itemprop="dateModified"] {
 }
 
 time[itemprop="dateModified"]:before {
-  content      : "last updated";
+  content      : 'last updated';
   font-variant : normal;
   font-style   : italic;
   display      : inline;

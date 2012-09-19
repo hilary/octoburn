@@ -6,6 +6,6 @@
         {{ post.title }}</span></a>
   </h1>
   {{ post.date | date_published }}
-    {{ post.updated | date_published: 'modified' }}{{ post.url | permalink }}
+    {{ post.updated | date_published modified }}{{ post.url | permalink }}
   {{ post.tags | tag_links }}
 </article>

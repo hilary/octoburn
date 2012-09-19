@@ -13,7 +13,7 @@ $aside-bg           : #d1dcd9;
 $aside-color        : change-color(mix($text-color, $aside-bg, 80), 
                                    $hue: hue($aside-bg), 
                                    $saturation: saturation($aside-bg)/2);
+$aside-link-color   : $link-color-visited;
+$aside-link-hover   : $link-color;
 
-$page-bg            : desaturate(lighten($header-bg, 10), 15);
-
-html { background-color : $page-bg; }
+html { background-color : $content-bg; }
