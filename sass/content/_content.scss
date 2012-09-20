@@ -23,6 +23,7 @@ $type-border      : lighten($text-color, 11);
 @import 'page-title';
 @import 'tag-links';
 
+@import 'article-header';
 @import 'article-excerpt';
 @import 'page-nav';
 @import 'sharing-menu';
@@ -31,5 +32,4 @@ $type-border      : lighten($text-color, 11);
 // page specific files
 @import 'index';
 @import 'blog-index';
-
-@import 'article-header';
+@import 'blog-archives';
