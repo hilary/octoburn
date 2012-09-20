@@ -46,6 +46,7 @@ module MicrodataLiquidFilters
   def tag_link(entry)
     root = @context.registers[:site].config['root']
     tag_dir = @context.registers[:site].config['tag_dir']
+    entry.sub!(/,\z/, '')
     '<a rel="tag" href="' + "#{root}#{tag_dir}/#{entry.to_slug}.html" +
       '"><span itemprop="keywords">' + "#{entry}</span></a>"
   end
@@ -57,7 +58,7 @@ module MicrodataLiquidFilters
   end
 
   def permalink_url(url)
-    root = @context.registers[:site].config['root']
+    root = @context.registers[:site].config['url']
     "#{root}#{url}"
   end
 

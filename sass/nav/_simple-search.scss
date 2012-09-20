@@ -1,5 +1,7 @@
 .simple-search form {
 
+  @extend .nav;
+
   @include background-clip;
   margin: 0; padding: 0;
   text-align : left;
@@ -20,7 +22,7 @@
       @include background-clip;
       @include single-box-shadow(lighten($nav-bg, 2), 0, 1px);
       @include border-radius(.5em);
-      padding : .2em .5em;
+      padding : .3em .5em .1em;
       border  : 1px solid $search-border;
 
       &:focus {

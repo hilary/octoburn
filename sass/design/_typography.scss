@@ -3,4 +3,3 @@
 .mono  { font-family : Electrolize, $mono; }
 
 .meta { @include adjust-font-size-to(.9*$base-font-size); }
-.bars { @include adjust-font-size-to(.95*$base-font-size); }

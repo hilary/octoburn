@@ -8,8 +8,35 @@
     @include float-right;
     margin  : 0; 
     padding : 0; 
-    > li { margin : 0; }
-  } // ul
+
+    > li { 
+      margin : 0;
+
+      &:after { 
+        content       : ','; 
+        color         : $date-color;
+        padding-right : .1em;
+      }
+      
+      &:nth-last-child(2) {
+        &:after { content : none; }
+      }
+
+      &:last-child {
+        &:before {
+          content : 'and';
+          color   : $date-color;
+          padding : { left : .1em; right : .2em; }
+        }
+
+        &:after { 
+          content : none; 
+          padding : 0;
+        }
+      }
+
+    } // > li
+  } // > ul
 
   &:before {
     content : 'posted under';

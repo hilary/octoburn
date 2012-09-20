@@ -5,6 +5,6 @@
   <nav><ul>
     {% for post in site.posts limit: site.recent_posts offset: start %}
       <li><a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
+    {% endfor %}
   </ul></nav>
 </aside>

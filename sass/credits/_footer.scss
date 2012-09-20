@@ -1,6 +1,6 @@
 footer.credits {
 
-  @extend .bars;
+  @extend .meta;
   color            : $credits-color;
   background-color : $credits-bg;
   @include background-image(linear-gradient(darken($credits-bg, 11),
@@ -22,4 +22,5 @@ footer.credits {
                          $visited: $credits-link-color);
   }
 
+  div { padding-top : .3em; }
 }

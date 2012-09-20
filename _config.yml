@@ -1,4 +1,4 @@
-url            : http://hholz.com/
+url            : http://hholz.com
 title          : integrating design
 subtitle       : your friendly native guide
 author         : hilary j holz
@@ -23,7 +23,7 @@ feed_dir        : feeds
 feed_url        : feeds/integrating_design.xml
 excerpt_in_feed : false
 
-permalink       : /blog/:year/:title
+permalink       : /blog/:year/:title/
 permalink_label : "permalink"
 permalink_label_feed : "&#9875; permalink"
 
