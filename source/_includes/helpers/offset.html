@@ -1,4 +1,4 @@
 {% assign start = 0 %}
-{% if post.title == page.title %}
+{% if post.title && post.title == page.title %}
   {% assign start = 1 %}
 {% endif %}

@@ -223,35 +223,36 @@ p, blockquote, ul, ol, dl {
 ul, ol, dl {
   margin-left: 1em;
   margin-right: 0;
+  padding-left: 0;
 }
 
-/* line 111, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 112, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ul {
   list-style-type: disc;
 }
-/* line 112, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 113, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ul ul {
   list-style-type: circle;
 }
-/* line 113, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 114, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ul ul ul {
   list-style-type: square;
 }
 
-/* line 115, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 116, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ol {
   list-style-type: decimal;
 }
-/* line 116, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 117, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ol ol {
   list-style-type: lower-alpha;
 }
-/* line 117, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 118, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 ol ol ol {
   list-style-type: lower-roman;
 }
 
-/* line 119, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 120, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 li, dd {
   margin-top: 0.65em;
   margin-bottom: 0.65em;
@@ -259,33 +260,33 @@ li, dd {
   margin-right: 0;
 }
 
-/* line 126, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 127, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h1 {
   font-size: 2em;
   line-height: 1.3em;
 }
 
-/* line 127, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 128, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h2, section h1 {
   font-size: 1.6em;
   line-height: 1.21875em;
 }
 
-/* line 128, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 129, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h3, section h2, section section h1 {
   font-variant: small-caps;
   font-size: 1.3em;
   line-height: 1.5em;
 }
 
-/* line 132, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 133, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h4, section h3, section section h2, section section section h1 {
   font-variant: normal;
   font-size: 1.3em;
   line-height: 1.5em;
 }
 
-/* line 137, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 138, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h5, section h4, section section h3, section section section h2,
 section section section section h1 {
   font-variant: small-caps;
@@ -293,7 +294,7 @@ section section section section h1 {
   line-height: 1.77273em;
 }
 
-/* line 142, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 143, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 h6, section h5, section section h4, section section section h3,
 section section section section h2, section section section section section h1 {
   font-variant: normal;
@@ -302,7 +303,7 @@ section section section section h2, section section section section section h1 {
   line-height: 1.77273em;
 }
 
-/* line 148, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
+/* line 149, /Users/hholz/coding/ruby/octopress/sass/defaults/_type.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -626,180 +627,6 @@ hgroup h2 {
   line-height: 1.625em;
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-menu[label=follow]:after {
-  content: "follow on";
-  color: #c0d8d2;
-  display: inline;
-  float: right;
-  margin: 0;
-  padding-top: .2em;
-  padding-right: .6em;
-}
-
-/* line 11, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-.follow-button, li.delicious-follow,
-li.github-follow,
-li.googleplus-follow,
-li.rss-follow {
-  margin: 0;
-}
-/* line 14, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-.follow-button img, li.delicious-follow img,
-li.github-follow img,
-li.googleplus-follow img,
-li.rss-follow img {
-  background-color: #fafafa;
-  border: 1px solid #c0d8d2;
-  vertical-align: middle;
-}
-
-/* line 29, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-menu[label=follow] {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=follow] li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-  white-space: nowrap;
-  display: inline;
-  float: right;
-  padding-left: 0.1em;
-  padding-right: 0.1em;
-}
-/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=follow] li:first-child, menu[label=follow] li.first {
-  padding-right: 0;
-}
-/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=follow] li:last-child {
-  padding-left: 0;
-}
-/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=follow] li.last {
-  padding-left: 0;
-}
-
-/* line 30, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-.follow-button img, li.delicious-follow img,
-li.github-follow img,
-li.googleplus-follow img,
-li.rss-follow img {
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-}
-
-@media (min-width: 35em) and (max-width: 52.5em) {
-  /* line 34, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-  menu[label=follow] {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-  }
-  /* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0;
-    white-space: nowrap;
-    display: inline;
-    float: right;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-  }
-  /* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li:first-child, menu[label=follow] li.first {
-    padding-right: 0;
-  }
-  /* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li:last-child {
-    padding-left: 0;
-  }
-  /* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li.last {
-    padding-left: 0;
-  }
-
-  /* line 35, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-  .follow-button img, li.delicious-follow img,
-  li.github-follow img,
-  li.googleplus-follow img,
-  li.rss-follow img {
-    -moz-border-radius-bottomleft: 0.3em;
-    -webkit-border-bottom-left-radius: 0.3em;
-    border-bottom-left-radius: 0.3em;
-    -moz-border-radius-bottomright: 0.3em;
-    -webkit-border-bottom-right-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-  }
-}
-@media (min-width: 52.5em) {
-  /* line 43, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-  menu[label=follow] {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-  }
-  /* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0;
-    white-space: nowrap;
-    display: inline;
-    float: right;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
-  }
-  /* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li:first-child, menu[label=follow] li.first {
-    padding-right: 0;
-  }
-  /* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li:last-child {
-    padding-left: 0;
-  }
-  /* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-  menu[label=follow] li.last {
-    padding-left: 0;
-  }
-
-  /* line 44, /Users/hholz/coding/ruby/octopress/sass/branding/_follow-menu.scss */
-  .follow-button img, li.delicious-follow img,
-  li.github-follow img,
-  li.googleplus-follow img,
-  li.rss-follow img {
-    -moz-border-radius-bottomleft: 0.3em;
-    -webkit-border-bottom-left-radius: 0.3em;
-    border-bottom-left-radius: 0.3em;
-    -moz-border-radius-bottomright: 0.3em;
-    -webkit-border-bottom-right-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
-    -moz-border-radius-topleft: 0;
-    -webkit-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -moz-border-radius-topright: 0;
-    -webkit-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-  }
-}
 /* line 1, /Users/hholz/coding/ruby/octopress/sass/nav/_nav-layout.scss */
 .primary-navigation {
   *zoom: 1;
@@ -1265,69 +1092,6 @@ article.excerpt a[rel=full-article] {
   float: right;
 }
 
-/* line 1, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
-menu[label=share] {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=share] li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-  white-space: nowrap;
-  display: inline;
-  float: right;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-}
-/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=share] li:first-child, menu[label=share] li.first {
-  padding-right: 0;
-}
-/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=share] li:last-child {
-  padding-left: 0;
-}
-/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-menu[label=share] li.last {
-  padding-left: 0;
-}
-/* line 5, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
-menu[label=share]:after {
-  content: "share";
-  color: #a9c4cb;
-  display: inline;
-  float: right;
-  margin: 0;
-  padding-top: .2em;
-  padding-right: .6em;
-}
-
-/* line 16, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
-.share-button, li.twitter-share,
-li.googleplus-share,
-li.facebook-share {
-  margin: 0;
-}
-/* line 19, /Users/hholz/coding/ruby/octopress/sass/content/_sharing-menu.scss */
-.share-button img, li.twitter-share img,
-li.googleplus-share img,
-li.facebook-share img {
-  background-color: #fafafa;
-  border: 2px groove white;
-  padding: 4px;
-  vertical-align: middle;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  -ms-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
-  border-radius: 0.4em;
-}
-
 /* non highlighted code colors */
 /* line 1, /Users/hholz/coding/ruby/octopress/sass/content/_index.scss */
 .moving-in {
@@ -1422,6 +1186,243 @@ li.facebook-share img {
 /* line 27, /Users/hholz/coding/ruby/octopress/sass/content/_blog-archives.scss */
 #blog-archives .main-content > .content > ul > li > article > .tag-links {
   padding-left: .3em;
+}
+
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+menu[label=follow]:after {
+  content: "follow on";
+  color: #c0d8d2;
+  display: inline;
+  float: right;
+  margin: 0;
+  padding-top: .2em;
+  padding-right: .6em;
+}
+
+/* line 11, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+.follow-button, li.delicious-follow,
+li.github-follow,
+li.googleplus-follow,
+li.rss-follow {
+  margin: 0;
+}
+/* line 14, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+.follow-button img, li.delicious-follow img,
+li.github-follow img,
+li.googleplus-follow img,
+li.rss-follow img {
+  background-color: #fafafa;
+  border: 1px solid #c0d8d2;
+  vertical-align: middle;
+}
+
+/* line 29, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+menu[label=follow] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=follow] li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: right;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=follow] li:first-child, menu[label=follow] li.first {
+  padding-right: 0;
+}
+/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=follow] li:last-child {
+  padding-left: 0;
+}
+/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=follow] li.last {
+  padding-left: 0;
+}
+
+/* line 30, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+.follow-button img, li.delicious-follow img,
+li.github-follow img,
+li.googleplus-follow img,
+li.rss-follow img {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+
+@media (min-width: 35em) and (max-width: 52.5em) {
+  /* line 34, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+  menu[label=follow] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+  }
+  /* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    display: inline;
+    float: right;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
+  /* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li:first-child, menu[label=follow] li.first {
+    padding-right: 0;
+  }
+  /* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li:last-child {
+    padding-left: 0;
+  }
+  /* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li.last {
+    padding-left: 0;
+  }
+
+  /* line 35, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+  .follow-button img, li.delicious-follow img,
+  li.github-follow img,
+  li.googleplus-follow img,
+  li.rss-follow img {
+    -moz-border-radius-bottomleft: 0.3em;
+    -webkit-border-bottom-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    -moz-border-radius-bottomright: 0.3em;
+    -webkit-border-bottom-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+@media (min-width: 52.5em) {
+  /* line 43, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+  menu[label=follow] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+  }
+  /* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    display: inline;
+    float: right;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+  }
+  /* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li:first-child, menu[label=follow] li.first {
+    padding-right: 0;
+  }
+  /* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li:last-child {
+    padding-left: 0;
+  }
+  /* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+  menu[label=follow] li.last {
+    padding-left: 0;
+  }
+
+  /* line 44, /Users/hholz/coding/ruby/octopress/sass/menu/_follow-menu.scss */
+  .follow-button img, li.delicious-follow img,
+  li.github-follow img,
+  li.googleplus-follow img,
+  li.rss-follow img {
+    -moz-border-radius-bottomleft: 0.3em;
+    -webkit-border-bottom-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    -moz-border-radius-bottomright: 0.3em;
+    -webkit-border-bottom-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+/* line 1, /Users/hholz/coding/ruby/octopress/sass/menu/_sharing-menu.scss */
+menu[label=share] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 60, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=share] li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: right;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+/* line 48, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=share] li:first-child, menu[label=share] li.first {
+  padding-right: 0;
+}
+/* line 49, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=share] li:last-child {
+  padding-left: 0;
+}
+/* line 50, /Users/hholz/.rbenv/versions/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+menu[label=share] li.last {
+  padding-left: 0;
+}
+/* line 5, /Users/hholz/coding/ruby/octopress/sass/menu/_sharing-menu.scss */
+menu[label=share]:after {
+  content: "share";
+  color: #a9c4cb;
+  display: inline;
+  float: right;
+  margin: 0;
+  padding-top: .2em;
+  padding-right: .6em;
+}
+
+/* line 16, /Users/hholz/coding/ruby/octopress/sass/menu/_sharing-menu.scss */
+.share-button, li.twitter-share,
+li.googleplus-share,
+li.facebook-share {
+  margin: 0;
+}
+/* line 19, /Users/hholz/coding/ruby/octopress/sass/menu/_sharing-menu.scss */
+.share-button img, li.twitter-share img,
+li.googleplus-share img,
+li.facebook-share img {
+  background-color: #fafafa;
+  border: 2px groove white;
+  padding: 4px;
+  vertical-align: middle;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
 
 /* line 5, /Users/hholz/coding/ruby/octopress/sass/aside/_aside-base.scss */
