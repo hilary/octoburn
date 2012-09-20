@@ -7,5 +7,7 @@
       <a href="{{ post.url | permalink_url }}"><span itemprop="headline">{{ post.title }}</span></a>
     </h1>
   </header>
-  {{ post.content | excerpt }}{{ post.url | excerpt_link }}
+  {% comment %}hack to get around tag page rendering glitch{% endcomment %}
+  {% capture excerpt_content %}{{ post.content | excerpt }}{{ post.url | excerpt_link }}{% endcapture %}
+  {{ excerpt_content | markdownify }}
 </article>

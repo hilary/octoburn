@@ -1,14 +1,15 @@
 menu[label=share] { 
 
-  @include horizontal-list(.2em, left);
+  @include horizontal-list(.2em, right);
 
-  &:before { 
-    content : "share";
-    color   : darken($subtitle-color, 20);
-    display : inline;
-    float   : left;
-    margin  : 0;
-    padding : 0 0.8em 0 2em;
+  &:after { 
+    content       : "share";
+    color         : $date-color;
+    display       : inline;
+    float         : right;
+    margin        : 0;
+    padding-top   : .2em;
+    padding-right : .6em;
   }
 }
 
@@ -17,7 +18,7 @@ menu[label=share] {
 
   img {
     background-color : $content-bg;
-    border           : 1px solid $subtitle-color;
+    border           : 2px groove lighten($date-color, 30);
     padding          : 4px;
     vertical-align   : middle;
 

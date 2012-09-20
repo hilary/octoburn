@@ -10,9 +10,10 @@ tags        :
 - Firefox
 ---
 
-I joined [Delicious][] (formerly styled del.icio.us) yesterday. For
-those of you living under a rock for the past decade, Delicious is the
-original social bookmarking web service.<!--more-->
+I joined [Delicious](http://www.delicious.com/) (formerly styled
+del.icio.us) yesterday. For those of you living under a rock for the
+past decade, Delicious is the original social bookmarking web
+service.<!--more-->
 
 ## problem
 
@@ -112,7 +113,6 @@ to my perennial bookmark problem!
 
   [Automator]:        http://www.macosxautomation.com/automator/ 
   [Chrome]:           http://www.google.com/chrome/
-  [Delicious]:        http://www.delicious.com/
   [Firefox]:          http://www.mozilla.org/firefox
   [Safari]:           http://www.apple.com/safari/
   [Safari Bookshelf]: http://safaribooksonline.com/

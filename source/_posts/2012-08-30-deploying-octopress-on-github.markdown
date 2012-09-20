@@ -5,15 +5,16 @@ title       : "repository naming for Octopress on Github"
 date        : 2012-08-30 10:40
 comments    : true
 sharing     : true
-tags        : Octopress, github, walkthrough
+tags        : Octopress github walkthrough
 ---
 
-While the [Octopress instructions][1] for deploying an
-Octopress blog on Github are generally quite straightforward,
-some confusion over the repository name seems fairly common.
-I ran into it myself. Hopefully this post can spare some
+While the
+[Octopress instructions](http://octopress.org/docs/deploying/github/)
+for deploying an Octopress blog on Github are generally quite
+straightforward, some confusion over the repository name seems fairly
+common.  I ran into it myself. Hopefully this post can spare some
 other folks hours of research and head-scratching.<!--more-->
-
+  
 ## repository name
 
 ### personal Octopress blogs use eponymous repositories

@@ -90,7 +90,7 @@ module Jekyll
 
       self.tags.keys.each do |tag|
 
-        attr[:tag]      = tag
+        attr[:tag]      = tag.sub(/,\z/, '')
         attr[:tag_slug] = tag.to_slug
 
         self.write_tag_page(attr)
@@ -106,7 +106,7 @@ module Jekyll
     safe true
     priority :low
 
-    TAG_TITLE_PREFIX       = ''
+    TAG_TITLE_PREFIX       = 'tag: '
     TAG_DESCRIPTION_PREFIX = 'index of posts tagged: '
     TAG_PAGE_LAYOUT        = 'tag_page'
 
