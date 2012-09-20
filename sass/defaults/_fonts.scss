@@ -3,36 +3,42 @@ $serif : Georgia, Times, Times New Roman, serif;
 $mono  : Menlo, Monaco, lucida console, Courier New, monospace;
 
 .sans  { font-family : $sans;  }
-.serif { font-family : $serif; }
-.mono  { font-family : $mono;  }
+.serif { font-family : $serif; text-rendering : optimizelegibility; }
+.mono  { font-family : $mono; text-rendering : optimizelegibility; }
 
-.main { @extend .sans;  }
-.header { 
-  @extend .serif; 
-  text-rendering : optimizelegibility; 
-  a { @include hover-link; } 
-}
-.code { 
-  @extend .mono;  
-  text-rendering : optimizelegibility; 
-  a { @include hover-link; } 
-}
-.aside { 
-  @extend .sans;  
-  a { @include hover-link; } 
-}
+a { @include hover-link; }
+
+.main   { @extend .sans;  }
+.header { @extend .serif; }
+.nav    { @extend .serif; }
+.aside  { @extend .sans;  }
+.code   { @extend .mono;  }
+
+.main, .code { a { font-weight : bold; } }
+.header, .nav, .aside { a { font-weight : normal } }
+
+.nav { @include adjust-font-size-to(.9*$base-font-size); }
 
 body { @extend .main; }
+
 header, h1, h2, h3, h4, h5, h6 { @extend .header; }
+
 pre {
   @extend .code;
   header, h1, h2, h3, h4, h5, h6 { @extend .code; }
 }
+
 code, kbd, var, tt, samp { 
   @extend .code; 
   header, h1, h2, h3, h4, h5, h6 { @extend .header; }
 }
+
 aside {
   @extend .aside;
   header, h1, h2, h3, h4, h5, h6 { @extend .header; }
+}
+
+menu, nav {
+  @extend .nav;
+  header, h1, h2, h3, h4, h5, h6 { @extend .nav; }
 }

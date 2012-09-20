@@ -6,6 +6,7 @@
     {% include sections/default_header.html %}
     <article class="main-content">
       {{ content | expand_urls: root_url }}
+      {% include helpers/aside.html %}
     </article>
     <div id="credits"></div>
     {% include script/disqus.html %}

@@ -12,12 +12,12 @@ article.excerpt {
   }
 
   a[rel=full-article] { 
-    display    : inline-block;
-    @include adjust-font-size-to(.85*$base-font-size);
-    @include apply-side-rhythm-border(left, 0, 1.5*$base-lines, 1em, none);
+    @extend .nav;
+    @include adjust-font-size-to(.85*$base-font-size); 
+    font-weight  : normal;
+    display      : inline-block;
+    padding-left : .3em;
   }
-
-  > footer a:hover { color: $link-color-hover; }
 
 }
 

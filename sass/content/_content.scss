@@ -28,7 +28,8 @@ $type-border      : lighten($text-color, 11);
 @import 'sharing-menu';
 @import 'solarized';
 
-// site index page
+// page specific files
 @import 'index';
+@import 'blog-index';
 
 @import 'article-header';

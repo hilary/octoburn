@@ -1,10 +1,11 @@
 menu[label=follow]:after {
-  content       : "follow";
+  content       : "follow on";
   color         : $subtitle-color; 
   display       : inline;
   float         : right;
   margin        : 0;
-  padding-right : 0.8em;
+  padding-top   : .2em;
+  padding-right : .6em;
 }
 
 .follow-button {

@@ -6,12 +6,14 @@ footer.credits {
   @include background-image(linear-gradient(darken($credits-bg, 11),
                                             $credits-bg,
                                             lighten($credits-bg, 8)));
-//  text-shadow      : lighten($credits-bg, 5) 0 1px;
+  text-shadow      : lighten($credits-bg, 5) 0 1px;
 
   border : {
     top    : 1px solid $credits-border-top;
     bottom : 1px solid $credits-border-bottom;
   }
+
+  img { vertical-align : middle; }
 
   a {
     @include link-colors($credits-link-color,

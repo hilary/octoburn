@@ -3,12 +3,12 @@
   @extend .meta;
   display : inline-block;
 
-  ul { 
+  > ul { 
     @include horizontal-list(.1em);
     @include float-right;
     margin  : 0; 
     padding : 0; 
-    li { margin : 0; }
+    > li { margin : 0; }
   } // ul
 
   &:before {

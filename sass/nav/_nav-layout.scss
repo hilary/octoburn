@@ -3,7 +3,7 @@
   @include pie-clearfix; 
   @extend .bars;
   margin  : 0;
-  padding : .2em;
+  padding : .3em;
 
   @include at-breakpoint($horizontal-aside-layout) {
     padding : .2em $horizontal-aside-single;

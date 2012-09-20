@@ -10,8 +10,7 @@ tags        :
          itemtype="http://schema.org/BlogPosting"
          role="article">
   <header>
-    {{ page.date | date_published }}
-      {{ page.updated | date_published modified }}{{ page.url | permalink }}
+    {{ page.date | date_published }}{{ page.updated | date_published modified }}{{ page.url | permalink }}
     <h1 itemprop="headline" class="page-title">{{ page.title }}</h1>
     {{ page.tags | tag_links }}
     {% include menus_and_navigation/sharing_menu.html %}
@@ -25,4 +24,4 @@ tags        :
   {% include menus_and_navigation/page_nav.html %}
   {% include sections/comments.html %}
 </article>
-{% include helpers/aside.html %}
+

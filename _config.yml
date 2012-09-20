@@ -28,7 +28,7 @@ permalink_label : "permalink"
 permalink_label_feed : "&#9875; permalink"
 
 index_posts       : 6
-excerpt_link      : "&hellip; read more &hellip;"
+excerpt_link      : "[ read me ]"
 archive_max_posts : 20
 
 disqus_short_name : integrating

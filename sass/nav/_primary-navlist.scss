@@ -2,7 +2,8 @@
 
   ul { 
     @include horizontal-list;
-    margin-top : .2em;
+    margin-top  : 2px;               // aligning with search!
+    padding-top : .2em;              // aligning with search!
 
     li {
       margin : 0;

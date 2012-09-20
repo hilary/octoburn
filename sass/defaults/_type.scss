@@ -12,7 +12,7 @@ mark { // missing definition: IE 7/8/9
   color            : #000;
 }
 
-a:focus { outline : thin dotted; }
+a:focus,
 a:active, 
 a:hover { outline : 0; }
 

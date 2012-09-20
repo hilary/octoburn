@@ -4,10 +4,8 @@ layout      : post
 title       : "repository naming for Octopress on Github"
 date        : 2012-08-30 10:40
 comments    : true
-description : Detailed walkthrough of repository naming when deploying Octopress on Github
-keywords    : octopress, github, walkthrough, naming
 sharing     : true
-tags        : Octopress, Github, walkthrough
+tags        : Octopress, github, walkthrough
 ---
 
 While the [Octopress instructions][1] for deploying an
