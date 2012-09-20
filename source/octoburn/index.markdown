@@ -7,7 +7,8 @@ sharing  : true
 ---
 
 [Octoburn](https://github.com/hilary/octoburn) is a blogging engine
-for Jekyll pages. It is a close descendant of
+for [Jekyll](https://github.com/mojombo/jekyll) pages. It is a close
+descendant of
 [Octopress](https://github.com/imathis/octopress/tree/2.1) (hence the
 name). I originally thought I would write an Octopress theme, however
 as I got deeper into the Octopress code I realized that I had
