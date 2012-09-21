@@ -24,7 +24,7 @@ new_post_ext    = "markdown"
 new_page_ext    = "markdown"  
 server_port     = "4000"      # preview server eg. localhost:4000
 
-desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
+desc "Initial setup: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
 task :install, :theme do |t, args|
   if File.directory?(source_dir) || File.directory?("sass")
     abort("rake aborted!") if ask("A theme is already installed, proceeding will overwrite existing files. Are you sure?", ['y', 'n']) == 'n'
@@ -46,15 +46,19 @@ end
 
 desc "Generate jekyll site"
 task :generate do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  raise "### You haven't set anything up yet. First run `rake install`." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
   system "compass compile --css-dir #{source_dir}/stylesheets"
   Rake::Task['minify_and_combine'].execute
   system "jekyll"
 end
 
+# seriously f*cked up: github script breaks unless jquery and modernizr are compressed
+# in with octopress script.
+# don't put widely used libraries like jquery and modernizr in the minified & combined file
+# as they are likely to already be in the visitor's memory
 Rake::Minify.new(:minify_and_combine) do
-  files = FileList.new("#{source_dir}/javascripts/group/*.*")
+  files = FileList.new("#{source_dir}/javascripts/put_your_javascript_here/*.*")
 
   output_file =  "#{source_dir}/javascripts/octopress.min.js"
 
@@ -89,7 +93,7 @@ end
 
 desc "Watch the site and regenerate when it changes"
 task :watch do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  raise "### You haven't set anything up yet. First run `rake install`." unless File.directory?(source_dir)
   puts "Starting to watch source with Jekyll and Compass."
   system "compass compile --css-dir #{source_dir}/stylesheets"
   Rake::Task['minify_and_combine'].execute
@@ -106,7 +110,7 @@ end
 
 desc "preview the site in a web browser"
 task :preview do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  raise "### You haven't set anything up yet. First run `rake install`." unless File.directory?(source_dir)
   puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}"
   system "compass compile --css-dir #{source_dir}/stylesheets"
 
@@ -129,7 +133,7 @@ task :new_post, :title do |t, args|
   else
     title = get_stdin("Enter a title for your post: ")
   end
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  raise "### You haven't set anything up yet. First run `rake install`." unless File.directory?(source_dir)
   mkdir_p "#{source_dir}/#{posts_dir}"
   filename = "#{source_dir}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
   if File.exist?(filename)
@@ -151,7 +155,7 @@ end
 # usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to "new-page.markdown")
 desc "Create a new page in #{source_dir}/(filename)/index.#{new_page_ext}"
 task :new_page, :filename do |t, args|
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  raise "### You haven't set anything up yet. First run `rake install`." unless File.directory?(source_dir)
   args.with_defaults(:filename => 'new-page')
   page_dir = [source_dir]
   if args.filename.downcase =~ /(^.+\/)?(.+)/
@@ -213,56 +217,6 @@ task :clean do
   rm "#{source_dir}/stylesheets/default.css" if File.exists?("#{source_dir}/stylesheets/default.css")
   system "compass clean"
   puts "## Cleaned Sass, Pygments and Gist caches, removed generated stylesheets ##"
-end
-
-desc "Update theme source and style"
-task :update, :theme do |t, args|
-  theme = args.theme || 'classic'
-  Rake::Task[:update_source].invoke(theme)
-  Rake::Task[:update_style].invoke(theme)
-end
-
-desc "Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom"
-task :update_style, :theme do |t, args|
-  theme = args.theme || 'classic'
-  if File.directory?("sass.old")
-    puts "removed existing sass.old directory"
-    rm_r "sass.old", :secure=>true
-  end
-  mv "sass", "sass.old"
-  puts "## Moved styles into sass.old/"
-  cp_r "#{themes_dir}/"+theme+"/sass/", "sass"
-  cp_r "sass.old/custom/.", "sass/custom"
-  puts "## Updated Sass ##"
-  rm_r ".sass-cache", :secure=>true if File.directory?(".sass-cache")
-end
-
-desc "Move source to source.old, install source theme updates, replace source/_includes/navigation.html with source.old's navigation"
-task :update_source, :theme do |t, args|
-  theme = args.theme || 'classic'
-  if File.directory?("#{source_dir}.old")
-    puts "## Removed existing #{source_dir}.old directory"
-    rm_r "#{source_dir}.old", :secure=>true
-  end
-  mkdir "#{source_dir}.old"
-  cp_r "#{source_dir}/.", "#{source_dir}.old"
-  puts "## Copied #{source_dir} into #{source_dir}.old/"
-  cp_r "#{themes_dir}/"+theme+"/source/.", source_dir, :remove_destination=>true
-  cp_r "#{source_dir}.old/_includes/custom/.", "#{source_dir}/_includes/custom/", :remove_destination=>true
-  mv "#{source_dir}/index.html", "#{blog_index_dir}", :force=>true if blog_index_dir != source_dir
-  cp "#{source_dir}.old/index.html", source_dir if blog_index_dir != source_dir && File.exists?("#{source_dir}.old/index.html")
-  if File.exists?("#{source_dir}/blog/archives/index.html")
-    puts "## Moving blog/archives to /archives (standard location as of 2.1) ##"
-    file = "#{source_dir}/_includes/custom/navigation.html"
-    navigation = IO.read(file)
-    navigation = navigation.gsub(/(.*)\/blog(\/archives)(.*$)/m, '\1\2\3')
-    File.open(file, 'w') do |f|
-      f.write navigation
-    end
-    rm_r "#{source_dir}/blog/archives"
-    rm_r "#{source_dir}/blog" if Dir.entries("#{source_dir}/blog").join == "..."
-  end
-  puts "## Updated #{source_dir} ##"
 end
 
 ##############
@@ -381,9 +335,8 @@ task :setup_github_pages, :repo do |t, args|
   project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
   url = "http://#{user}.github.com"
   url += "/#{project}" unless project == ''
-  unless `git remote -v`.match(/origin.+?octopress.git/).nil?
-    # If octopress is still the origin remote (from cloning) rename it to octopress
-    system "git remote rename origin octopress"
+  unless `git remote -v`.match(/origin.+?hilary\/octoburn/).nil?
+    system "git remote rename origin octoburn"
     if branch == 'master'
       # If this is a user/organization pages repository, add the correct origin remote
       # and checkout the source branch for committing changes to the blog source.
@@ -409,9 +362,9 @@ task :setup_github_pages, :repo do |t, args|
     puts   "Attempting to pull from repository"
     system "git pull origin #{branch}"
     unless File.exist?('index.html')
-      system "echo 'My Octopress Page is coming soon &hellip;' > index.html"
+      system "echo 'Octoburn on the way &hellip;' > index.html"
       system "git add ."
-      system "git commit -m \"Octopress init\""
+      system "git commit -m \"Octoburn init\""
       system "git branch -m gh-pages" unless branch == 'master'
     end
   end

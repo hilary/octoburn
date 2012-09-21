@@ -1,15 +1,4 @@
 <div class="primary-navigation">
   {% include nav/simple_search.html %}
-  <nav class="primary-navlist" role="navigation">
-    <ul>
-      <li><a href="{{ root_url }}/"
-             itemprop="relatedLink">home</a></li>
-      <li><a href="{{ root_url }}/octoburn/"
-             itemprop="relatedLink">Octoburn</a></li>
-      <li><a href="{{ root_url }}/blog/"
-             itemprop="relatedLink">blog</a></li>
-      <li><a href="{{ root_url }}/archives/"
-             itemprop="relatedLink">archives</a></li>
-    </ul>
-  </nav>
+  {% include nav/primary_navlist.html %}
 </div>

@@ -15,7 +15,7 @@ destination    : public
 plugins        : plugins
 code_dir       : downloads/code
 tag_dir        : tags
-markdown       : rdiscount
+markdown       : kramdown
 pygments       : false
 
 tag_feeds       : true

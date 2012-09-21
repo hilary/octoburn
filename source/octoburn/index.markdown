@@ -7,37 +7,47 @@ sharing  : true
 ---
 
 [Octoburn](https://github.com/hilary/octoburn) is a blogging engine
-for [Jekyll](https://github.com/mojombo/jekyll) pages. It is a close
-descendant of
-[Octopress](https://github.com/imathis/octopress/tree/2.1) (hence the
-name). I originally thought I would write an Octopress theme, however
-as I got deeper into the Octopress code I realized that I had
-fundamentally different priorities. I am less concerned with providing
-a generalized blogging platform for coders and more concerned with
-information design. Thus Octoburn only supports respectful social
-network widgets but uses the HTML5 microdata standard.
+for [Jekyll](https://github.com/mojombo/jekyll) pages based on
+[Octopress](https://github.com/imathis/octopress/tree/2.1).
 
-At the moment, Octoburn is still compatible with (and makes use of)
-many of the Octopress plugins, some of its Javascript and much of its
-build system. I think Octopress is terrific and would very much like to
-continue to leverage its facilities.
+## contents {#toc}
 
-So what's different?
+<ul class="toc">
+ <li><a href="#leveraging_compass">leveraging Compass</a>
+  <ul><li><a href="#susy">Susy for responsive layout</a></li>
+  <li><a href="#vertical_rhythm">Vertical Rhythm for readability</a></li></ul>
+ </li>
+ <li><a href="#microdata">microdata</a></li>
+ <li><a href="#convention">convention over configuration</a>
+  <ul><li><a href="#waldo">where's waldo?</a></li>
+  <li><a href="#tags">tags are not categories</a></li></ul>
+ </li>
+ <li><a href="#next">what's next?</a></li>
+</ul>
 
-## leveraging Compass
+## <a name="leveraging_compass"></a>leveraging Compass
 
-Octoburn uses a rich set of Compass libraries. Essentially, whenever
-I could use a Compass library to do what I wanted to do, I did so:
+### <a name="susy"></a>[Susy](http://susy.oddbird.net/) for responsive layout. 
 
-* [Susy](http://susy.oddbird.net/) for responsive layout. While Susy
-  can present something of an initial learning curve, the results are
-  worth it. Susy grids encapsulate much of the grid calculations
-  without tying a designer down.
+While doing a Susy design from scratch can present something of an
+initial learning curve, customizing an existing design is a joy. Want
+4 asides instead of 3 in your default layout? Allocate columns to each
+aside in `sass/asides/_default_layout.scss` and regenerate. You're done.
 
-* [Vertical Rhythm](http://compass-style.org/reference/compass/typography/vertical_rhythm/)
-  for, well, vertical rhythm (the way text flows down a 'page').
+### <a name="vertical_rhythm"></a>[Vertical Rhythm](http://compass-style.org/reference/compass/typography/vertical_rhythm/) for readability
 
-* a host of smaller libraries, for example, [Horizontal List](http://compass-style.org/reference/compass/typography/lists/horizontal_list/) and [float](http://compass-style.org/reference/compass/utilities/general/float/).
+Vertical rhythm refers to the way text flows down a page. The core of
+Compass's Vertical Rhythm library is the ability to adjust both
+font-size and line-height with a single call. The `establish-baseline`
+mixin is integrated with other Compass libraries such as Susy.
+
+### and many more
+
+Octoburn uses a host of smaller Compass libraries as well. Two
+examples are [Horizontal
+List](http://compass-style.org/reference/compass/typography/lists/horizontal_list/)
+and
+[float](http://compass-style.org/reference/compass/utilities/general/float/).
 
 Why use Compass? The single largest benefit is that the libraries
 encapsulate cross-browser issues, and continue to do so as browsers
@@ -48,19 +58,23 @@ Comprehensive libraries such as Susy and Vertical Rhythm make it possible
 to achieve in days what used to take a week. They also make implementing
 changes fun as opposed to mildly terrifying.
 
-## [microdata](http://schema.org/)
+## <a name="microdata"></a>[microdata](http://schema.org/)
 
-Octoburn's markup uses the relevant microdata schema. Microdata is
-critical to having your information correctly indexed by the major
-search engines. A new set of extremely promising schemas for technical
-materials is in review. I plan on trying some of them out.
+Octoburn's markup uses relevant microdata schemas. A set of microdata liquid
+filters is included as a plugin for easy template customization.
+
+Microdata is critical to having your information correctly indexed by
+the major search engines. A new set of extremely promising schemas for
+technical materials is in review which I plan to incorporate.
 
 Encoding markup with microdata has a secondary benefit. Semantic HTML5
 is challenging. Many elements can legitimately be marked up in
 multiple ways depending on context. I often find that ambiguous
 elements resolve themselves as I work through a schema.
 
-## convention over configuration
+## <a name="convention"></a>convention over configuration
+
+### <a name="waldo"></a>where's waldo?
 
 I spend a lot of my time in Rails; one of the strengths of the Rails
 architecture is how easy it is to find
@@ -75,8 +89,18 @@ Consider, for example, the follow menu at the top of each page:
 (There's more to the Sass import design, but a proper treatment would
 be a full post.) 
 
-## what's next?
+### <a name="tags"></a>tags are not categories
+
+Octoburn offers built-in support for tags: automatically generated 
+tag pages, liquid filters for a single tag link and a full set of
+tag links and automatically generated tag feeds. I am currently reviewing
+several of the existing Jekyll tag cloud plugins to see if one of them
+will do.
+
+## <a name="next"></a>what's next?
 
 While I have lots of plans for Octoburn, my next step is to turn it
-into a gem. Hi, my name is Hilary, and I am an agile addict. I need
-my bdd toolset!
+into a gem. Hi, my name is Hilary, and I addicted to agile software
+development. I need my BDD toolset!
+
+ *[BDD]: Behavior-Driven Development
