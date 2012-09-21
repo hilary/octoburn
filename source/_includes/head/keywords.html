@@ -1,5 +1,0 @@
-{% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}">
-{% elsif page.tags %}
-  <meta name="keywords" content="{{ page.tags | array_to_sentence_string }}">
-{% endif %}

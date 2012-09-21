@@ -1,9 +1,0 @@
-a[rel=bookmark] { 
-
-  @extend .header;
-  @extend .meta;
-  @include hover-link;
-  padding : 0;
-  margin  : 0;
-  &:before, &:after { @extend .bullet; } 
-}
