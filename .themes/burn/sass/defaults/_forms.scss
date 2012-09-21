@@ -1,0 +1,79 @@
+form { 
+  margin  : 0;
+  padding : 0;
+}
+
+fieldset { 
+  border-color : #c0c0c0;
+  margin       : 0.2em;
+  @include rhythm-borders(1px, $base-lines, 1em, solid);
+}
+
+legend {
+  @include rhythm-borders(0, .5*$base-lines, 1em, none);
+  margin       : 0;
+  *margin-left : -0.5em;   // alignment displayed oddly: IE 7
+}
+
+textarea {
+  overflow       : auto; // Remove default vertical scrollbar: IE 7/8/9
+  vertical-align : top;  // Improve readability and alignment: all browsers
+}
+
+input[type="checkbox"], 
+input[type="radio"] {
+  box-sizing : border-box; // box sizing set to content-box: IE 8/9
+  padding    : 0;          // Remove excess padding: IE 8/9
+  *height    : 1em;        // Remove excess padding: IE 7
+  *width     : 1em;        // Remove excess padding: IE 7
+}
+
+input[type="search"] {
+  -webkit-appearance : textfield;   // appearance = searchfield: Saf 5, Chrome
+  -moz-box-sizing    : content-box; // future-proofing, lol
+  -webkit-box-sizing : content-box; // box-sizing = border-box: Saf 5, Chrome
+  box-sizing         : content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, // Remove search cancel button,
+input[type="search"]::-webkit-search-decoration {   // inner padding: Saf 5, Chrome OS X
+  -webkit-appearance : none; 
+}
+
+html input[type="button"], // stop **breaking native a/v controls: Android 4.0.*
+input[type="reset"],
+input[type="submit"],
+button {
+  -webkit-appearance : button; // **make clickable input types stylable: iOS
+  cursor             : pointer; // improve consistency between text & image buttons
+  *overflow          : visible; // Remove inner spacing: IE 7
+}
+
+button,
+input,
+select,
+textarea {
+  font : {
+    family : inherit; // not inherited in all browsers
+    size   : 100%;    // not inherited in all browsers
+  }
+  margin : 0; // margins set differently: FF 4+, Safari 5, Chrome
+}
+
+button, 
+input { // FF 4+ `line-height` on `input` uses `!important` in UA stylesheet.
+  line-height : normal;
+}
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { // Remove inner padding, border: FF 4+
+  border  : 0;
+  padding : 0;
+}
+
+button[disabled], 
+input[disabled] {
+  cursor : default; // Re-set default cursor for disabled elements.
+}
+
+

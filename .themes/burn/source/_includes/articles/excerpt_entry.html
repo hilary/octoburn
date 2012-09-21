@@ -1,0 +1,13 @@
+<article class="excerpt" itemscope 
+         itemtype="http://schema.org/BlogPosting"
+         role="article">
+  <header>
+    {{ post.date | date_published }}{{ post.updated | date_published modified }}{{ post.url | permalink }}{{ post.tags | tag_links }}
+    <h1>
+      <a href="{{ post.url | permalink_url }}"><span itemprop="headline">{{ post.title }}</span></a>
+    </h1>
+  </header>
+  {% comment %}hack to get around tag page rendering glitch{% endcomment %}
+  {% capture excerpt_content %}{{ post.content | excerpt }}{{ post.url | excerpt_link }}{% endcapture %}
+  {{ excerpt_content | markdownify }}
+</article>

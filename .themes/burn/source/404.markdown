@@ -1,0 +1,10 @@
+---
+layout : page
+style  : default
+title  : Page Not Found
+---
+
+Doh! I could not find a page with that [URI](http://www.w3.org/2001/tag/awwsw/issue57/20110327/#id35578).
+
+You might try entering some of the words from the title in the search box.
+

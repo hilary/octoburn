@@ -1,0 +1,16 @@
+@import 'compass/layout/sticky-footer';
+@include sticky-footer(2em, '#grid', '#credits', '#contentinfo');
+
+footer.credits {
+
+  padding : 0 $vertical-layout-gutter;   
+
+  @include at-breakpoint($horizontal-aside-layout) { 
+    padding-left : $horizontal-aside-single;
+  }
+
+  @include at-breakpoint($aside-right-layout) {
+    padding-left : $aside-right-single;
+  }
+
+}

@@ -1,0 +1,49 @@
+menu[label=follow]:after {
+  content       : "follow on";
+  color         : $subtitle-color; 
+  display       : inline;
+  float         : right;
+  margin        : 0;
+  padding-top   : .2em;
+  padding-right : .6em;
+}
+
+.follow-button {
+  margin : 0;
+
+  img {
+    background-color : $content-bg;
+    border           : 1px solid $subtitle-color;
+    vertical-align   : middle;
+  } // img
+
+} // .follow-button
+
+li.delicious-follow,
+li.github-follow,
+li.googleplus-follow,
+li.rss-follow { 
+  @extend .follow-button; 
+}
+
+menu[label=follow] { @include horizontal-list(.1em, right); }
+.follow-button img { @include border-radius(.3em); }
+
+@include at-breakpoint($horizontal-aside-layout) {
+
+  menu[label=follow] { @include horizontal-list(.2em, right); }
+  .follow-button img { 
+    @include border-bottom-radius(.3em); 
+    @include border-top-radius(0);
+  }
+}
+
+@include at-breakpoint($aside-right-layout) {
+
+  menu[label=follow] { @include horizontal-list(.4em, right); }
+  .follow-button img { 
+    @include border-bottom-radius(.3em); 
+    @include border-top-radius(0);
+  }
+}
+

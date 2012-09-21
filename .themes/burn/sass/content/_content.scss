@@ -1,0 +1,36 @@
+$text-color-light : lighten($text-color, 8);
+$type-border      : lighten($text-color, 11);
+
+.content {
+  color            : $text-color;
+  background-color : $content-bg;
+
+  a {
+    color : $link-color;
+    @include transition(color .3s);
+    @include link-colors($link-color,            // normal
+                         $link-color-hover,      // hover
+                         $link-color-hover,      // active
+                         $link-color-visited,    // visited
+                         $link-color-hover);     // focus
+  }
+}
+
+@import 'content-layout';
+@import 'date-published';
+@import 'permalink';
+
+@import 'page-title';
+@import 'tag-links';
+@import 'toc';
+
+@import 'article-header';
+@import 'article-excerpt';
+@import 'page-nav';
+@import 'solarized';
+
+// page specific files
+@import 'index';
+@import 'blog-index';
+@import 'tag-index';
+@import 'blog-archives';

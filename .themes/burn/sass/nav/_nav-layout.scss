@@ -1,0 +1,37 @@
+.primary-navigation { 
+
+  @include pie-clearfix; 
+  margin  : 0;
+  padding : .3em;
+
+  @include at-breakpoint($horizontal-aside-layout) {
+    padding : .2em $horizontal-aside-single;
+
+    .primary-navlist { 
+      @include span-columns(11, $horizontal-aside-columns); 
+      margin-right : 0;
+      padding-right : $horizontal-aside-single;
+    }
+    .simple-search { 
+      @include span-columns(9 omega, $horizontal-aside-columns);
+    }
+
+  } // $horizontal-aside-layout
+
+
+  @include at-breakpoint($aside-right-layout) {
+    padding : .2em $aside-right-gutter .2em $aside-right-single;
+
+    .primary-navlist { 
+      @include span-columns(20, $aside-right-columns); 
+      margin-right : 0;
+      padding-right : $aside-right-single;
+    }
+    .simple-search { 
+      @include span-columns(9 omega, $aside-right-columns); 
+    }
+
+  } // $aside-right-layout
+
+}
+

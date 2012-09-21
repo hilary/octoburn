@@ -1,0 +1,16 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[{{ site.title }}: {{ page.title }}]]></title>
+  <link href="{{ site.url }}{{ page.feed_url }}" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{{ page.date | date_to_xmlschema }}</updated>
+  {% include head/site_meta.xml %}
+
+  {% for post in site.tags[page.tag] limit: 20 %}
+    {% include articles/feed_entry.xml %}
+  {% endfor %}
+</feed>
+

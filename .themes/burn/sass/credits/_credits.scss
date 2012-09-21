@@ -1,0 +1,12 @@
+$credits-color            : $title-color;
+$credits-link-color       : $title-color;
+$credits-link-color-hover : $subtitle-color;
+
+$credits-bg               : desaturate(lighten($header-bg, 18), 10);
+
+$credits-border-top       : lighten($credits-bg, 15);
+$credits-border-bottom    : darken($credits-bg, 15);
+
+@import 'credits-layout';
+
+@import 'footer';

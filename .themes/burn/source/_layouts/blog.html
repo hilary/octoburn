@@ -1,0 +1,16 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head/head.html %}
+<body itemscope {% if page.body_id %} id="{{ page.body_id }}" {% endif %}
+      itemtype="http://schema.org/Blog">
+  <div id="grid">
+    {% include sections/default_header.html %}
+    <article class="main-content">
+      {{ content | expand_urls: root_url }}
+      {% include helpers/aside.html %}
+    </article>
+    <div id="credits"></div>
+  </div>
+  {% include footers/credits.html %}
+  {% include script/disqus.html %}
+</body>
+</html>
