@@ -1,3 +1,3 @@
 <id>{{ site.url }}/</id>
 <author><name><![CDATA[{{ site.author | strip_html }}]]></name></author>
-<generator uri="{{ site.generator_uri }}">{{ site.generator_name }}</generator>
+<generator uri="http://hholz.com/octoburn/">Octoburn</generator>

@@ -9,7 +9,7 @@ layout: nil
   <updated>{{ page.date | date_to_xmlschema }}</updated>
   {% include head/site_meta.xml %}
 
-  {% for post in site.tags[page.tag] limit: 20 %}
+  {% for post in site.tags[page.tag] limit: site.tag_feed_max_posts %}
     {% include articles/feed_entry.xml %}
   {% endfor %}
 </feed>

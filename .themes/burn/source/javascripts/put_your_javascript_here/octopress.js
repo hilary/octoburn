@@ -76,7 +76,7 @@ var octopress = (function(){
           $.ajax({
               url: "https://api.github.com/users/"+user+"/repos?callback=?"
             , dataType: 'jsonp'
-            , error: function (err) { target.find('.loading').addClass('error').text("Error loading feed"); }
+            , error: function (err) { target.find('.loading').addClass('error').text("Error loading github repos"); }
             , success: function(data) {
               var repos = [];
               if (!data.data) { return; }

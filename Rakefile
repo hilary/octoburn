@@ -335,11 +335,9 @@ task :setup_github_pages, :repo do |t, args|
   project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
   url = "http://#{user}.github.com"
   url += "/#{project}" unless project == ''
-  unless `git remote -v`.match(/origin.+?hilary\/octoburn/).nil?
+  unless `git remote -v`.match(/origin.+?octoburn\.git/).nil?
     system "git remote rename origin octoburn"
     if branch == 'master'
-      # If this is a user/organization pages repository, add the correct origin remote
-      # and checkout the source branch for committing changes to the blog source.
       system "git remote add origin #{repo_url}"
       puts "Added remote #{repo_url} as origin"
       system "git config branch.master.remote origin"

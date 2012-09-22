@@ -1,47 +1,103 @@
-url            : http://hholz.com
-title          : integrating design
-subtitle       : your friendly native guide
-author         : hilary j holz
-simple_search  : http://google.com/search
-description    : coding blog by full stack web dev
-date_format    : "ordinal"
+# ------------------------------------------------------------------------------
+# Octoburn specific config
+# ------------------------------------------------------------------------------
 
-generator_uri  : octoburn/
-generator_name : Octoburn
+feed_url           : feed/atom.xml # RSS subscription link
+feed_email         :               # RSS feeds can list your email address
+feed_dir           : feed          # where to store feeds
+feed_max_posts     : 20            # number of posts to include in main feed
 
-root           : /
-source         : source
-destination    : public
-plugins        : plugins
-code_dir       : downloads/code
-tag_dir        : tags
-markdown       : kramdown
-pygments       : false
+tag_dir            : tag
+tag_feeds          : true          # tag_feeds are stored in feed_dir
+tag_feed_max_posts : 20            # number of posts to include in tag feeds
 
-tag_feeds       : true
-feed_dir        : feeds
-feed_url        : feeds/integrating_design.xml
-excerpt_in_feed : false
+index_max_posts    : 6             # number of posts to show on blog index page
+archive_max_posts  : 20            # number of posts to show on blog archive pg
 
-permalink       : /blog/:year/:title/
-permalink_label : "permalink"
-permalink_label_feed : "&#9875; permalink"
-
-index_posts       : 6
-excerpt_link      : "[ read me ]"
-archive_max_posts : 20
-
-disqus_short_name : integrating
-
-recent_posts         : 5
-
-github_user          : hilary
-github_repo_count    : 3
-github_skip_forks    : true
+# ------------------------------------------------------------------------------
+# follow widget
+#
+# github and delicious are exposed here for ease of updating since
+# providers update their APIs frequently and often with little notice
+# (although github is better than most). 
+# ------------------------------------------------------------------------------
+google_plus_user     :               
 github_follow_url    : https://github.com/users/follow?target=      
-
-delicious_user       : hilzh
-delicious_count      : 6
 delicious_follow_url : https://www.delicious.com/settings/networkedit?action=add&username=
 
-google_plus_user     : holz.hilary@gmail.com
+# ------------------------------------------------------------------------------
+# Octopress-compatible configs
+# Note: These configs were compatible with Octopress 2.0 as of 
+#       September 21, 2012
+# ------------------------------------------------------------------------------
+
+url                  : http://yoursite.com
+title                : Spiffy Octoburn Blog
+subtitle             : information architecture at its best
+author               : my name is me
+simple_search        : http://google.com/search
+description          :
+
+# You can customize the date format using the directives listed at
+# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# Blogs in english can use the additional directive %o
+# for the ordinal, i.e., 13th, 22nd, ..., representation of the day.
+date_format          : "%B %o %Y"
+
+# Optional email subscription link
+subscribe_email      :
+
+excerpt_link         : "[ read me ]"
+excerpt_in_feed      : false
+permalink_label      : "permalink"
+permalink_label_feed : "&#9875; permalink"
+
+recent_posts         : 5  # posts in the recent posts aside widget
+
+# ------------------------------------------------------------------------------
+# javascript widgets
+# ------------------------------------------------------------------------------
+
+# Github repositories
+github_user       :
+github_repo_count : 0
+github_skip_forks : true
+
+# Delicious
+delicious_user    :
+delicious_count   : 6
+
+# Disqus Comments
+disqus_short_name :
+
+# ------------------------------------------------------------------------------
+# Jekyll core
+# ------------------------------------------------------------------------------
+
+#-- paths
+# to publish to a subdirectory (http://site.com/project) set 'root : /project'
+root              : /
+permalink         : /blog/:year/:title/
+
+#-- directories
+source            : source
+destination       : public
+plugins           : plugins
+code_dir          : downloads/code
+
+#-- processing content
+markdown          : kramdown
+pygments          : false   # because we use pygments.rb
+
+# ------------------------------------------------------------------------------
+# and pagination...
+#
+# burn theme templates don't use pagination. If you use it, do so extremely
+# sparingly and be sure to include a 'view as a single page' link. Viewers 
+# overwhelmingly HATE pagination, unfortunately designers love it.
+# ------------------------------------------------------------------------------
+#
+# example pagination config params
+# paginate       : 10    # Posts per page on the blog index
+# pagination_dir : blog  # Directory base for pagination URLs eg. /blog/page/2/
+
